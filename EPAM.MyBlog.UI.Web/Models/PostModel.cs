@@ -12,6 +12,8 @@ namespace EPAM.MyBlog.UI.Web.Models
         /// Поля для ID, Заголовка поста и текста поста.
         /// </summary>
 
+        public static List<PostModel> Posts;
+
         public Guid Id { get { return id; } set { id = value; } }
 
         [Display(Name = "Текст записи")]
@@ -33,6 +35,11 @@ namespace EPAM.MyBlog.UI.Web.Models
             return new Entities.PostText() {Id = Guid.NewGuid(), Text = Post.Text, Title = Post.Title};
         }
 
+        public static explicit operator PostModel(Entities.PostText Post)
+        {
+            return new PostModel() { Id = Post.Id, Text = Post.Text, Title = Post.Title };
+        }
+
 
 
         internal bool AddPost(string login)
@@ -47,5 +54,7 @@ namespace EPAM.MyBlog.UI.Web.Models
                 return false;
             }
         }
+
+
     }
 }

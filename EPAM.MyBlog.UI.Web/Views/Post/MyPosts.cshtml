@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+
+    @foreach (var item in Model) 
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+
+    }
+
+</table>

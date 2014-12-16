@@ -131,5 +131,27 @@ namespace EPAM.MyBlog.DAL.DB
             }
 
         }
+
+        public IEnumerable<Entities.PresentPost> GetAllPostsTitle(string user)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts WHERE User_Name = @Name", con);
+                command.Parameters.Add(new SqlParameter("@Name", user));
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                 while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+
+        }
     }
 }

@@ -41,5 +41,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        [ChildActionOnly]
+        public ActionResult MyPosts()
+        {
+            return PartialView(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
+        }
+
+      
     }
 }

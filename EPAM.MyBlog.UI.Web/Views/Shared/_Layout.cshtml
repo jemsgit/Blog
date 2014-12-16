@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>#Blog</title>
+
+    <!-- Bootstrap -->
+      <link href="~/Content/bootstrap.css" rel="stylesheet" />
+      <link href="~/Content/css/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-static-top" >
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                  <span class="sr-only">Открыть</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a href="@Url.Action("Index","Home")" class="navbar-brand">
+                <img src="../../Content/img/logo.png" alt="MyBlog" height ="25" />
+              </a>
+          </div>
+          <div class="collapse navbar-collapse" id="menu">
+              
+              @Html.Action("MenuState", "Account")
+
+
+              <div class="col-sm1 col-md-1 pull-right">
+                   <div class="btn-group">
+                       @Html.Action("State", "Account")
+                    </div>
+              </div>
+
+         <div class="col-sm-3 col-md-3">
+                  
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+
+
+               </div>
+
+          </div>
+      </div>
+        
+
+  </div>
+
+      <div class="container head shadow">
+          <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">@Html.Action("TitleState", "Account")</div>
+          </div>
+      </div>
+
+        <div class="container main">
+            <div class="row main">
+                      <div class="col-lg-9 col-md-9 col-sm-9 shadow" id="content">@RenderBody()</div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 shadow" id="sidebar">1</div>
+            </div>
+        </div>
+
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-md-4"><a href="#">Помощь</a></div>
+                <div class="col-md-4"><a href="#">Контакты</a></div>
+                <div class="col-md-4"><a href="#">Справка</a></div>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+      @RenderSection("script", false)    
+
+  </body>
+</html>

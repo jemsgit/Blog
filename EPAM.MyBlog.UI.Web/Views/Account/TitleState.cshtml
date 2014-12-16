@@ -1,0 +1,8 @@
+﻿@if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+    <h2>#Blog: @User.Identity.Name.ToString() </h2>
+}
+else
+{
+    <h1>#Blog</h1>
+}

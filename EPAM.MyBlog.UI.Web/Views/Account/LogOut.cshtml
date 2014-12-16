@@ -1,0 +1,12 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.ConfirmModel
+
+@{
+    ViewBag.Title = "LogOut";
+}
+
+<h2>LogOut?</h2>
+@using (Html.BeginForm())
+{
+    <button name="Confirm" value ="true">Yes</button> 
+    <button name="Confirm" value ="false">No</button>
+}

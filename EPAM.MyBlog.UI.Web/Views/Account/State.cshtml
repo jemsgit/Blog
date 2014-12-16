@@ -1,0 +1,17 @@
+﻿<div class ="login">
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <a href="@Url.Action("Logout", "Account")" class="btn btn-default navbar-btn">
+            <i class="glyphicon glyphicon-log-out"></i>
+
+        </a>
+        
+    }
+    else
+    {
+        <a href="@Url.Action("Login", "Account")" class="btn btn-default navbar-btn">
+            <i class="glyphicon glyphicon-log-in"></i>
+
+        </a>
+    }
+</div>

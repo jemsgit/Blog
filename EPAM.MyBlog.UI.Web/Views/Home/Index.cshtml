@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+ @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <h1>Авторизация успешно пройдена </h1>    
+    }
+    
+    else
+    {
+        <h1>Добро пожаловать в #Blog</h1>
+     <h2> Здесь вы можете завести свой блог и делится интересными новостями</h2>
+    }

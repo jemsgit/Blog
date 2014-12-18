@@ -25,6 +25,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         [RegularExpression(@"[\w]{6,20}", ErrorMessage = "{0} должен состоять из анлйских букв и/или цифр")]
         public string Password { get { return pass; } set { pass = value; } }
 
+        [Required]
         public bool Remember { get {return remember;} set{remember = value;} }
 
         private string name;
@@ -61,7 +62,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             }
             else
             {
-                if (GetString(Pass) == this.Password)
+                if (GetString(Pass) == GetString(EncodePassword(this.Password)))
                 {
                     Result = "Welcome";
                     FormsAuthentication.RedirectFromLoginPage(this.Name, this.Remember);
@@ -123,7 +124,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             char[] chars = new char[bytes.Length / sizeof(char)];
             System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
             string s = new string(chars);
-            if (s.Contains("\0"))
+            while (s.Contains("\0"))
             {
                 string s2 = s.Substring(0, s.IndexOf("\0", 0));
                 return s2;

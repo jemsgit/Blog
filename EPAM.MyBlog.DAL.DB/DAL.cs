@@ -153,5 +153,75 @@ namespace EPAM.MyBlog.DAL.DB
             }
 
         }
+
+        public Entities.PostText GetPostById(Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Text FROM dbo.Posts WHERE Post_Id = @Id", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                con.Open();
+                Entities.PostText post = new Entities.PostText() {Id = Id };
+                int count = 0;
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                        post.Title = (string)reader["Post_Title"];
+                        post.Text = (string)reader["Post_Text"];
+                    count++;
+                }
+                if (count < 0)
+                {
+                    return post = null;
+                }
+                else
+                {
+                    return post;
+                }
+
+            }
+        }
+
+        public bool EditPostById(Entities.PostText post)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("UPDATE dbo.Posts SET Post_Title = @Title, Post_Text = @Text WHERE Post_Id = @Id", con);
+                command.Parameters.Add(new SqlParameter("@Id", post.Id));
+                command.Parameters.Add(new SqlParameter("@Text", post.Text));
+                command.Parameters.Add(new SqlParameter("@Title", post.Title));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool DeletePostById(Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("Delete FROM dbo.Posts WHERE Post_Id = @Id", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+ 
+        }
     }
 }

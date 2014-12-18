@@ -26,7 +26,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [HttpPost]
         public ActionResult Login(UserModel model, string ReturnUrl)
         {
-            var checkbox = Request.Form["remember"];
+            var checkbox = Request.Form["remember1"];
             if (checkbox == "on")
             {
                 model.Remember = true;

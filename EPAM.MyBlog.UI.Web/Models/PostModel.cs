@@ -32,7 +32,7 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         public static explicit operator Entities.PostText(PostModel Post)
         {
-            return new Entities.PostText() {Id = Guid.NewGuid(), Text = Post.Text, Title = Post.Title};
+            return new Entities.PostText() { Id = Post.Id, Text = Post.Text, Title = Post.Title };
         }
 
         public static explicit operator PostModel(Entities.PostText Post)
@@ -56,5 +56,24 @@ namespace EPAM.MyBlog.UI.Web.Models
         }
 
 
+
+        internal static PostModel GetPostById(Guid Id)
+        {
+            var post = GetDAL.dal.GetPostById(Id);
+            return (PostModel)post;
+        }
+
+        internal bool EditPost()
+        {
+            var post = (Entities.PostText)this;
+            if (GetDAL.dal.EditPostById(post))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

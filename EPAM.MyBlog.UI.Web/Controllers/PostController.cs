@@ -47,6 +47,29 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return PartialView(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
         }
 
+        public ActionResult Edit(Guid Id)
+        {
+            var post = PostModel.GetPostById(Id);
+            return View(post);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(PostModel post)
+        {
+            if (ModelState.IsValid)
+            {
+                if (post.EditPost())
+                {
+                    return RedirectToAction("Index", "Post");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return View();
+
+        }
       
     }
 }

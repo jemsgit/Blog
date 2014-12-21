@@ -118,6 +118,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ConfirmModel.cs" />
+    <Compile Include="Models\MyRoleProvider.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\PresentPostModel.cs" />
     <Compile Include="Models\RegModel.cs" />

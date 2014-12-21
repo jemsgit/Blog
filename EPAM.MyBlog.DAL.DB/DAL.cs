@@ -223,5 +223,41 @@ namespace EPAM.MyBlog.DAL.DB
             }
  
         }
+
+        public string[] GetAllRoles()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Title FROM dbo.Roles", con);
+                con.Open();
+                string[] roles = new string[command.ExecuteNonQuery()];
+                int count = 0;
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    roles[count] = (string)reader["Title"];
+                    count++;
+                }
+                return roles;
+            }
+            
+        }
+
+        public int GetRoleForUser(string username)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Role_Id FROM dbo.Users WHERE Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Login", username));
+                con.Open();
+                int role = 0;
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    role = (int)reader["Role_Id"];
+                }
+                return role;
+            }
+        }
     }
 }

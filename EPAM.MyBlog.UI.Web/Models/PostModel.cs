@@ -75,5 +75,10 @@ namespace EPAM.MyBlog.UI.Web.Models
                 return false;
             }
         }
+
+        internal static bool Delete(Guid id)
+        {
+            return GetDAL.dal.DeletePostById(id);
+        }
     }
 }

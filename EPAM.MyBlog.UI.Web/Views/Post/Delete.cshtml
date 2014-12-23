@@ -1,10 +1,10 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.ConfirmModel
 
 @{
-    ViewBag.Title = "LogOut";
+    ViewBag.Title = "Delete";
 }
 
-<h2>Вы действиетльно хотите выйти?</h2>
+<h2>Вы действиетльно хотите удалить запись @ViewData["Title"]</h2>
 @using (Html.BeginForm())
 {
     <button name="Confirm" value ="true">Да</button> 

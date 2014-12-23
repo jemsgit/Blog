@@ -136,5 +136,20 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         {
             return PartialView();
         }
+
+
+        [Authorize(Roles = "Admin")]
+        [ChildActionOnly]
+        public ActionResult ModerMenu()
+        {
+            return PartialView();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [ChildActionOnly]
+        public ActionResult ModerMenu()
+        {
+            return PartialView();
+        }
     }
 }

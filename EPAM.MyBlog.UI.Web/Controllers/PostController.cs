@@ -70,6 +70,32 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
 
         }
+
+
+        public ActionResult Delete(Guid Id)
+        {
+            var post = PostModel.GetPostById(Id);
+            //ViewData["Post_Id"] = Id;
+            ViewData["Title"] = post.Title;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Guid id, ConfirmModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (PostModel.Delete(id))
+                {
+                    return RedirectToAction("Index", "Post");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return View();
+        }
       
     }
 }

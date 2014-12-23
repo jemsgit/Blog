@@ -66,6 +66,7 @@ namespace EPAM.MyBlog.UI.Web.Models
                 {
                     Result = "Welcome";
                     FormsAuthentication.RedirectFromLoginPage(this.Name, this.Remember);
+                    //MyRoleProvider.GetRolesForUser(this.Name)
                     return true;
                 }
                 else

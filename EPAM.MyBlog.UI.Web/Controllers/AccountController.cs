@@ -138,18 +138,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
-        [ChildActionOnly]
-        public ActionResult ModerMenu()
-        {
-            return PartialView();
-        }
+        //[Authorize(Roles = "Admin")]
+        //[ChildActionOnly]
+        //public ActionResult ModerMenu()
+        //{
+        //    return PartialView();
+        //}
 
-        [Authorize(Roles = "Admin")]
-        [ChildActionOnly]
-        public ActionResult ModerMenu()
-        {
-            return PartialView();
-        }
+        //[Authorize(Roles = "Admin")]
+        //[ChildActionOnly]
+        //public ActionResult ModerMenu()
+        //{
+        //    return PartialView();
+        //}
     }
 }

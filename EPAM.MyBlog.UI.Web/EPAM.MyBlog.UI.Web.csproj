@@ -175,6 +175,7 @@
     <Content Include="Views\Post\MyPosts.cshtml" />
     <Content Include="Views\Post\Edit.cshtml" />
     <Content Include="Views\Post\Delete.cshtml" />
+    <Content Include="Views\Post\Posts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

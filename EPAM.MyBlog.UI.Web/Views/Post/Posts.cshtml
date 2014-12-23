@@ -1,0 +1,16 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.PostModel
+
+@{
+    ViewBag.Title = "Posts";
+}
+
+    <legend>@Html.DisplayFor(model => model.Title)</legend>
+
+    <div>
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

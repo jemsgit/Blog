@@ -17,7 +17,6 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
         public ActionResult NewPost()
         {
             return View();
@@ -45,6 +44,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult MyPosts()
         {
             return PartialView(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
+        }
+
+        public ActionResult Posts(Guid Id)
+        {
+            var post = PostModel.GetPostById(Id);
+            return View(post);
         }
 
         public ActionResult Edit(Guid Id)

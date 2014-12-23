@@ -6,12 +6,13 @@
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
 
         </td>
         <td>
             @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id }) |
+            
         </td>
     </tr>
 

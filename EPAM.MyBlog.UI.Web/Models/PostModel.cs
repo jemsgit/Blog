@@ -25,19 +25,24 @@ namespace EPAM.MyBlog.UI.Web.Models
         [StringLength(50,MinimumLength=1,ErrorMessage="Поле {0} должно быть от {2} до {1} символов")]
         public string Title { get { return title; } set { title = value; } }
 
+        public string Author { get { return author; } set { author = value; } }
+        public DateTime Time { get { return time; } set { time = value; } }
+
         private string text;
         private string title;
+        private string author;
         private Guid id;
+        private DateTime time;
 
 
         public static explicit operator Entities.PostText(PostModel Post)
         {
-            return new Entities.PostText() { Id = Post.Id, Text = Post.Text, Title = Post.Title };
+            return new Entities.PostText() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time };
         }
 
         public static explicit operator PostModel(Entities.PostText Post)
         {
-            return new PostModel() { Id = Post.Id, Text = Post.Text, Title = Post.Title };
+            return new PostModel() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time };
         }
 
 

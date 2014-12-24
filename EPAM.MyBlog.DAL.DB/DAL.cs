@@ -18,6 +18,8 @@ namespace EPAM.MyBlog.DAL.DB
             ConnectionString = ConfigurationManager.ConnectionStrings["Blog"].ConnectionString;
         }
 
+        #region Account
+
         public Entities.User Login(string Name)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -108,15 +110,19 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
+        #endregion
+
+        #region Posts
         public bool AddPost(Entities.PostText post, string login)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("INSERT INTO dbo.Posts (User_Name, Post_Id, Post_Title, Post_Text) VALUES (@Login,CAST(@ID AS NVARCHAR(36)), @Title, @Text)", con);
+                SqlCommand command = new SqlCommand("INSERT INTO dbo.Posts (User_Name, Post_Id, Post_Title, Post_Text, Time) VALUES (@Login,CAST(@ID AS NVARCHAR(36)), @Title, @Text, @Time)", con);
                 command.Parameters.Add(new SqlParameter("@Login", login));
                 command.Parameters.Add(new SqlParameter("@ID", post.Id));
                 command.Parameters.Add(new SqlParameter("@Title", post.Title));
                 command.Parameters.Add(new SqlParameter("@Text", post.Text));
+                command.Parameters.Add(new SqlParameter("@Time", post.Time));
                 con.Open();
                 int num = command.ExecuteNonQuery();
 
@@ -158,7 +164,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Text FROM dbo.Posts WHERE Post_Id = @Id", con);
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Text, User_Name, Time FROM dbo.Posts WHERE Post_Id = @Id", con);
                 command.Parameters.Add(new SqlParameter("@Id", Id));
                 con.Open();
                 Entities.PostText post = new Entities.PostText() {Id = Id };
@@ -169,6 +175,8 @@ namespace EPAM.MyBlog.DAL.DB
                 {
                         post.Title = (string)reader["Post_Title"];
                         post.Text = (string)reader["Post_Text"];
+                        post.Author = (string)reader["User_Name"];
+                        post.Time = (DateTime)reader["Time"];
                     count++;
                 }
                 if (count < 0)
@@ -187,10 +195,11 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("UPDATE dbo.Posts SET Post_Title = @Title, Post_Text = @Text WHERE Post_Id = @Id", con);
+                SqlCommand command = new SqlCommand("UPDATE dbo.Posts SET Post_Title = @Title, Post_Text = @Text, Time = @Time WHERE Post_Id = @Id", con);
                 command.Parameters.Add(new SqlParameter("@Id", post.Id));
                 command.Parameters.Add(new SqlParameter("@Text", post.Text));
                 command.Parameters.Add(new SqlParameter("@Title", post.Title));
+                command.Parameters.Add(new SqlParameter("@Time", post.Time));
                 con.Open();
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
@@ -224,6 +233,9 @@ namespace EPAM.MyBlog.DAL.DB
  
         }
 
+        #endregion
+
+        #region Roles
         public string[] GetAllRoles()
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -259,5 +271,7 @@ namespace EPAM.MyBlog.DAL.DB
                 return role;
             }
         }
+
+        #endregion
     }
 }

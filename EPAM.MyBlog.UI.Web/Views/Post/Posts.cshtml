@@ -4,13 +4,19 @@
     ViewBag.Title = "Posts";
 }
 
-    <legend>@Html.DisplayFor(model => model.Title)</legend>
+<legend>@Html.DisplayFor(model => model.Title)</legend>
 
     <div>
         @Html.DisplayFor(model => model.Text)
     </div>
-
+<div>
+Автор: @Html.DisplayFor(model => model.Author)
+</div>
+<div>
+Дата: @Html.DisplayFor(model => model.Time)
+</div>
 
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
+    @Html.Action("Comments", "Post", new { id = Model.Id })

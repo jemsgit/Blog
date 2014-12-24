@@ -25,6 +25,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [HttpPost]
         public ActionResult NewPost(PostModel model)
         {
+            model.Id = Guid.NewGuid();
+            model.Time = DateTime.Now;
             if (ModelState.IsValid)
             {
                 //string Result;
@@ -52,6 +54,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(post);
         }
 
+
         public ActionResult Edit(Guid Id)
         {
             var post = PostModel.GetPostById(Id);
@@ -61,6 +64,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [HttpPost]
         public ActionResult Edit(PostModel post)
         {
+            post.Time = DateTime.Now;
             if (ModelState.IsValid)
             {
                 if (post.EditPost())
@@ -99,6 +103,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     return View();
                 }
             }
+            return View();
+        }
+
+        public ActionResult Comments(Guid id)
+        {
+            //
             return View();
         }
       

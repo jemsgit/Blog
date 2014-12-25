@@ -17,6 +17,6 @@
 </div>
 
 <p>
-    @Html.ActionLink("Back to List", "Index")
 </p>
-    @Html.Action("Comments", "Post", new { id = Model.Id })
+    @Html.Action("AddComment", "Comment", new { id = Model.Id })
+    @Html.ActionLink("К списку", "Index", "Post");

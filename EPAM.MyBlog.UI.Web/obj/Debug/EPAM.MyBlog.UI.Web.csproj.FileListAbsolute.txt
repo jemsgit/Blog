@@ -41,8 +41,6 @@ C:\Users\Jem\documents\visual studio 2012\Projects\MvcApplication3\EPAM.MyBlog.U
 C:\Users\Jem\documents\visual studio 2012\Projects\MvcApplication3\EPAM.MyBlog.UI.Web\bin\NLog.xml
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\MvcApplication3\EPAM.MyBlog.UI.Web\bin\log4net.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\MvcApplication3\EPAM.MyBlog.UI.Web\bin\log4net.xml
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.csprojResolveAssemblyReference.cache
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\EPAM.MyBlog.UI.Web.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\EPAM.MyBlog.UI.Web.pdb
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\Entities.dll
@@ -83,4 +81,6 @@ C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\r
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.pdb

@@ -12,8 +12,10 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         //
         // GET: /Comment/
 
-        public ActionResult AddComment()
+        public ActionResult AddComment(Guid Post_ID)
         {
+            var list = CommentModel.GetAllComments(Post_ID);
+            ViewData["List"] = list;
             return PartialView();
         }
 
@@ -24,8 +26,26 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         {
             comment.Author = User.Identity.Name.ToString();
             comment.Time = DateTime.Now;
-
-            return PartialView();
+            if (ModelState.IsValid)
+            {
+                if (comment.AddComment())
+                {
+                    CommentModel.Comments.Add(comment);
+                    ViewData["List"] = CommentModel.Comments;
+                    ModelState.Clear();
+                    return PartialView();
+                }
+                else
+                {
+                    ViewData["List"] = CommentModel.Comments;
+                    return PartialView(comment);
+                }
+            }
+            else
+            {
+                ViewData["List"] = CommentModel.Comments;
+                return PartialView(comment);
+            }
         }
     }
 }

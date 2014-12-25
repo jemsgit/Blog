@@ -8,9 +8,6 @@ C:\Users\Jem\documents\visual studio 2012\Projects\MvcApplication3\EPAM.MyBlog.D
 C:\Users\Jem\documents\visual studio 2012\Projects\MvcApplication3\EPAM.MyBlog.DAL.DB\bin\Debug\Entities.pdb
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\MvcApplication3\EPAM.MyBlog.DAL.DB\bin\Debug\log4net.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\MvcApplication3\EPAM.MyBlog.DAL.DB\bin\Debug\log4net.xml
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.csprojResolveAssemblyReference.cache
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.dll
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.pdb
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\EPAM.MyBlog.DAL.DB.dll.config
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\EPAM.MyBlog.DAL.DB.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\EPAM.MyBlog.DAL.DB.pdb
@@ -18,3 +15,6 @@ C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\D
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\log4net.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\Entities.pdb
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\bin\Debug\log4net.xml
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.csprojResolveAssemblyReference.cache
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.dll
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.DAL.DB\obj\Debug\EPAM.MyBlog.DAL.DB.pdb

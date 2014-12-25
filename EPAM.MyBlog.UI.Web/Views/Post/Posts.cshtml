@@ -18,5 +18,5 @@
 
 <p>
 </p>
-    @Html.Action("AddComment", "Comment", new { id = Model.Id })
+    @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id });
     @Html.ActionLink("К списку", "Index", "Post");

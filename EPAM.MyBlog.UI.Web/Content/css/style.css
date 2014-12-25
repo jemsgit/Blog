@@ -17,18 +17,21 @@ body{
 }
 
 #sidebar {
-    background-color:rgba(245, 221, 194, 0.8)    
+    background-color:rgba(245, 221, 194, 0.8);
 }
 .main{
      background-color:rgba(229, 220, 213, 0.00);
+     
 }
 
 #content, #sidebar{
-    height: 700px;
+    height: 800px;
+    
 }
 
 #content{
     background-color:rgba(229, 220, 213, 0.8);
+    overflow-x:auto;
 }
 
 .head{

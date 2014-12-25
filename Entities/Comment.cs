@@ -12,11 +12,13 @@ namespace Entities
         public string Text { get { return text; } set { text = value; } }
         public DateTime Time { get { return time; } set { time = value; } }
         public Guid ID { get { return id; } set { id = value; } }
+        public Guid Post_ID { get { return post_id; } set { post_id = value; } }
 
         private string author;
         private string text;
         private DateTime time;
         private Guid id;
+        private Guid post_id;
 
 
     }

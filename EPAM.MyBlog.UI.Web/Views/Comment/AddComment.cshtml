@@ -4,12 +4,21 @@
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
+<legend>Комментарии</legend>
+
+@foreach (var item in (List<EPAM.MyBlog.UI.Web.Models.CommentModel>)ViewData["List"])
+    {
+    
+        <div>@item.Author в @item.Time</div>
+        <div>Сказал: @item.Text </div>
+    }
+
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
+    @Html.AntiForgeryToken()
+    
     <fieldset>
-        <legend>CommentModel</legend>
-            @ViewData["Author"]=User.Identity.Name.ToString()
+        
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Text)
@@ -19,11 +28,8 @@
             @Html.ValidationMessageFor(model => model.Text)
         </div>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Добавить" />
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

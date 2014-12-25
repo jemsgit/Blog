@@ -273,5 +273,59 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
         #endregion
+
+        #region Comments
+
+        public bool AddComment(Entities.Comment comment)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO dbo.Comments (User_Name, Post_ID, Comment_ID, Text, Time) VALUES (@Author,CAST(@Post_ID AS NVARCHAR(36)), CAST(@Comment_ID AS NVARCHAR(36)), @Text, @Time)", con);
+                command.Parameters.Add(new SqlParameter("@Author", comment.Author));
+                command.Parameters.Add(new SqlParameter("@Post_ID", comment.Post_ID));
+                command.Parameters.Add(new SqlParameter("@Comment_ID", comment.ID));
+                command.Parameters.Add(new SqlParameter("@Text", comment.Text));
+                command.Parameters.Add(new SqlParameter("@Time", comment.Time));
+                con.Open();
+                int num = command.ExecuteNonQuery();
+                if (num == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }  
+        }
+
+        public IEnumerable<Entities.Comment> GetAllComments(Guid Post_ID)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Post_ID, User_Name, Comment_ID, Text, Time FROM dbo.Comments  WHERE Post_ID = CAST(@Post_ID AS NVARCHAR(36)) ORDER BY Time", con);
+                command.Parameters.Add(new SqlParameter("@Post_ID", Post_ID));
+                con.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    yield return new Entities.Comment()
+                    {
+                        Post_ID = new Guid((string)reader["Post_Id"]),
+                        Author = (string)reader["User_Name"],
+                        ID = new Guid((string)reader["Comment_ID"]),
+                        Text = (string)reader["Text"],
+                        Time = (DateTime)reader["Time"]
+
+                    };
+
+                }
+            }
+
+        }
+
+        #endregion
+
+
     }
 }

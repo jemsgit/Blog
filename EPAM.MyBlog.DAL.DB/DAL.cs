@@ -326,6 +326,27 @@ namespace EPAM.MyBlog.DAL.DB
 
         #endregion
 
+        #region Users
 
+        public IEnumerable<Entities.User> GetAllUsers()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Login, E_mail, Title FROM dbo.Users, dbo.Roles WHERE Users.Role_Id = Roles.Id", con);
+                con.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    yield return new Entities.User()
+                    {
+                        Name = (string)reader["Login"],
+                        Email = (string)reader["E_mail"],
+                        Role = (string)reader["Title"],
+                    };
+                }
+            }
+        }
+
+        #endregion
     }
 }

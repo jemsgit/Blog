@@ -14,12 +14,17 @@ namespace Entities
         public string Name { get { return name; } set { name = value; } }
         public string Password { get { return pass; } set { pass = value; } }
         public string Email { get { return email; } set { email = value; } }
-        public int Role_Id { get { return role; } set { role = value; } }
+        public int Role_Id { get { return role_id; } set { role_id = value; } }
+        public string Role { get { return role; } set { role = value; } }
 
         //public Guid user_id;
         private string name;
         private string pass;
         private string email;
-        private int role;
+        private int role_id;
+        private string role;
+
+        public User()
+        { }
     }
 }

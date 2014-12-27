@@ -16,11 +16,11 @@
                   <li><a href="#">Помощь</a></li>
             @if (User.IsInRole("Moder"))
                 {
-                   @Html.Partial("ModerMenu")
+                   @Html.Partial("~/Views/Admin/ModerMenu.cshtml")
                 }
              @if (User.IsInRole("Admin"))
              {      
-                   @Html.Partial("AdminMenu")
+                   @Html.Partial("~/Views/Admin/AdminMenu.cshtml")
              }
               </ul>
 }

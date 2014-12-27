@@ -7,6 +7,10 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class PresentPostModel
     {
+        /// <summary>
+        /// Создана модель для того чтобы не тащить большой объем данных с текстом поста. Только заголовки и Id.
+        /// </summary>
+
         public static List<PresentPostModel> PostsTitle;
 
         public Guid Id { get { return id; } set { id = value; } }

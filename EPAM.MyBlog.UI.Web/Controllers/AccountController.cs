@@ -27,7 +27,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Login(UserModel model, string ReturnUrl)
+        public ActionResult Login(LoginModel model, string ReturnUrl)
         {
             var checkbox = Request.Form["remember1"];
             if (checkbox == "on")
@@ -113,7 +113,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.Confirm)
                 {
-                    UserModel.LogOut();
+                    LoginModel.LogOut();
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -134,21 +134,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return PartialView();
         }
 
-        [Authorize(Roles = "Moder")]
-        [ChildActionOnly]
-        public ActionResult ModerMenu()
-        {
-            return PartialView();
-        }
 
-        [Authorize(Roles = "Admin")]
-        [ChildActionOnly]
-        public ActionResult AdminMenu()
-        {
-            {
-                return PartialView();
-            }
-        }
 
         [AllowAnonymous]
         [ChildActionOnly]

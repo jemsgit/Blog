@@ -21,7 +21,7 @@ body{
 }
 .main{
      background-color:rgba(229, 220, 213, 0.00);
-     
+     overflow:hidden;
 }
 
 #content, #sidebar{

@@ -11,7 +11,7 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         public override string[] GetAllRoles()
         {
-            return GetDAL.dal.GetAllRoles();
+            return new[] { "Admin", "Moder", "User" };
         }
 
         public override string[] GetRolesForUser(string username)

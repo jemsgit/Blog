@@ -179,6 +179,8 @@
     <Content Include="Views\Post\Delete.cshtml" />
     <Content Include="Views\Post\Posts.cshtml" />
     <Content Include="Views\Comment\AddComment.cshtml" />
+    <Content Include="Views\Account\AdminMenu.cshtml" />
+    <Content Include="Views\Account\ModerMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

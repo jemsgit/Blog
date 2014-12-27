@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
+    [Authorize(Roles = "User")]
     public class AccountController : Controller
     {
         //
         // GET: /Account/
-
+        [AllowAnonymous]
         public ActionResult Login(string ReturnUrl)
         {
             if (string.IsNullOrWhiteSpace(ReturnUrl))
@@ -22,6 +24,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Login(UserModel model, string ReturnUrl)
@@ -57,7 +60,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         public ActionResult Reg(string ReturnUrl)
         {
             if (string.IsNullOrWhiteSpace(ReturnUrl))
@@ -68,7 +71,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Reg(RegModel model, string ReturnUrl)
@@ -97,7 +100,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         }
 
-
+        [Authorize(Roles = "User")]
         public ActionResult LogOut()
         {
             return View();
@@ -118,19 +121,36 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         [ChildActionOnly]
         public ActionResult State()
         {
             return PartialView();
         }
-
+        [AllowAnonymous]
         [ChildActionOnly]
         public ActionResult MenuState()
         {
             return PartialView();
         }
 
+        [Authorize(Roles = "Moder")]
+        [ChildActionOnly]
+        public ActionResult ModerMenu()
+        {
+            return PartialView();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [ChildActionOnly]
+        public ActionResult AdminMenu()
+        {
+            {
+                return PartialView();
+            }
+        }
+
+        [AllowAnonymous]
         [ChildActionOnly]
         public ActionResult TitleState()
         {

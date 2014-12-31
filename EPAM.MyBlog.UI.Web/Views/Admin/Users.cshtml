@@ -29,10 +29,13 @@
             @Html.DisplayFor(modelItem => item.Role)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Посты", "Posts", new { name=item.Name }) |
+            @Html.ActionLink("Комменты", "Comments", new { name=item.Name }) |
         </td>
+        <td>
+            <input type="checkbox" name="@item.Name"/>
+        </td>
+        <input type="submit" class="btn btn-success" value="Отправить" id="addButton"/>
     </tr>
 }
 

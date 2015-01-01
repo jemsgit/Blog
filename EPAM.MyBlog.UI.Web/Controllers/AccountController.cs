@@ -143,19 +143,26 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return PartialView();
         }
 
+        [Authorize(Roles = "User")]
+        public ActionResult DeleteAc()
+        {
+            return View();
+        }
 
-        //[Authorize(Roles = "Admin")]
-        //[ChildActionOnly]
-        //public ActionResult ModerMenu()
-        //{
-        //    return PartialView();
-        //}
+        [HttpPost]
+        public ActionResult DeleteAc(ConfirmModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Confirm)
+                {
+                    LoginModel.LogOut();
 
-        //[Authorize(Roles = "Admin")]
-        //[ChildActionOnly]
-        //public ActionResult ModerMenu()
-        //{
-        //    return PartialView();
-        //}
+                }
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
     }
 }

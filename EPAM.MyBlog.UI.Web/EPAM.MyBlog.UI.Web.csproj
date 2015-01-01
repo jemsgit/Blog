@@ -189,6 +189,7 @@
     <Content Include="Views\Admin\Posts.cshtml" />
     <Content Include="Views\Admin\UserComments.cshtml" />
     <Content Include="Views\Admin\DeleteComment.cshtml" />
+    <Content Include="Views\Account\DeleteAc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

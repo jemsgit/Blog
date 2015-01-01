@@ -5,15 +5,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Посты <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="@Url.Action("Index", "Post")">Мои посты</a></li>
-                            <li><a href="#">Избранное</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Посты друзей</a></li>
-
+                            <li><a href="@Url.Action("Favorite", "Post")">Избранное</a></li>
+                            <li><a href="#">Лента</a></li>
                         </ul>
                   </li>
-                  <li><a href="#">Лента</a></li>
-                  <li><a href="#">Аккаунт</a></li>
-                  <li><a href="#">Помощь</a></li>
+                  <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Аккаунт <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="@Url.Action("AboutMe", "Account")">О себе</a></li>
+                            <li><a href="@Url.Action("DeleteAc", "Account")">Удалить аккаунт</a></li>
+                        </ul>
+                  </li>
+                  <li><a href="@Url.Action("Help", "Account")">Помощь</a></li>
             @if (User.IsInRole("Moder"))
                 {
                    @Html.Partial("~/Views/Admin/ModerMenu.cshtml")

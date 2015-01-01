@@ -1,0 +1,25 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.ConfirmModel
+
+@{
+    ViewBag.Title = "DeleteAc";
+}
+
+     
+@using (Html.BeginForm())
+{
+            <div class="editor-label">
+            @Html.LabelFor(model => model.Reason)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reason)
+        </div>
+    <h2>Вы действиетльно хотите удалить аккаунт?</h2>
+    <button name="Confirm" value ="true">Да</button> 
+    <button name="Confirm" value ="false">Нет</button>
+
+
+}
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

@@ -53,6 +53,23 @@ namespace EPAM.MyBlog.UI.Web.Models
         {
             return GetDAL.dal.AddComment((Entities.Comment)this);
         }
+
+        internal static object GetAllComments(string name)
+        {
+            var comments = new List<Entities.Comment>(GetDAL.dal.GetAllCommentsOfUser(name).ToList());
+            Comments = new List<CommentModel>();
+            foreach (var item in comments)
+            {
+                Comments.Add((CommentModel)item);
+            }
+            return Comments;
+            
+        }
+
+        internal static bool Delete(Guid id)
+        {
+            return GetDAL.dal.DeleteCommentById(id);
+        }
     }
 
 

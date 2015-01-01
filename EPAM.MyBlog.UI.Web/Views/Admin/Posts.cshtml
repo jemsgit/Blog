@@ -1,20 +1,28 @@
-﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
+﻿@model EPAM.MyBlog.UI.Web.Models.PostModel
 
-<table>
+@{
+    ViewBag.Title = "Posts";
+}
 
-    @foreach (var item in Model) 
+@if(Model != null){
+<legend>@Html.DisplayFor(model => model.Title)</legend>
+
+    <div>
+        @Html.DisplayFor(model => model.Text)
+    </div>
+<div>
+Автор: @Html.DisplayFor(model => model.Author)
+</div>
+<div>
+Дата: @Html.DisplayFor(model => model.Time)
+</div>
+
+<p>
+</p>
+
+    @Html.ActionLink("К списку", "UserPosts", new { name = Model.Author })
+}
+else
 {
-    <tr>
-        <td>
-            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
-
-        </td>
-        <td>
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id }) |
-            
-        </td>
-    </tr>
-
-    }
-
-</table>
+    <div>Данная запись была удалена</div>
+}

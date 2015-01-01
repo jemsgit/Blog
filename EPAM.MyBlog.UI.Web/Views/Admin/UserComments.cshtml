@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.CommentModel>
+
+@{
+    ViewBag.Title = "UserComments";
+}
+
+<h2>UserComments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
+            @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

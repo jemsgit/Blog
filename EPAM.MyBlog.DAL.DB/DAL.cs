@@ -324,6 +324,28 @@ namespace EPAM.MyBlog.DAL.DB
 
         }
 
+        public IEnumerable<Entities.Comment> GetAllCommentsOfUser(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT  Post_Id, Comment_ID, Text, Time FROM dbo.Comments  WHERE User_Name = @Name ORDER BY Time", con);
+                command.Parameters.Add(new SqlParameter("@Name", name));
+                con.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    yield return new Entities.Comment()
+                    {
+                        Post_ID = new Guid((string)reader["Post_Id"]),
+                        ID = new Guid((string)reader["Comment_ID"]),
+                        Text = (string)reader["Text"],
+                        Time = (DateTime)reader["Time"]
+                    };
+
+                }
+            }
+        }
+
         #endregion
 
         #region Users
@@ -348,5 +370,27 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
         #endregion
+
+
+
+        public bool DeleteCommentById(Guid id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                string text = "НЛО прилетело и оставило эту запись";
+                SqlCommand command = new SqlCommand("UPDATE dbo.Comments SET Text = @Text", con);
+                command.Parameters.Add(new SqlParameter("@Text", text));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

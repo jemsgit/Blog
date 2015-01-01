@@ -19,13 +19,14 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return PartialView();
         }
 
+
         [Authorize(Roles = "Admin")]
         [ChildActionOnly]
         public ActionResult AdminMenu()
         {
             return PartialView();
-            
         }
+
 
         [Authorize(Roles = "Admin")]
         public ActionResult Users()
@@ -33,35 +34,95 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(UserAdminModel.GetAllUsers());
         }
 
+
         [Authorize(Roles = "Admin")]
-        public ActionResult Posts(string name)
+        public ActionResult UserPosts(string name)
         {
             return View(PresentPostModel.GetAllPostsTitle(name));
         }
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult Comments()
-        {
-            return PartialView();
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult Posts(Guid Id)
+        {
+            var post = PostModel.GetPostById(Id);
+            return View(post);
+        }
+        
+
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult UserComments(string name)
+        {
+            return View(CommentModel.GetAllComments(name));
         }
 
 
-        public ActionResult Delete(Guid Id)
+        public ActionResult DeletePost(Guid Id, string ReturnUrl)
         {
+            if (string.IsNullOrWhiteSpace(ReturnUrl))
+            {
+                ReturnUrl = "";
+            }
             var post = PostModel.GetPostById(Id);
             ViewData["Title"] = post.Title;
+            ViewData.Add("ReturnUrl", ReturnUrl);
             return View();
         }
 
+
         [HttpPost]
-        public ActionResult Delete(Guid id, ConfirmModel model)
+        public ActionResult DeletePost(Guid id, ConfirmModel model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {
                 if (PostModel.Delete(id))
                 {
-                    return RedirectToAction("Index", "Post");
+                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
+                        return Redirect(ReturnUrl);
+                    else
+                    {
+                        return RedirectToAction("Users", "Admin");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return View();
+        }
+
+        /// <summary>
+        /// Доделать
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="ReturnUrl"></param>
+        /// <returns></returns>
+        public ActionResult DeleteComment(Guid Id, string ReturnUrl)
+        {
+            if (string.IsNullOrWhiteSpace(ReturnUrl))
+            {
+                ReturnUrl = "";
+            }
+            ViewData.Add("ReturnUrl", ReturnUrl);
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult DeleteComment(Guid id, ConfirmModel model, string ReturnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                if (CommentModel.Delete(id))
+                {
+                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
+                        return Redirect(ReturnUrl);
+                    else
+                    {
+                        return RedirectToAction("Users", "Admin");
+                    }
                 }
                 else
                 {

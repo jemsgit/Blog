@@ -1,0 +1,12 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.ConfirmModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Вы действиетльно хотите удалить запись @ViewData["Title"]</h2>
+@using (Html.BeginForm())
+{
+    <button name="Confirm" value ="true">Да</button> 
+    <button name="Confirm" value ="false">Нет</button>
+}

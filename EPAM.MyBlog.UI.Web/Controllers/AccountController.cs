@@ -157,7 +157,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (model.Confirm)
                 {
                     LoginModel.LogOut();
-
+                    LoginModel.DeleteUser(User.Identity.Name);
                 }
                 return RedirectToAction("Index", "Home");
             }

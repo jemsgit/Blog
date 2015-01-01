@@ -110,6 +110,25 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
+        public bool DeleteUser(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("Delete FROM dbo.Users WHERE Login = @Name", con);
+                command.Parameters.Add(new SqlParameter("@Name", name));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         #endregion
 
         #region Posts
@@ -346,6 +365,26 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
+        public bool DeleteCommentById(Guid id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                string text = "НЛО прилетело и оставило эту запись";
+                SqlCommand command = new SqlCommand("UPDATE dbo.Comments SET Text = @Text", con);
+                command.Parameters.Add(new SqlParameter("@Text", text));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         #endregion
 
         #region Users
@@ -373,24 +412,8 @@ namespace EPAM.MyBlog.DAL.DB
 
 
 
-        public bool DeleteCommentById(Guid id)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                string text = "НЛО прилетело и оставило эту запись";
-                SqlCommand command = new SqlCommand("UPDATE dbo.Comments SET Text = @Text", con);
-                command.Parameters.Add(new SqlParameter("@Text", text));
-                con.Open();
-                int count = command.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+       
+
+        
     }
 }

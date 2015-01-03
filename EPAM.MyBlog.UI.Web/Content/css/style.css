@@ -31,7 +31,7 @@ body{
 
 #content{
     background-color:rgba(229, 220, 213, 0.8);
-    overflow-x:auto;
+
 }
 
 .head{
@@ -79,8 +79,12 @@ a img {
     color: red;
 }
 
-.text-box{
-    width:250px;
+.text-box {
+    width: 250px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 
 p {
@@ -88,11 +92,20 @@ p {
     font-size: 16px;
 }
 
-.username {
+.username, legend{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 26px;
 }
 
-.title-top{
+.title-top, legend, fieldset{
     margin-top:20px;
+}
+
+#reg{
+    margin-top:10px;
+}
+
+.error-login{
+     font-size: 26px;
+     margin-top:20px;
 }

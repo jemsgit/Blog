@@ -82,3 +82,17 @@ a img {
 .text-box{
     width:250px;
 }
+
+p {
+    font-family: 'Century Gothic', futura, 'URW Gothic L', Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.username {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 26px;
+}
+
+.title-top{
+    margin-top:20px;
+}

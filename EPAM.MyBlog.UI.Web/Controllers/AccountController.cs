@@ -164,5 +164,14 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
             return View();
         }
+
+
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult Avatar()
+        {
+
+            return PartialView();
+        }
     }
 }

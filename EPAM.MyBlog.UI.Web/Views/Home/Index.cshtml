@@ -4,11 +4,19 @@
 
  @if (User.Identity != null && User.Identity.IsAuthenticated)
     {
-        <h1>Авторизация успешно пройдена </h1>    
+     <div class="row">
+         <div class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 title-top">
+            <p>Авторизация успешно пройдена </p>    
+         </div>
+     </div>
     }
     
     else
     {
-        <h1>Добро пожаловать в #Blog</h1>
-     <h2> Здесь вы можете завести свой блог и делится интересными новостями</h2>
+     <div class="row">
+         <div class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 title-top">
+            <p>Добро пожаловать в #Blog</p>
+             <p>Здесь вы можете завести свой блог и делится интересными новостями</p>
+         </div>
+     </div>
     }

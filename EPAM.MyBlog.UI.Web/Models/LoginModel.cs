@@ -132,11 +132,16 @@ namespace EPAM.MyBlog.UI.Web.Models
             return s;
         }
 
-
+        
 
         internal static bool DeleteUser(string name)
         {
             return (GetDAL.dal.DeleteUser(name));
+        }
+
+        internal static void SaveReason(string reason)
+        {
+            GetDAL.dal.SaveReason(reason);
         }
     }
 }

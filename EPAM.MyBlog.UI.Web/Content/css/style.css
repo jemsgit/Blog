@@ -29,9 +29,11 @@ body{
     
 }
 
-#content{
-    background-color:rgba(229, 220, 213, 0.8);
-
+#content {
+    background-color: rgba(229, 220, 213, 0.8);
+    -ms-word-break: break-all;
+    word-break: break-all;
+    overflow-y: auto;
 }
 
 .head{
@@ -92,7 +94,7 @@ p {
     font-size: 16px;
 }
 
-.username, legend{
+.title, .username, legend{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 26px;
 }
@@ -105,7 +107,21 @@ p {
     margin-top:10px;
 }
 
-.error-login{
+.error-login, .title{
      font-size: 26px;
      margin-top:20px;
+}
+
+.title{
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    display:inline-block;
+}
+
+.title  p{
+    margin-top:10px;
+}
+
+.list > div{
+    margin-top: 20px;
 }

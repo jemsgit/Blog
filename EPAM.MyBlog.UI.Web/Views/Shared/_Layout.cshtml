@@ -77,7 +77,7 @@
     <footer>
         <div class="container footer">
             <div class="row">
-                <div class="col-md-4"><a href="#">Помощь</a></div>
+                <div class="col-md-4"><a href="@Url.Action("Help", "Home")">Помощь</a></div>
                 <div class="col-md-4"><a href="#">Контакты</a></div>
                 <div class="col-md-4"><a href="#">Справка</a></div>
             </div>
@@ -86,6 +86,8 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
+    
+
       @RenderSection("script", false)    
 
   </body>

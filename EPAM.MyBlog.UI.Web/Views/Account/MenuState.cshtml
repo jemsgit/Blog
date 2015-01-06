@@ -16,7 +16,7 @@
                             <li><a href="@Url.Action("DeleteAc", "Account")">Удалить аккаунт</a></li>
                         </ul>
                   </li>
-                  <li><a href="@Url.Action("Help", "Account")">Помощь</a></li>
+                  <li><a href="@Url.Action("Help", "Home")">Помощь</a></li>
             @if (User.IsInRole("Moder"))
                 {
                    @Html.Partial("~/Views/Admin/ModerMenu.cshtml")

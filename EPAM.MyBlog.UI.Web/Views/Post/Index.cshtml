@@ -2,11 +2,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Мои записи</h2>
+<div class="col-sm-12 title">
+    
+    <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4">
+        <p>Мои записи</p>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2 ">
+        @Html.ActionLink("Создать запись", "NewPost", "Post", new { @class="btn btn-default"})
+    </div>
+</div>
 
-<div>
-    @Html.ActionLink("Создать запись", "NewPost", "Post")
-</div>
-<div>
+
+
     @Html.Action("MyPosts","Post")
-</div>
+

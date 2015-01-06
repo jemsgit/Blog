@@ -1,0 +1,47 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.UserAboutModel
+
+@{
+    ViewBag.Title = "UserInfo";
+}
+
+<fieldset>
+    <legend>@Model.Login</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sex)
+    </div>
+    @if(Model.Sex != null){
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+    }
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Birthday)
+    </div>
+    @if(Model.Birthday != null){
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Birthday)
+    </div>
+    } 
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    @if(Model.Name != null){
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    }
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AboutMe)
+    </div>
+    @if(Model.AboutMe != null){
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AboutMe)
+    </div>
+    }
+</fieldset>
+<div>
+    @Html.ActionLink("Изменить инфу", "EditInfoText", null, new { @class="btn btn-default"}) 
+    @Html.ActionLink("Изменить аватар", "EditInfoAvatar", null, new { @class="btn btn-default"})
+</div>

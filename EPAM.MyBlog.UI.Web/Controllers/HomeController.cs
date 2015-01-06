@@ -16,5 +16,9 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        public ActionResult Help()
+        {
+            return View();
+        }
     }
 }

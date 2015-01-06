@@ -157,6 +157,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (model.Confirm)
                 {
                     LoginModel.LogOut();
+                    LoginModel.SaveReason(model.Reason);
                     LoginModel.DeleteUser(User.Identity.Name);
                 }
                 return RedirectToAction("Index", "Home");
@@ -166,12 +167,38 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
 
-        [AllowAnonymous]
-        [ChildActionOnly]
-        public ActionResult Avatar()
+        public ActionResult AboutMe() 
         {
+            var info = UserAboutModel.GetInfo(User.Identity.Name);
+            return View(info);
+        }
 
-            return PartialView();
+        public ActionResult EditInfoText()
+        {
+            var info = UserAboutModel.GetInfo(User.Identity.Name);
+            return View(info);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditInfoText(UserAboutModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.SetInfo())
+                {
+                    return RedirectToAction("AboutMe", "Account");
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
         }
     }
 }

@@ -1,21 +1,18 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
 
-<table>
+
 
     @foreach (var item in Model) 
 {
-    <tr>
-        <td>
+    <div class="row list">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
-
-        </td>
-        <td>
-            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id }) |
-            
-        </td>
-    </tr>
+        </div>
+         <div class="col-sm-4 col-md-4 col-lg-4 col-sx-4">
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class="btn btn-default"}) 
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id }, new { @class="btn btn-default"})  
+        </div>
+    </div>
 
     }
 
-</table>

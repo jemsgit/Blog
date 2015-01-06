@@ -408,12 +408,117 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
+        public Entities.UserInfo GetUserInfo(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Avatar, Type, Sex, Birthday, True_Name, About FROM dbo.UserAbout RIGHT JOIN Users ON Users.Login = UserAbout.Login Where Users.Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                Entities.UserInfo info = new Entities.UserInfo() { Login = name };
+                int count = 0;
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (DBNull.Value.Equals(reader["Avatar"]))
+                    {
+                        info.Avatar = null;
+                    }
+                    else
+                    {
+                        info.Avatar = (byte[])reader["Avatar"];
+                    }
+
+                    if (DBNull.Value.Equals(reader["Type"]))
+                    {
+                        info.MimeType = null;
+                    }
+                    else
+                    {
+                        info.MimeType = (string)reader["Type"];
+                    }
+                    if (DBNull.Value.Equals(reader["Sex"]))
+                    {
+                        info.Sex = null;
+                    }
+                    else
+                    {
+                        info.Sex = (string)reader["Sex"];
+                    }
+                    if (DBNull.Value.Equals(reader["Birthday"]))
+                    {
+                        info.Birthday = null;
+                    }
+                    else
+                    {
+                        info.Birthday = (DateTime)reader["Birthday"];
+                    }
+                    if (DBNull.Value.Equals(reader["True_Name"]))
+                    {
+                        info.Name = null;
+                    }
+                    else
+                    {
+                        info.Name = (string)reader["True_Name"];
+                    }
+                    if (DBNull.Value.Equals(reader["About"]))
+                    {
+                        info.AboutMe = null;
+                    }
+                    else
+                    {
+                        info.AboutMe = (string)reader["About"];
+                    }
+                    count++;
+                }
+                if (count < 0)
+                {
+                    return info = null;
+                }
+                else
+                {
+                    return info;
+                }
+            }
+        }
+
         #endregion
 
 
 
-       
+        public void SaveReason(string reason)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO dbo.Reasons VALUES (@Reason)", con);
+                command.Parameters.Add(new SqlParameter("@Reason", reason));
+                con.Open();
+            }
+        }
 
-        
+
+        public bool SaveInfoText(Entities.UserInfo info)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Sex = @Sex, Birthday = CAST(@Birthday AS Date), True_Name = @True_Name, About = @About WHERE Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Sex", info.Sex));
+                command.Parameters.Add(new SqlParameter("@Birthday", info.Birthday));
+                command.Parameters.Add(new SqlParameter("@True_Name", info.Name));
+                command.Parameters.Add(new SqlParameter("@About", info.AboutMe));
+                command.Parameters.Add(new SqlParameter("@Login", info.Login));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

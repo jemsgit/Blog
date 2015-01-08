@@ -280,7 +280,10 @@
     <Content Include="Scripts\tinymce\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Account\AboutMe.cshtml" />
-    <Content Include="Views\Account\EditInfoText.cshtml" />
+    <Content Include="Views\Account\EditSex.cshtml" />
+    <Content Include="Views\Account\EditDate.cshtml" />
+    <Content Include="Views\Account\EditName.cshtml" />
+    <Content Include="Views\Account\EditAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

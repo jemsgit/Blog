@@ -1,0 +1,32 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.UserAboutModel
+
+@{
+    ViewBag.Title = "EditAbout";
+}
+
+<h2></h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>О себе</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AboutMe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AboutMe)
+            @Html.ValidationMessageFor(model => model.AboutMe)
+        </div>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться", "AboutMe")
+</div>

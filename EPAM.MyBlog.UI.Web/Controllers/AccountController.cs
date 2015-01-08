@@ -173,7 +173,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(info);
         }
 
-        public ActionResult EditInfoText()
+        public ActionResult EditSex()
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
             return View(info);
@@ -182,11 +182,114 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditInfoText(UserAboutModel model)
+        public ActionResult EditSex(UserAboutModel model)
         {
+            if(string.IsNullOrEmpty(model.Sex))
+            {
+                model.Sex = " ";
+            }
+            model.Login = User.Identity.Name;
             if (ModelState.IsValid)
             {
-                if (model.SetInfo())
+                if (model.SetSex())
+                {
+                    return RedirectToAction("AboutMe", "Account");
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
+
+        public ActionResult EditDate()
+        {
+            var info = UserAboutModel.GetInfo(User.Identity.Name);
+            return View(info);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditDate(UserAboutModel model)
+        {
+            model.Login = User.Identity.Name;
+            if (ModelState.IsValid)
+            {
+                if (model.SetDate())
+                {
+                    return RedirectToAction("AboutMe", "Account");
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        public ActionResult EditName()
+        {
+            var info = UserAboutModel.GetInfo(User.Identity.Name);
+            return View(info);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditName(UserAboutModel model)
+        {
+            model.Login = User.Identity.Name;
+            if (string.IsNullOrEmpty(model.Name))
+            {
+                model.Name = " ";
+            }
+            if (ModelState.IsValid)
+            {
+                if (model.SetName())
+                {
+                    return RedirectToAction("AboutMe", "Account");
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
+        public ActionResult EditAbout()
+        {
+            var info = UserAboutModel.GetInfo(User.Identity.Name);
+            return View(info);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditAbout(UserAboutModel model)
+        {
+            if (string.IsNullOrEmpty(model.AboutMe))
+            {
+                model.AboutMe = " ";
+            }
+            model.Login = User.Identity.Name;
+            if (ModelState.IsValid)
+            {
+                if (model.SetAbout())
                 {
                     return RedirectToAction("AboutMe", "Account");
                 }

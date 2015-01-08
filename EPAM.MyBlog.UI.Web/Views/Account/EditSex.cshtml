@@ -1,0 +1,33 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.UserAboutModel
+
+@{
+    ViewBag.Title = "EditSex";
+}
+
+<h2>EditInfoText</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Пол</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sex)
+            @Html.ValidationMessageFor(model => model.Sex)
+        </div>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться", "AboutMe")
+</div>
+

@@ -75,10 +75,28 @@ namespace EPAM.MyBlog.UI.Web.Models
         //MimeType = image.ContentType;
         //Data = new byte[image.ContentLength];
 
-        internal bool SetInfo()
+        internal bool SetSex()
         {
             var info = (Entities.UserInfo)this;
-            return GetDAL.dal.SaveInfoText(info);
+            return GetDAL.dal.SaveSex(info);
+        }
+
+        internal bool SetDate()
+        {
+            var info = (Entities.UserInfo)this;
+            return GetDAL.dal.SaveDate(info);
+        }
+
+        internal bool SetName()
+        {
+            var info = (Entities.UserInfo)this;
+            return GetDAL.dal.SaveName(info);
+        }
+
+        internal bool SetAbout()
+        {
+            var info = (Entities.UserInfo)this;
+            return GetDAL.dal.SaveAbout(info);
         }
     }
 }

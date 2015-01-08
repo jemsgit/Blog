@@ -498,14 +498,79 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
 
-        public bool SaveInfoText(Entities.UserInfo info)
+        public bool SaveSex(Entities.UserInfo info)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Sex = @Sex, Birthday = CAST(@Birthday AS Date), True_Name = @True_Name, About = @About WHERE Login = @Login", con);
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Sex = @Sex WHERE Login = @Login", con);
                 command.Parameters.Add(new SqlParameter("@Sex", info.Sex));
-                command.Parameters.Add(new SqlParameter("@Birthday", info.Birthday));
-                command.Parameters.Add(new SqlParameter("@True_Name", info.Name));
+                command.Parameters.Add(new SqlParameter("@Login", info.Login));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool SaveDate(Entities.UserInfo info)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Birthday = @Birthday WHERE Login = @Login", con);
+                if (info.Birthday == null)
+                {
+                    command.Parameters.Add(new SqlParameter("@Birthday", DBNull.Value));
+                }
+                else
+                {
+                    command.Parameters.Add(new SqlParameter("@Birthday", info.Birthday));
+                }
+                command.Parameters.Add(new SqlParameter("@Login", info.Login));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool SaveName(Entities.UserInfo info)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET True_Name = @Name WHERE Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Name", info.Name));
+                command.Parameters.Add(new SqlParameter("@Login", info.Login));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool SaveAbout(Entities.UserInfo info)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET About = @About WHERE Login = @Login", con);
                 command.Parameters.Add(new SqlParameter("@About", info.AboutMe));
                 command.Parameters.Add(new SqlParameter("@Login", info.Login));
                 con.Open();

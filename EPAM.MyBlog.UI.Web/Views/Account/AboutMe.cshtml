@@ -9,20 +9,25 @@
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Sex)
+          
     </div>
     @if(Model.Sex != null){
     <div class="display-field">
         @Html.DisplayFor(model => model.Sex)
+       
     </div>
     }
+     @Html.ActionLink("Изменить", "EditSex", null, new { @class="btn btn-default"})
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Birthday)
+         
     </div>
     @if(Model.Birthday != null){
     <div class="display-field">
-        @Html.DisplayFor(model => model.Birthday)
+        @Html.DisplayFor(model => model.Birthday) 
     </div>
     } 
+    @Html.ActionLink("Изменить", "EditDate", null, new { @class="btn btn-default"})
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Name)
     </div>
@@ -31,7 +36,7 @@
         @Html.DisplayFor(model => model.Name)
     </div>
     }
-    
+    @Html.ActionLink("Изменить", "EditName", null, new { @class="btn btn-default"})
     <div class="display-label">
          @Html.DisplayNameFor(model => model.AboutMe)
     </div>
@@ -40,8 +45,8 @@
         @Html.DisplayFor(model => model.AboutMe)
     </div>
     }
+    @Html.ActionLink("Изменить", "EditAbout", null, new { @class="btn btn-default"})
 </fieldset>
 <div>
-    @Html.ActionLink("Изменить инфу", "EditInfoText", null, new { @class="btn btn-default"}) 
     @Html.ActionLink("Изменить аватар", "EditInfoAvatar", null, new { @class="btn btn-default"})
 </div>

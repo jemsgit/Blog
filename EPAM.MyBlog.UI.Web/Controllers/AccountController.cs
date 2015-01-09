@@ -168,11 +168,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         public ActionResult Avatar() 
         {
-
             var info = AvatarModel.GetInfo(User.Identity.Name);
-            ViewData["path"] = "~/Content/img/" + User.Identity.Name + ".jpg";
-            var file = File(info.Avatar, info.MimeType, User.Identity.Name + ".jpg");
-            
             return PartialView(info);
         }
 

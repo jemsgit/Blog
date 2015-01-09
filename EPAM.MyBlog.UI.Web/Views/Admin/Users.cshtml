@@ -4,7 +4,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-
+<form action="@Url.Action("ChangeUser")">
 <table class="table table-condensed">
     <tr>
         <th>
@@ -42,3 +42,8 @@
 }
 </tbody>
 </table>
+    <input type="submit" class="btn btn-success" value="Сделать User'ом" id="addUser"/>
+    <input type="submit" class="btn btn-success" value="Сделать Moder'ом" id="addModer"/>
+    <input type="submit" class="btn btn-success" value="Сделать Admin'ом" id="addAdmin"/>
+    <input type="submit" class="btn btn-success" value="Удалить" id="Delete"/>
+</form>

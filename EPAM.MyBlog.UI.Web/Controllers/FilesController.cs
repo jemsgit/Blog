@@ -44,5 +44,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
             
         }
+
+        public FileContentResult GetImage(string name)
+        {
+            if (name != null)
+            {
+                var info = AvatarModel.GetInfo(name);
+                return File(info.Avatar, info.MimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

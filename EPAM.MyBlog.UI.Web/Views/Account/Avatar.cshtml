@@ -1,7 +1,7 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.AvatarModel
 
-<fieldset>
-    <legend>@Model.Login</legend>
+
+    <p>@Model.Login</p>
 
     @if (Model.Avatar == null)
     {
@@ -12,11 +12,10 @@
     else
     {
          <div>
-            <img src="~/Content/img/User-icon.png">
+            <img src="@Url.Action("GetImage","Files", new { name = User.Identity.Name})" width="250" />
         </div> 
     }
 
-</fieldset>
 
 <div>
     @Html.ActionLink("Изменить аватар", "EditInfoAvatar", "Files", null, new { @class="btn btn-default"})

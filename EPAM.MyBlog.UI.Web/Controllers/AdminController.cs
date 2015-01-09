@@ -131,5 +131,21 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             }
             return View();
         }
+
+        //[HttpPost]
+        //public ActionResult ChangeUser()
+        //{
+        //    string exist;
+
+            
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        exist = Request[i.ToString()];
+        //        if (exist == "on")
+        //        {
+        //            UserModel.AddLink(idUser, ChooseAwardsModel.awards[i].AwardId);
+        //        }
+        //    }
+        //}
     }
 }

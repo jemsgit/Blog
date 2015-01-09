@@ -28,13 +28,13 @@ namespace EPAM.MyBlog.DAL.DB
                 command.Parameters.Add(new SqlParameter("@Name", Name));
                 con.Open();
                 var reader = command.ExecuteReader();
-                        return new Entities.User()
-                        {
-                            Name = (string)reader["Login"],
-                            Password = (string)reader["Password"],
-                            Email = (string)reader["E_mail"],
-                            Role_Id = (int)reader["Role_Id"]
-                        };
+                return new Entities.User()
+                {
+                    Name = (string)reader["Login"],
+                    Password = (string)reader["Password"],
+                    Email = (string)reader["E_mail"],
+                    Role_Id = (int)reader["Role_Id"]
+                };
             }
 
         }
@@ -58,7 +58,7 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
-        public byte[] CheckLogPas(string Name) 
+        public byte[] CheckLogPas(string Name)
         {
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -74,7 +74,7 @@ namespace EPAM.MyBlog.DAL.DB
                     count++;
                     Pass = (byte[])reader["Password"];
                 }
-                if(count<1)
+                if (count < 1)
                 {
                     return Pass = null;
                 }
@@ -166,7 +166,7 @@ namespace EPAM.MyBlog.DAL.DB
                 con.Open();
                 var reader = command.ExecuteReader();
 
-                 while (reader.Read())
+                while (reader.Read())
                 {
                     yield return new Entities.PresentPost()
                     {
@@ -186,16 +186,16 @@ namespace EPAM.MyBlog.DAL.DB
                 SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Text, User_Name, Time FROM dbo.Posts WHERE Post_Id = @Id", con);
                 command.Parameters.Add(new SqlParameter("@Id", Id));
                 con.Open();
-                Entities.PostText post = new Entities.PostText() {Id = Id };
+                Entities.PostText post = new Entities.PostText() { Id = Id };
                 int count = 0;
                 var reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                        post.Title = (string)reader["Post_Title"];
-                        post.Text = (string)reader["Post_Text"];
-                        post.Author = (string)reader["User_Name"];
-                        post.Time = (DateTime)reader["Time"];
+                    post.Title = (string)reader["Post_Title"];
+                    post.Text = (string)reader["Post_Text"];
+                    post.Author = (string)reader["User_Name"];
+                    post.Time = (DateTime)reader["Time"];
                     count++;
                 }
                 if (count < 0)
@@ -249,7 +249,7 @@ namespace EPAM.MyBlog.DAL.DB
                     return false;
                 }
             }
- 
+
         }
 
         #endregion
@@ -271,7 +271,7 @@ namespace EPAM.MyBlog.DAL.DB
                 }
                 return roles;
             }
-            
+
         }
 
         public int GetRoleForUser(string username)
@@ -315,7 +315,7 @@ namespace EPAM.MyBlog.DAL.DB
                 {
                     return false;
                 }
-            }  
+            }
         }
 
         public IEnumerable<Entities.Comment> GetAllComments(Guid Post_ID)
@@ -412,7 +412,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Avatar, Type, Sex, Birthday, True_Name, About FROM dbo.UserAbout RIGHT JOIN Users ON Users.Login = UserAbout.Login Where Users.Login = @Login", con);
+                SqlCommand command = new SqlCommand("SELECT Sex, Birthday, True_Name, About FROM dbo.UserAbout RIGHT JOIN Users ON Users.Login = UserAbout.Login Where Users.Login = @Login", con);
                 command.Parameters.Add(new SqlParameter("@Login", name));
                 con.Open();
                 Entities.UserInfo info = new Entities.UserInfo() { Login = name };
@@ -421,23 +421,6 @@ namespace EPAM.MyBlog.DAL.DB
 
                 while (reader.Read())
                 {
-                    if (DBNull.Value.Equals(reader["Avatar"]))
-                    {
-                        info.Avatar = null;
-                    }
-                    else
-                    {
-                        info.Avatar = (byte[])reader["Avatar"];
-                    }
-
-                    if (DBNull.Value.Equals(reader["Type"]))
-                    {
-                        info.MimeType = null;
-                    }
-                    else
-                    {
-                        info.MimeType = (string)reader["Type"];
-                    }
                     if (DBNull.Value.Equals(reader["Sex"]))
                     {
                         info.Sex = null;
@@ -522,7 +505,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                
+
                 SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Birthday = @Birthday WHERE Login = @Login", con);
                 if (info.Birthday == null)
                 {
@@ -585,5 +568,70 @@ namespace EPAM.MyBlog.DAL.DB
                 }
             }
         }
-    }
+
+        public Entities.Avatar GetAvatarInfo(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Avatar, Type FROM dbo.UserAbout RIGHT JOIN Users ON Users.Login = UserAbout.Login Where Users.Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                Entities.Avatar info = new Entities.Avatar() { Login = name };
+                int count = 0;
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (DBNull.Value.Equals(reader["Avatar"]))
+                    {
+                        info.Pic = null;
+                    }
+                    else
+                    {
+                        info.Pic = (byte[])reader["Avatar"];
+                    }
+
+                    if (DBNull.Value.Equals(reader["Type"]))
+                    {
+                        info.MimeType = null;
+                    }
+                    else
+                    {
+                        info.MimeType = (string)reader["Type"];
+                    }
+                    count++;
+                }
+                if (count < 0)
+                {
+                    return info = null;
+                }
+                else
+                {
+                    return info;
+                }
+            }
+        }
+
+
+        public bool AddAvatar(Entities.Avatar avatar)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("UPDATE dbo.UserAbout SET Avatar = @Pic, Type = @Type WHERE Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Pic", avatar.Pic));
+                command.Parameters.Add(new SqlParameter("@Type", avatar.MimeType));
+                command.Parameters.Add(new SqlParameter("@Login", avatar.Login));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+    } 
 }

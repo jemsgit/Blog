@@ -1,0 +1,23 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.AvatarModel
+
+<fieldset>
+    <legend>@Model.Login</legend>
+
+    @if (Model.Avatar == null)
+    {
+        <div>
+            <img src="~/Content/img/User-icon.png" />
+        </div> 
+    }
+    else
+    {
+         <div>
+            <img src="~/Content/img/User-icon.png">
+        </div> 
+    }
+
+</fieldset>
+
+<div>
+    @Html.ActionLink("Изменить аватар", "EditInfoAvatar", "Files", null, new { @class="btn btn-default"})
+</div>

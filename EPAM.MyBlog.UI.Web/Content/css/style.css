@@ -125,3 +125,8 @@ p {
 .list > div{
     margin-top: 20px;
 }
+
+.table-condensed tbody
+{
+    overflow:auto;
+}

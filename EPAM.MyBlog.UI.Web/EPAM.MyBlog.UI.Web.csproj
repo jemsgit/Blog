@@ -120,6 +120,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AvatarModel.cs" />
     <Compile Include="Models\UserAboutModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\ConfirmModel.cs" />
@@ -284,6 +285,8 @@
     <Content Include="Views\Account\EditDate.cshtml" />
     <Content Include="Views\Account\EditName.cshtml" />
     <Content Include="Views\Account\EditAbout.cshtml" />
+    <Content Include="Views\Files\EditInfoAvatar.cshtml" />
+    <Content Include="Views\Account\Avatar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

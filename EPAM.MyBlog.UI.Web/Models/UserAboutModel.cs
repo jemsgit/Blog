@@ -11,8 +11,7 @@ namespace EPAM.MyBlog.UI.Web.Models
     public class UserAboutModel
     {
         public string Login { get { return login; } set { login = value; } }
-        public byte[] Avatar { get { return avatar; } set { avatar = value; } }
-        public string MimeType { get { return type; } set { type = value; } }
+
         [Display(Name = "Пол")]
         public string Sex { get { return sex; } set { sex = value; } }
         [Display(Name = "День Рождения")]
@@ -24,8 +23,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         public string AboutMe { get { return info; } set { info = value; } }
 
         private string login;
-        private byte[] avatar;
-        private string type;
+
         private string sex;
         private Nullable<DateTime> birthday;
         private string name;
@@ -33,12 +31,12 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         public static explicit operator Entities.UserInfo(UserAboutModel Info)
         {
-            return new Entities.UserInfo() { Login = Info.Login, AboutMe = Info.AboutMe, Avatar = Info.Avatar, Birthday = Info.Birthday, MimeType = Info.MimeType, Name = Info.Name, Sex = Info.Sex };
+            return new Entities.UserInfo() { Login = Info.Login, AboutMe = Info.AboutMe, Birthday = Info.Birthday, Name = Info.Name, Sex = Info.Sex };
         }
 
         public static explicit operator UserAboutModel(Entities.UserInfo Info)
         {
-            return new UserAboutModel() { Login = Info.Login, AboutMe = Info.AboutMe, Avatar = Info.Avatar, Birthday = Info.Birthday, MimeType = Info.MimeType, Name = Info.Name, Sex = Info.Sex };
+            return new UserAboutModel() { Login = Info.Login, AboutMe = Info.AboutMe, Birthday = Info.Birthday, Name = Info.Name, Sex = Info.Sex };
         }
 
 

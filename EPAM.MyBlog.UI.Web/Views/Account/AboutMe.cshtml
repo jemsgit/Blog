@@ -47,6 +47,7 @@
     }
     @Html.ActionLink("Изменить", "EditAbout", null, new { @class="btn btn-default"})
 </fieldset>
-<div>
-    @Html.ActionLink("Изменить аватар", "EditInfoAvatar", null, new { @class="btn btn-default"})
-</div>
+
+@Html.Action("Avatar")
+
+

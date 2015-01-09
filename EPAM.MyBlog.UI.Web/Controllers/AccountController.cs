@@ -166,6 +166,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        public ActionResult Avatar() 
+        {
+
+            var info = AvatarModel.GetInfo(User.Identity.Name);
+            ViewData["path"] = "~/Content/img/" + User.Identity.Name + ".jpg";
+            var file = File(info.Avatar, info.MimeType, User.Identity.Name + ".jpg");
+            
+            return PartialView(info);
+        }
 
         public ActionResult AboutMe() 
         {

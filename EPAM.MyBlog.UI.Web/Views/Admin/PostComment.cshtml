@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.UserAdminModel>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-<form action="@Url.Action("ChangeUser")">
 <table class="table table-condensed">
     <tr>
         <th>
@@ -22,7 +17,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink(item.Name, "UserInfo","Account",new {name = item.Name}, null)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
@@ -33,17 +28,8 @@
         <td>
             @Html.ActionLink("Посты", "UserPosts", new { name=item.Name }) |
             @Html.ActionLink("Комменты", "UserComments", new { name=item.Name }) |
-        </td>
-        <td>
-            <input type="checkbox" name="@item.Name"/>
-        </td>
-        
+        </td>      
     </tr>
 }
 </tbody>
 </table>
-    <input type="submit" class="btn btn-success" value="Сделать User'ом" id="addUser"/>
-    <input type="submit" class="btn btn-success" value="Сделать Moder'ом" id="addModer"/>
-    <input type="submit" class="btn btn-success" value="Сделать Admin'ом" id="addAdmin"/>
-    <input type="submit" class="btn btn-success" value="Удалить" id="Delete"/>
-</form>

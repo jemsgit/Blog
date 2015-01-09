@@ -134,6 +134,20 @@ namespace EPAM.MyBlog.DAL.DB
         #region Posts
         public bool AddPost(Entities.PostText post, string login)
         {
+            string[] split = post.Tags.Split(new Char[] { ' ', ','});
+            for (int i = 0; i < split.Length; i++)
+            {
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("INSERT INTO dbo.Tags (Post_Id, Tag) VALUES (CAST(@ID AS NVARCHAR(36)), @Tag)", con);
+
+                    command.Parameters.Add(new SqlParameter("@ID", post.Id));
+                    command.Parameters.Add(new SqlParameter("@Tag", split[i]));
+                    con.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("INSERT INTO dbo.Posts (User_Name, Post_Id, Post_Title, Post_Text, Time) VALUES (@Login,CAST(@ID AS NVARCHAR(36)), @Title, @Text, @Time)", con);
@@ -181,17 +195,23 @@ namespace EPAM.MyBlog.DAL.DB
 
         public Entities.PostText GetPostById(Guid Id)
         {
+            StringBuilder s = new StringBuilder();
+
+
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Text, User_Name, Time FROM dbo.Posts WHERE Post_Id = @Id", con);
+                SqlCommand command = new SqlCommand("SELECT Post_Id, Post_Title, Post_Text, User_Name, Time FROM dbo.Posts WHERE Post_Id = @Id", con);
                 command.Parameters.Add(new SqlParameter("@Id", Id));
                 con.Open();
                 Entities.PostText post = new Entities.PostText() { Id = Id };
                 int count = 0;
                 var reader = command.ExecuteReader();
+                string post_id = "";
 
                 while (reader.Read())
                 {
+                    post_id = (string)reader["Post_Id"];
                     post.Title = (string)reader["Post_Title"];
                     post.Text = (string)reader["Post_Text"];
                     post.Author = (string)reader["User_Name"];
@@ -204,6 +224,20 @@ namespace EPAM.MyBlog.DAL.DB
                 }
                 else
                 {
+                    reader.Close();
+                    using (SqlConnection con2 = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command2 = new SqlCommand("SELECT Tag FROM dbo.Tags WHERE Post_Id = @Id", con);
+                        command2.Parameters.Add(new SqlParameter("@Id", post_id));
+                        con2.Open();
+                        var reader2 = command2.ExecuteReader();
+                        while (reader2.Read())
+                        {
+                            s.Append((string)reader2["Tag"]);
+                            s.Append(", ");
+                        }
+                    }
+                    post.Tags = s.ToString();
                     return post;
                 }
 

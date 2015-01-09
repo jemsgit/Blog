@@ -28,6 +28,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
 
+        [Authorize(Roles = "Moder")]
+        public ActionResult PostComment()
+        {
+            return View(UserAdminModel.GetAllUsers());
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult Users()
         {

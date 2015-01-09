@@ -129,4 +129,5 @@ p {
 .table-condensed tbody
 {
     overflow:auto;
+    max-height: 500px;
 }

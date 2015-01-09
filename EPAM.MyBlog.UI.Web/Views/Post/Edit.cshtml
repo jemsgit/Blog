@@ -28,6 +28,14 @@
             @Html.ValidationMessageFor(model => model.Text)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tags)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tags)
+            @Html.ValidationMessageFor(model => model.Tags)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>
@@ -35,5 +43,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("К списку записей", "Index")
 </div>

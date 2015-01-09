@@ -166,9 +166,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-        public ActionResult Avatar() 
+        public ActionResult Avatar(string name) 
         {
-            var info = AvatarModel.GetInfo(User.Identity.Name);
+            var info = AvatarModel.GetInfo(name);
+            return PartialView(info);
+        }
+
+        public ActionResult UserAvatar(string name)
+        {
+            var info = AvatarModel.GetInfo(name);
             return PartialView(info);
         }
 
@@ -177,6 +183,13 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             var info = UserAboutModel.GetInfo(User.Identity.Name);
             return View(info);
         }
+
+        public ActionResult UserInfo(string name) 
+        {
+            var info = UserAboutModel.GetInfo(name);
+            return View(info);
+        }
+        
 
         public ActionResult EditSex()
         {

@@ -13,12 +13,14 @@ namespace Entities
         public string Title { get { return title; } set { title = value; } }
         public string Author { get { return author; } set { author = value; } }
         public DateTime Time { get { return time; } set { time = value; } }
+        public string Tags { get { return tags; } set { tags = value; } }
 
         private string text;
         private string title;
         private string author;
         private Guid id;
         private DateTime time;
+        private string tags;
 
         public PostText()
         {

@@ -11,7 +11,7 @@
         @Html.DisplayFor(model => model.Text)
     </div>
 <div>
-Автор: @Html.DisplayFor(model => model.Author)
+Автор: @Html.ActionLink(Model.Author, "UserInfo", "Account",new {name = Model.Author}, null)
 </div>
 <div>
 Дата: @Html.DisplayFor(model => model.Time)

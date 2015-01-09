@@ -287,6 +287,9 @@
     <Content Include="Views\Account\EditAbout.cshtml" />
     <Content Include="Views\Files\EditInfoAvatar.cshtml" />
     <Content Include="Views\Account\Avatar.cshtml" />
+    <Content Include="Views\Admin\PostComment.cshtml" />
+    <Content Include="Views\Account\UserInfo.cshtml" />
+    <Content Include="Views\Account\UserAvatar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,21 +28,26 @@ namespace EPAM.MyBlog.UI.Web.Models
         public string Author { get { return author; } set { author = value; } }
         public DateTime Time { get { return time; } set { time = value; } }
 
+        [Display(Name = "Теги")]
+        [Required(ErrorMessage = "Поле {0} не заполнено")]
+        [StringLength(100, MinimumLength = 1, ErrorMessage = "Поле {0} должно быть от {2} до {1} символов")]
+        public string Tags { get { return tags; } set { tags = value; } }
+
         private string text;
         private string title;
         private string author;
         private Guid id;
         private DateTime time;
-
+        private string tags;
 
         public static explicit operator Entities.PostText(PostModel Post)
         {
-            return new Entities.PostText() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time };
+            return new Entities.PostText() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time, Tags = Post.Tags };
         }
 
         public static explicit operator PostModel(Entities.PostText Post)
         {
-            return new PostModel() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time };
+            return new PostModel() { Id = Post.Id, Text = Post.Text, Title = Post.Title, Author = Post.Author, Time = Post.Time, Tags = Post.Tags };
         }
 
 

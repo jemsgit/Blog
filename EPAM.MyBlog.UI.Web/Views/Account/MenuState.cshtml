@@ -17,6 +17,7 @@
                         </ul>
                   </li>
                   <li><a href="@Url.Action("Help", "Home")">Помощь</a></li>
+                  <li><a href="@Url.Action("Index", "Search")">Поиск</a></li> 
             @if (User.IsInRole("Moder"))
                 {
                    @Html.Partial("~/Views/Admin/ModerMenu.cshtml")

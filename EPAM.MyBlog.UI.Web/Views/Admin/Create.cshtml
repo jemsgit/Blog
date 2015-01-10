@@ -1,0 +1,80 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.RegModel
+
+@{
+    ViewBag.Title = "Reg";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    @Html.Hidden("ReturnUrl",ViewData["ReturnUrl"])
+
+    <fieldset>
+        <legend>Регистрация</legend>
+        
+       <div class="col-sm-10 col-md-10 col-lg-10 col-sx-10 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4">
+           <div class ="validation-error col-sm-8 col-md-8 col-lg-8 col-sx-8">
+           @ViewData["Result"]
+               </div>
+            <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
+                <label>
+                    @Html.LabelFor(model => model.Email)
+                </label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                <div>
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "validation-error" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            <label>
+                @Html.LabelFor(model => model.Name)
+            </label>
+
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                <div>
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "validation-error" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            <label>
+                @Html.LabelFor(model => model.Password)
+            </label>
+
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+                <div>
+                @Html.ValidationMessageFor(model => model.Password, null, new { @class = "validation-error" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            <label>
+                @Html.LabelFor(model => model.Confirm)
+            </label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Confirm)
+                <div>
+                @Html.ValidationMessageFor(model => model.Confirm, null, new { @class = "validation-error" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-sx-5">
+                <button type="submit" class="btn btn-default" id="reg">Регистрация</button>
+            </div>
+        </div>
+    </div>
+
+    </fieldset>
+}
+
+
+@section script {
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

@@ -138,6 +138,42 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Create(RegModel model, string ReturnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                string Result;
+                if (model.RegByAdmin(out Result))
+                {
+
+                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
+                    {
+                        return Redirect(ReturnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Users", "Admin");
+                    }
+                }
+                else
+                {
+                    ViewData["Result"] = Result;
+                }
+            }
+            return View();
+
+        }
+
         //[HttpPost]
         //public ActionResult ChangeUser()
         //{

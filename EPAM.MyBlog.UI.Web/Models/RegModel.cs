@@ -143,5 +143,41 @@ namespace EPAM.MyBlog.UI.Web.Models
         }
 
 
+        internal bool RegByAdmin(out string Result)
+        {
+            var user = (Entities.User)this;
+            byte[] Pass = GetDAL.dal.CheckLogPas(this.Name);
+            if (Pass != null)
+            {
+                Result = "Пользователь с таким логином уже существует!";
+                logger.Info("Попытка регистрации существующего логина" + this.Name);
+                return false;
+            }
+            else
+            {
+                if (GetDAL.dal.CheckMail(this.Email))
+                {
+                    Result = "Данный E-mail уже зарегистрирован!";
+                    return false;
+                }
+                else
+                {
+
+                    bool answer = GetDAL.dal.Registration(user);
+                    if (answer)
+                    {
+                        Result = "Вы зарегистрированы!";
+                        return true;
+                    }
+                    else
+                    {
+                        Result = "Упс, что-то пошло не так! Попробуйте, пажалуйста, еще раз.";
+                        return false;
+                    }
+                }
+            }
+        }
+
+
     }
 }

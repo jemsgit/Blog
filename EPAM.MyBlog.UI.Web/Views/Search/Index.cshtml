@@ -1,0 +1,17 @@
+﻿@model EPAM.MyBlog.UI.Web.Models.SearchModel
+
+@using (Html.BeginForm("Index", "Search")) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+<form class="navbar-form" role="search">
+        <div class="input-group">
+            @Html.TextBoxFor(model => model.SearchText, new { type="text", @class="form-control", placeholder="Search", name="srch-term", id="srch-term"})
+            @*<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">*@
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+</form>
+}
+    

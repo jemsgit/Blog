@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
+@{
+    WebGrid grid = new WebGrid(Model);
+}
+
+<h2> Результаты поиска </h2>
+
+@if(Model != null)
+{
+@grid.GetHtml(columns: new [] {
+    grid.Column("Title",header: " "),
+    grid.Column("",
+                    header: "",
+                    format: @<text>
+                                @Html.ActionLink("Читать", "Posts", new { id=item.Id })
+                             </text>
+)
+})
+
+}
+else
+{
+    <p>Поиск не дал результатов</p>
+}

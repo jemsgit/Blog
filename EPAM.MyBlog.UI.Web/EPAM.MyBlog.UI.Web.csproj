@@ -116,11 +116,13 @@
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="GetDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AvatarModel.cs" />
+    <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\UserAboutModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\ConfirmModel.cs" />
@@ -291,6 +293,9 @@
     <Content Include="Views\Account\UserInfo.cshtml" />
     <Content Include="Views\Account\UserAvatar.cshtml" />
     <Content Include="Views\Post\News.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Result.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

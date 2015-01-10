@@ -724,5 +724,48 @@ namespace EPAM.MyBlog.DAL.DB
             }
 
         }
+
+        public IEnumerable<Entities.PresentPost> GetResultOfSearchTag(string p)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT dbo.Posts.Post_Id, dbo.Posts.Post_Title FROM dbo.Posts INNER JOIN dbo.Tags ON dbo.Tags.Post_Id = dbo.Posts.Post_Id WHERE CONTAINS(Tag, @Tag)", con);
+                command.Parameters.Add("@Tag", p);
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+        }
+
+
+        public IEnumerable<Entities.PresentPost> GetResultOfSearch(string p)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT dbo.Posts.Post_Id, dbo.Posts.Post_Title FROM dbo.Posts INNER JOIN dbo.Tags ON dbo.Tags.Post_Id = dbo.Posts.Post_Id WHERE CONTAINS(Post_Text, @Text)", con);
+                command.Parameters.Add("@Text", p);
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+        }
     } 
 }

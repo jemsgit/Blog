@@ -176,7 +176,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts WHERE User_Name = @Name", con);
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts WHERE User_Name = @Name ORDER BY Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Name", user));
                 con.Open();
                 var reader = command.ExecuteReader();
@@ -392,7 +392,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Post_ID, User_Name, Comment_ID, Text, Time FROM dbo.Comments  WHERE Post_ID = CAST(@Post_ID AS NVARCHAR(36)) ORDER BY Time", con);
+                SqlCommand command = new SqlCommand("SELECT Post_ID, User_Name, Comment_ID, Text, Time FROM dbo.Comments  WHERE Post_ID = CAST(@Post_ID AS NVARCHAR(36)) ORDER BY Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Post_ID", Post_ID));
                 con.Open();
                 var reader = command.ExecuteReader();
@@ -417,7 +417,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT  Post_Id, Comment_ID, Text, Time FROM dbo.Comments  WHERE User_Name = @Name ORDER BY Time", con);
+                SqlCommand command = new SqlCommand("SELECT  Post_Id, Comment_ID, Text, Time FROM dbo.Comments  WHERE User_Name = @Name ORDER BY Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Name", name));
                 con.Open();
                 var reader = command.ExecuteReader();
@@ -463,7 +463,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Login, E_mail, Title FROM dbo.Users, dbo.Roles WHERE Users.Role_Id = Roles.Id", con);
+                SqlCommand command = new SqlCommand("SELECT Login, E_mail, Title FROM dbo.Users, dbo.Roles WHERE Users.Role_Id = Roles.Id ORDER BY Login", con);
                 con.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -708,7 +708,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts", con);
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts ORDER BY Time DESC", con);
                 con.Open();
                 var reader = command.ExecuteReader();
 

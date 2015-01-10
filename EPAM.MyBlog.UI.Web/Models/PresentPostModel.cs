@@ -38,6 +38,16 @@ namespace EPAM.MyBlog.UI.Web.Models
             return TitleList;
         }
 
+        internal static IEnumerable<PresentPostModel> GetAllPostsTitle()
+        {
+            var list = GetDAL.dal.GetAllPostsTitle().ToList();
+            List<PresentPostModel> TitleList = new List<PresentPostModel>();
+            foreach (var item in list)
+            {
+                TitleList.Add((PresentPostModel)item);
+            }
+            return TitleList;
+        }
         
     }
 }

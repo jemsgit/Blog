@@ -145,6 +145,7 @@ namespace EPAM.MyBlog.DAL.DB
                     command.Parameters.Add(new SqlParameter("@Tag", split[i]));
                     con.Open();
                     command.ExecuteNonQuery();
+                    con.Close();
                 }
             }
 
@@ -257,6 +258,31 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    using (SqlConnection con2 = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command2 = new SqlCommand("DELETE FROM dbo.Tags WHERE Post_Id = @ID", con);
+
+                        command2.Parameters.Add(new SqlParameter("@ID", post.Id));
+                        con2.Open();
+                        command2.ExecuteNonQuery();
+                        con2.Close();
+                    }
+
+                    string[] split = post.Tags.Split(new Char[] { ' ', ',' });
+                    for (int i = 0; i < split.Length; i++)
+                    {
+                        using (SqlConnection con2 = new SqlConnection(ConnectionString))
+                        {
+                            SqlCommand command2 = new SqlCommand("INSERT INTO dbo.Tags (Post_Id, Tag) VALUES (CAST(@ID AS NVARCHAR(36)), @Tag)", con);
+
+                            command2.Parameters.Add(new SqlParameter("@ID", post.Id));
+                            command2.Parameters.Add(new SqlParameter("@Tag", split[i]));
+                            con2.Open();
+                            command2.ExecuteNonQuery();
+                            con2.Close();
+                        }
+                    }
+
                     return true;
                 }
                 else
@@ -276,6 +302,16 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    using (SqlConnection con2 = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command2 = new SqlCommand("DELETE FROM dbo.Tags WHERE Post_Id = @ID", con);
+
+                        command2.Parameters.Add(new SqlParameter("@ID", Id));
+                        con2.Open();
+                        command2.ExecuteNonQuery();
+                        con2.Close();
+                    }
+
                     return true;
                 }
                 else
@@ -666,6 +702,27 @@ namespace EPAM.MyBlog.DAL.DB
                     return false;
                 }
             }
+        }
+
+        public IEnumerable<Entities.PresentPost> GetAllPostsTitle()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts", con);
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+
         }
     } 
 }

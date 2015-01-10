@@ -111,6 +111,11 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             //
             return View();
         }
-      
+
+        public ActionResult News()
+        {
+            var posts = PresentPostModel.GetAllPostsTitle();
+            return View(posts);
+        }
     }
 }

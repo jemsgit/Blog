@@ -290,6 +290,7 @@
     <Content Include="Views\Admin\PostComment.cshtml" />
     <Content Include="Views\Account\UserInfo.cshtml" />
     <Content Include="Views\Account\UserAvatar.cshtml" />
+    <Content Include="Views\Post\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

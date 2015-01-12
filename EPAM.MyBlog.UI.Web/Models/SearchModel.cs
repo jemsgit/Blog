@@ -26,7 +26,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             string query = SearchText.Trim();
             if(query.Substring(0,1) == "#")
             {
-                var result = GetDAL.dal.GetResultOfSearchTag(this.SearchText).ToList();
+                var result = GetDAL.dal.GetResultOfSearchTag(this.SearchText.Substring(1,SearchText.Length-1)).ToList();
                 List<PresentPostModel> TitleList = new List<PresentPostModel>();
                 foreach (var item in result)
                 {

@@ -729,8 +729,8 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT dbo.Posts.Post_Id, dbo.Posts.Post_Title FROM dbo.Posts INNER JOIN dbo.Tags ON dbo.Tags.Post_Id = dbo.Posts.Post_Id WHERE CONTAINS(Tag, @Tag)", con);
-                command.Parameters.Add("@Tag", p);
+                SqlCommand command = new SqlCommand("SELECT [Blog].dbo.Posts.Post_Id,[Blog].dbo.Posts.Post_Title FROM [Blog].dbo.Posts INNER JOIN [Blog].dbo.Tags ON [Blog].dbo.Tags.Post_Id = [Blog].dbo.Posts.Post_Id WHERE Tag LIKE @Tag", con);
+                command.Parameters.Add(new SqlParameter("@Tag", p));
                 con.Open();
                 var reader = command.ExecuteReader();
 
@@ -751,8 +751,8 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT dbo.Posts.Post_Id, dbo.Posts.Post_Title FROM dbo.Posts INNER JOIN dbo.Tags ON dbo.Tags.Post_Id = dbo.Posts.Post_Id WHERE CONTAINS(Post_Text, @Text)", con);
-                command.Parameters.Add("@Text", p);
+                SqlCommand command = new SqlCommand("SELECT [Post_Id], [Post_Title] FROM [Blog].dbo.Posts WHERE Post_Text LIKE @Text", con);
+                command.Parameters.Add(new SqlParameter("@Text", p));
                 con.Open();
                 var reader = command.ExecuteReader();
 

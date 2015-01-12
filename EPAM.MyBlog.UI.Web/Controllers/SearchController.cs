@@ -31,10 +31,11 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         }
 
-        [HttpPost]
+        
         public ActionResult Result(string search)
         {
             SearchModel model = new SearchModel();
+            model.SearchText = search;
             var result = model.GetResult();
             return View(result);
         }

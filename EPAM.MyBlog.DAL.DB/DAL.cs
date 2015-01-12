@@ -134,7 +134,7 @@ namespace EPAM.MyBlog.DAL.DB
         #region Posts
         public bool AddPost(Entities.PostText post, string login)
         {
-            string[] split = post.Tags.Split(new Char[] { ' ', ','});
+            string[] split = post.Tags.Split(' ');
             for (int i = 0; i < split.Length; i++)
             {
                 using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -268,7 +268,7 @@ namespace EPAM.MyBlog.DAL.DB
                         con2.Close();
                     }
 
-                    string[] split = post.Tags.Split(new Char[] { ' ', ',' });
+                    string[] split = post.Tags.Split(' ');
                     for (int i = 0; i < split.Length; i++)
                     {
                         using (SqlConnection con2 = new SqlConnection(ConnectionString))

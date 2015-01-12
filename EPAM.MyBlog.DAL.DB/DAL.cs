@@ -729,7 +729,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT [Blog].dbo.Posts.Post_Id,[Blog].dbo.Posts.Post_Title FROM [Blog].dbo.Posts INNER JOIN [Blog].dbo.Tags ON [Blog].dbo.Tags.Post_Id = [Blog].dbo.Posts.Post_Id WHERE Tag LIKE @Tag", con);
+                SqlCommand command = new SqlCommand("SELECT [Blog].dbo.Posts.Post_Id,[Blog].dbo.Posts.Post_Title FROM [Blog].dbo.Posts INNER JOIN [Blog].dbo.Tags ON [Blog].dbo.Tags.Post_Id = [Blog].dbo.Posts.Post_Id WHERE Tag LIKE @Tag ORDER BY [Blog].dbo.Posts.Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Tag", p));
                 con.Open();
                 var reader = command.ExecuteReader();
@@ -751,7 +751,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT [Post_Id], [Post_Title] FROM [Blog].dbo.Posts WHERE Post_Text LIKE @Text", con);
+                SqlCommand command = new SqlCommand("SELECT [Post_Id], [Post_Title] FROM [Blog].dbo.Posts WHERE Post_Text LIKE @Text ORDER BY [Blog].dbo.Posts.Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Text", p));
                 con.Open();
                 var reader = command.ExecuteReader();

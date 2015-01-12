@@ -767,5 +767,21 @@ namespace EPAM.MyBlog.DAL.DB
                 }
             }
         }
+
+        public IEnumerable<string> GetTopTags()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT TOP 10 [Blog].dbo.Tags.Tag, COUNT([Blog].dbo.Tags.Tag) as count_tag FROM [Blog].dbo.Tags GROUP BY [Blog].dbo.Tags.Tag ORDER BY count_tag DESC", con);
+                con.Open();
+                var reader = command.ExecuteReader();
+                List<string> Tags = new List<string>();
+                while (reader.Read())
+                {
+                    Tags.Add((string)reader["Tag"]);
+                }
+                return Tags;
+            }
+        }
     } 
 }

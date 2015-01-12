@@ -45,5 +45,11 @@ namespace EPAM.MyBlog.UI.Web.Models
                 return TitleList;
             }
         }
+
+        public static IEnumerable<string> GetTopTags()
+        {
+            return GetDAL.dal.GetTopTags();
+        }
+
     }
 }

@@ -39,5 +39,10 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             var result = model.GetResult();
             return View(result);
         }
+
+        public ActionResult Tags()
+        {
+            return PartialView(SearchModel.GetTopTags());
+        }
     }
 }

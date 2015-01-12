@@ -1,0 +1,25 @@
+﻿@model IEnumerable<string>
+
+
+<h2> Популярные теги </h2>
+<ul>
+@if(Model != null)
+{
+    foreach (var item in Model)
+    {
+        
+        if (!String.IsNullOrEmpty(item))
+        {
+            <li>
+                @Html.ActionLink(item, "Result", "Search", new { search = "#" + item }, null)
+           </li>
+        }
+        
+    }
+
+}
+else
+{
+    
+}
+    </ul>

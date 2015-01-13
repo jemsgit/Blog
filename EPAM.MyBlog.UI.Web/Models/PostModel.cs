@@ -90,5 +90,15 @@ namespace EPAM.MyBlog.UI.Web.Models
         {
             return GetDAL.dal.DeletePostById(id);
         }
+
+        internal static bool CheckFavorite(string name, Guid Id)
+        {
+            return GetDAL.dal.CheckFavorite(name, Id);
+        }
+
+        internal static bool AddFavorite(string name, Guid Id)
+        {
+            return GetDAL.dal.AddFavorite(name, Id);
+        }
     }
 }

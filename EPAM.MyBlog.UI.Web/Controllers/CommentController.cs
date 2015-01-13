@@ -12,14 +12,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         //
         // GET: /Comment/
 
-        public ActionResult AddComment(Guid Post_ID)
+        public ActionResult AddComment(Guid Post_Id)
         {
-            var list = CommentModel.GetAllComments(Post_ID);
+            var list = CommentModel.GetAllComments(Post_Id);
             ViewData["List"] = list;
+            ViewData["ID"] = Post_Id; 
             return PartialView();
         }
 
-
+        [ChildActionOnly]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult AddComment(CommentModel comment)

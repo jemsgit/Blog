@@ -40,6 +40,28 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(UserAdminModel.GetAllUsers());
         }
 
+        [HttpPost]
+        public ActionResult Users(string action)
+        {
+            switch (action)
+            {
+                case "addUser":
+                    UserAdminModel.AddUser();
+                    break;
+                case "addModer":
+                    UserAdminModel.AddModer();
+                    break;
+                case "addAdmin":
+                    UserAdminModel.AddAdmin();
+                    break;
+                case "Delete":
+                    break;
+                default:
+                    break;
+            }
+
+            return View(UserAdminModel.GetAllUsers());
+        }
 
         [Authorize(Roles = "Admin")]
         public ActionResult UserPosts(string name)

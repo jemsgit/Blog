@@ -783,5 +783,50 @@ namespace EPAM.MyBlog.DAL.DB
                 return Tags;
             }
         }
+
+        public bool CheckFavorite(string name, Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) AS C FROM Blog.dbo.Favorite WHERE Post_Id = @Id AND Login=@Login", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                var reader = command.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = (int)reader["C"];
+                }
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool AddFavorite(string name, Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO Blog.dbo.Favorite (Blog.dbo.Favorite.Login, Blog.dbo.Favorite.Post_Id) VALUES (@Login, @Id)", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     } 
 }

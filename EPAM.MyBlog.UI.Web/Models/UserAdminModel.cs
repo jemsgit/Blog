@@ -38,5 +38,20 @@ namespace EPAM.MyBlog.UI.Web.Models
             }
             return Users;
         }
+
+        internal static void AddUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void AddModer()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void AddAdmin()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

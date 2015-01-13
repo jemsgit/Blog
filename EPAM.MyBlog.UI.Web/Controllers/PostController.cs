@@ -50,10 +50,24 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         public ActionResult Posts(Guid Id)
         {
+            ViewData["Check"] = PostModel.CheckFavorite(User.Identity.Name, Id).ToString();
             var post = PostModel.GetPostById(Id);
             return View(post);
         }
 
+        [HttpPost]
+        public ActionResult Posts(PostModel model, string action)
+        {
+            if(action == "AddFav")
+            {
+               PostModel.AddFavorite(User.Identity.Name, model.Id);
+               return RedirectToAction("Posts", new {Id = model.Id});
+            }
+            else
+            {
+                return RedirectToAction("Posts", new {Id = model.Id});
+            }
+        }
 
         public ActionResult Edit(Guid Id)
         {

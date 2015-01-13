@@ -3,23 +3,35 @@
 @{
     ViewBag.Title = "Posts";
 }
-
-<legend>@Html.DisplayFor(model => model.Title)</legend>
-
-    <div>
+@using (Html.BeginForm("Posts", "Post", FormMethod.Post))
+{
+<div class ="row">
+<div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">@Html.DisplayFor(model => model.Title)</div>
+</div>
+<div class ="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 post">
         @Html.DisplayFor(model => model.Text)
     </div>
+</div>
     <div>
- Теги: @Html.DisplayFor(model => model.Tags)
+        <p>Теги: @Html.DisplayFor(model => model.Tags)</p>
     </div>
-<div>
-Автор: @Html.DisplayFor(model => model.Author)
-</div>
-<div>
-Дата: @Html.DisplayFor(model => model.Time)
-</div>
+    <div>
+        <p>Автор: @Html.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author}, null)</p>
+    </div>
+    <div>
+        <p>Дата: @Html.DisplayFor(model => model.Time)</p>
+    </div>
+    if((string)ViewData["Check"] == "True")
+    {
+        <button type="submit" name="action" value="AddFav" hidden="hidden">В избранное</button>
+        <p>Данная статья находится в @Html.ActionLink(" избранном","Favorite", "Post")</p>
+    }
+    else{
+        <button type="submit" name="action" value="AddFav">В избранное</button>
+    }
+}
 
-<p>
-</p>
-    @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
+    @{ Html.RenderAction("AddComment", "Comment", new { Post_Id = Model.Id });}
+
     @Html.ActionLink("К списку", "Index", "Post")

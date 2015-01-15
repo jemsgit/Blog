@@ -160,5 +160,10 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             var posts = PresentPostModel.GetAllPostsTitle();
             return View(posts);
         }
+
+        public ActionResult UserPosts(string name)
+        {
+            return View(PresentPostModel.GetAllPostsTitle(name));
+        }
     }
 }

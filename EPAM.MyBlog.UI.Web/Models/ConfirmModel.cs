@@ -8,6 +8,10 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class ConfirmModel
     {
+        /// <summary>
+        /// Модель подтверждения. Свойство Reason используется только при удалении - для записи причины удаления аккаунта
+        /// </summary>
+
         public bool Confirm { get{return confirm;} set{confirm = value;} }
 
         [Display(Name = "Причина удаления (необязательно для заполнения)")]

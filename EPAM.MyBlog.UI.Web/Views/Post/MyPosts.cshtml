@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
 
-
+@{int c = 0;}
 
     @foreach (var item in Model) 
 {
+    c++;
     <div class="row list">
         <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
@@ -16,3 +17,11 @@
 
     }
 
+@if(c==0)
+{
+    <div class="row list">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            <p>  Вы не добавили ни ондой статьи </p>
+        </div>
+        </div>
+}

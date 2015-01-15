@@ -5,14 +5,14 @@
 }
 @using (Html.BeginForm("Posts", "Post", FormMethod.Post))
 {
-<div class ="row">
-<div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">@Html.DisplayFor(model => model.Title)</div>
-</div>
-<div class ="row">
-    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 post">
-        @Html.DisplayFor(model => model.Text)
+    <div class ="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">@Html.DisplayFor(model => model.Title)</div>
     </div>
-</div>
+    <div class ="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 post">
+            @Html.DisplayFor(model => model.Text)
+        </div>
+    </div>
     <div>
         <p>Теги: @Html.DisplayFor(model => model.Tags)</p>
     </div>
@@ -34,4 +34,9 @@
 
     @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
 
+@if(Model.Author == User.Identity.Name){
     @Html.ActionLink("К списку", "Index", "Post")
+}
+else{
+    @Html.ActionLink("К списку", "UserPosts", "Post", new { name=Model.Author }, null)
+}

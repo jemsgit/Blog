@@ -7,6 +7,11 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class SearchModel
     {
+        /// <summary>
+        /// Модель для поиска по тегам и тексту
+        /// </summary>
+        /// 
+
         public string SearchText { get { return search; } set { search = value; } }
 
         private string search;

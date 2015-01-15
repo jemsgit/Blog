@@ -8,6 +8,9 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class CommentModel
     {
+        /// <summary>
+        /// Модель для комментариев пользователя. Поля: ID, текст, время, автор и Id Записи
+        /// </summary>
 
         public static List<CommentModel> Comments;
 

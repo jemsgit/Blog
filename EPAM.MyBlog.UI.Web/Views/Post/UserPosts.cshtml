@@ -15,10 +15,7 @@
             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
 
         </td>
-        <td>
-            @Html.ActionLink("Удалить", "DeletePost", new { id=item.Id }) |
-            
-        </td>
+
     </tr>
 
     }
@@ -34,5 +31,3 @@
         </div>
         </div>
 }
-
-@Html.ActionLink("К пользователям", "Users")

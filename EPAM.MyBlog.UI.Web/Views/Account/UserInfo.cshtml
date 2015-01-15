@@ -50,3 +50,7 @@
 
 @Html.Action("UserAvatar", new {name = Model.Login})
 
+@if (Model.Login != User.Identity.Name)
+{
+    @Html.ActionLink("Посты", "UserPosts", "Post", new { name=Model.Login }, null)
+}

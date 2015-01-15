@@ -7,6 +7,10 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class AvatarModel
     {
+        /// <summary>
+        /// Модель для картинки аватара пользователя. Поля логин, байтовое представлене изображения аватара и тип файла
+        /// </summary>
+
         public string Login { get { return login; } set { login = value; } }
         public byte[] Avatar { get { return avatar; } set { avatar = value; } }
         public string MimeType { get { return type; } set { type = value; } }

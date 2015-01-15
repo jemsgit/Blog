@@ -9,7 +9,7 @@
 @foreach (var item in (List<EPAM.MyBlog.UI.Web.Models.CommentModel>)ViewData["List"])
     {
     
-        <div>@item.Author в @item.Time</div>
+        <div>@Html.ActionLink(item.Author, "UserInfo","Account",new {name = item.Author}, null) в @item.Time</div>
         <div>Сказал: @item.Text </div>
     }
 
@@ -20,7 +20,7 @@
    
     <fieldset>
         
-        @Html.HiddenFor(model => model.Post_ID, new { @Value = ViewData["ID"] });
+        @Html.HiddenFor(model => model.Post_ID, new { @Value = ViewData["ID"] })
          
         
         <div class="editor-label">

@@ -10,6 +10,11 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class UserAboutModel
     {
+        /// <summary>
+        /// Модель для информации о пользователе.
+        /// </summary>
+        /// 
+
         public string Login { get { return login; } set { login = value; } }
 
         [Display(Name = "Пол")]
@@ -39,39 +44,12 @@ namespace EPAM.MyBlog.UI.Web.Models
             return new UserAboutModel() { Login = Info.Login, AboutMe = Info.AboutMe, Birthday = Info.Birthday, Name = Info.Name, Sex = Info.Sex };
         }
 
-
-        //public static Image byteArrayToImage(byte[] byteArrayIn)
-        //{
-        //    MemoryStream ms = new MemoryStream(byteArrayIn);
-        //    Image returnImage = Image.FromStream(ms);
-        //    returnImage.Save("");
-        //    return returnImage;
-        //}
-
-        public void Upload(HttpPostedFile file, string name)
-        {
-            //string path = @"~\" + name + @"\";
-            //if(!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //}
-            //path += @"myAvatar";
-            //if(File.Exists(path))
-            //{
-            //    File.Delete(path);
-            //}
-            //file.SaveAs(path);
-        }
-
-
         public static UserAboutModel GetInfo(string name) 
         {
             var userinfo = (UserAboutModel)GetDAL.dal.GetUserInfo(name);
             return userinfo;
         }
 
-        //MimeType = image.ContentType;
-        //Data = new byte[image.ContentLength];
 
         internal bool SetSex()
         {

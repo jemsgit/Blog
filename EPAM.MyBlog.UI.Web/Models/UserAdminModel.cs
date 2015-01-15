@@ -7,6 +7,11 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class UserAdminModel
     {
+        /// <summary>
+        /// Модель пользователей для админитстратора и модератора
+        /// </summary>
+        ///
+
         public string Name { get { return name; } set { name = value; } }
         public string Email { get { return email; } set { email = value; } }
         public string Role { get { return role; } set { role = value; } }

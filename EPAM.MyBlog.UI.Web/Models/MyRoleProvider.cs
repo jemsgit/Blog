@@ -8,6 +8,10 @@ namespace EPAM.MyBlog.UI.Web.Models
 {
     public class MyRoleProvider: RoleProvider
     {
+        /// <summary>
+        /// класс для выдачи ролей пользователям
+        /// </summary>
+        /// <returns></returns>
 
         public override string[] GetAllRoles()
         {

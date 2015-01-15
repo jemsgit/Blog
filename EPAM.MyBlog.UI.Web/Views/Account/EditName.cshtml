@@ -4,7 +4,6 @@
     ViewBag.Title = "EditName";
 }
 
-<h2>EditInfoText</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -13,20 +12,16 @@
     <fieldset>
         <legend>Имя</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Name)
             @Html.ValidationMessageFor(model => model.Name)
         </div>
 
         <p>
-            <input type="submit" value="Сохранить" />
+            <input type="submit" value="Сохранить" class="btn btn-default"/>
+            @Html.ActionLink("Вернуться", "AboutMe", null, new { @class="btn btn-default"})
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Вернуться", "AboutMe")
-</div>
+

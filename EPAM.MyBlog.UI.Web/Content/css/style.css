@@ -61,6 +61,7 @@ body{
 .footer .row {
      padding:10px;
      text-align:center;
+     vertical-align:middle;
 }
 
 a img {
@@ -116,6 +117,7 @@ p {
     border: 0;
     border-bottom: 1px solid #e5e5e5;
     display:inline-block;
+    margin-bottom:10px;
 }
 
 .title  p{
@@ -136,3 +138,12 @@ p {
     margin-bottom: 40px;
     margin-top: 40px;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.btn{
+    margin:5px 10px;
+}
+

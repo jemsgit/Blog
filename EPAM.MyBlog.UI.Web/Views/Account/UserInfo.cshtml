@@ -4,53 +4,85 @@
     ViewBag.Title = "UserInfo";
 }
 
-<fieldset>
-    <legend>@Model.Login</legend>
+<div class="col-sm-12 title">
+    
+    <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 ">
+        <p>@Model.Login</p>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2 pull-right">
+        @if (Model.Login != User.Identity.Name)
+        {<p>
+            @Html.ActionLink("Посты", "UserPosts", "Post", new { name=Model.Login }, new { @class="btn btn-default"})
+            </p>
+        }
+    </div>
+</div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sex)
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            @Html.Action("Avatar", new { name  = Model.Login})
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+
+            <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Name)
           
-    </div>
-    @if(Model.Sex != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Sex)
-       
-    </div>
-    }
+            </div>
+            @if (Model.Name != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+            }
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Birthday)
-         
-    </div>
-    @if(Model.Birthday != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Birthday) 
-    </div>
-    } 
+            </div>
+            <div class="row">
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    @if(Model.Name != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-    }
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Sex)
+          
+            </div>
+            @if(Model.Sex != null){
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Sex)
+            </div>
+            }
+     
+            </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.AboutMe)
+            <div class="row">
+
+             <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Birthday)
+          
+            </div>
+            @if (Model.Birthday != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Birthday)
+            </div>
+            }
+            </div>
+            
+            <div class="row">
+    
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.AboutMe)
+          
+            </div>
+            @if (Model.AboutMe != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.AboutMe)
+            </div>
+            }
+            </div>
+        </div>
     </div>
-    @if(Model.AboutMe != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AboutMe)
-    </div>
-    }
 
-</fieldset>
 
-@Html.Action("UserAvatar", new {name = Model.Login})
 
-@if (Model.Login != User.Identity.Name)
-{
-    @Html.ActionLink("Посты", "UserPosts", "Post", new { name=Model.Login }, null)
-}
+

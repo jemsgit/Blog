@@ -4,50 +4,90 @@
     ViewBag.Title = "UserInfo";
 }
 
-<fieldset>
-    <legend>@Model.Login</legend>
+<div class="col-sm-12 title">
+    <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4">
+        <p>@Model.Login</p>
+    </div>
+</div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sex)
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            @Html.Action("Avatar", new { name  = User.Identity.Name})
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+
+            <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Name)
           
-    </div>
-    @if(Model.Sex != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Sex)
-       
-    </div>
-    }
-     @Html.ActionLink("Изменить", "EditSex", null, new { @class="btn btn-default"})
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Birthday)
-         
-    </div>
-    @if(Model.Birthday != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Birthday) 
-    </div>
-    } 
-    @Html.ActionLink("Изменить", "EditDate", null, new { @class="btn btn-default"})
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    @if(Model.Name != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-    }
-    @Html.ActionLink("Изменить", "EditName", null, new { @class="btn btn-default"})
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.AboutMe)
-    </div>
-    @if(Model.AboutMe != null){
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AboutMe)
-    </div>
-    }
-    @Html.ActionLink("Изменить", "EditAbout", null, new { @class="btn btn-default"})
-</fieldset>
+            </div>
+            @if (Model.Name != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Name)
+                <div class="pull-right">
+                    @Html.ActionLink("Изменить", "EditName", null, new { @class="btn btn-default"})
+                </div>
+            </div>
+            }
 
-@Html.Action("Avatar", new { name  = User.Identity.Name})
+            </div>
+            <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Sex)
+          
+            </div>
+            @if(Model.Sex != null){
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Sex)
+                <div class="pull-right">
+                    @Html.ActionLink("Изменить", "EditSex", null, new { @class="btn btn-default"})
+                </div>
+            </div>
+            }
+            </div>
+            <div class="row">
+
+             <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.Birthday)
+          
+            </div>
+            @if (Model.Birthday != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.Birthday)
+                <div class="pull-right">
+                    @Html.ActionLink("Изменить", "EditDate", null, new { @class="btn btn-default"})
+                </div>
+            </div>
+            }
+                </div>
+            
+            <div class="row">
+    
+            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+                @Html.DisplayNameFor(model => model.AboutMe)
+          
+            </div>
+            @if (Model.AboutMe != null)
+            {
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                @Html.DisplayFor(model => model.AboutMe)
+                <div class="pull-right">
+                    @Html.ActionLink("Изменить", "EditAbout", null, new { @class="btn btn-default"})
+                </div>
+            </div>
+            }
+                </div>
+        </div>
+    </div>
+
+
+    
+
+
 
 

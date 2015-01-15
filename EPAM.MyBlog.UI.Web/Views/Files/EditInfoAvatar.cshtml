@@ -2,16 +2,20 @@
     ViewBag.Title = "EditInfoAvatar";
 }
 
-<h2>EditInfoAvatar</h2>
+
 
 @using (Html.BeginForm("EditInfoAvatar", "Files", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
 
+    <fieldset>
+        <legend>Аватар</legend>
+
     <input type="file" name="File" />
     <p>
-         <input type="submit" value="Сохранить" />
+         <input type="submit" value="Сохранить" class="btn btn-default"/>
     </p>
+        </fieldset>
 }
 

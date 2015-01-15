@@ -3,19 +3,25 @@
 @{
     ViewBag.Title = "DeleteAc";
 }
+<div class="col-sm-12 title">
+    
+    <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 ">
+        <p>Удаление аккаунта </p>
+    </div>
+</div>
+     <p>Вы действиетльно хотите удалить аккаунт?</p>
 
-     
 @using (Html.BeginForm())
 {
             <div class="editor-label">
             @Html.LabelFor(model => model.Reason)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Reason)
+            @Html.TextAreaFor(model => model.Reason, new { cols = 60, @rows = 3 })
         </div>
-    <h2>Вы действиетльно хотите удалить аккаунт?</h2>
-    <button name="Confirm" value ="true">Да</button> 
-    <button name="Confirm" value ="false">Нет</button>
+
+    <button name="Confirm" value ="true" class="btn btn-default">Да</button> 
+    <button name="Confirm" value ="false" class="btn btn-default">Нет</button>
 
 
 }

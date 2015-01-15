@@ -1,8 +1,6 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.AvatarModel
 
 
-    <p>@Model.Login</p>
-
     @if (Model.Avatar == null)
     {
         <div>
@@ -17,6 +15,6 @@
     }
 
 
-<div>
+<div class="post">
     @Html.ActionLink("Изменить аватар", "EditInfoAvatar", "Files", null, new { @class="btn btn-default"})
 </div>

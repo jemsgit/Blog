@@ -17,6 +17,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        
+        public ActionResult Favorite() 
+        {
+            return View(PresentPostModel.GetAllFavorite(User.Identity.Name));
+        }
+
         public ActionResult NewPost()
         {
             return View();
@@ -98,7 +104,6 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult Delete(Guid Id)
         {
             var post = PostModel.GetPostById(Id);
-            //ViewData["Post_Id"] = Id;
             ViewData["Title"] = post.Title;
             return View();
         }
@@ -111,6 +116,30 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (PostModel.Delete(id))
                 {
                     return RedirectToAction("Index", "Post");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return View();
+        }
+
+        public ActionResult DeleteFavorite(Guid Id)
+        {
+            var post = PostModel.GetPostById(Id);
+            ViewData["Title"] = post.Title;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteFavorite(Guid id, ConfirmModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (PostModel.DeleteFavorite(User.Identity.Name, id))
+                {
+                    return RedirectToAction("Favorite", "Post");
                 }
                 else
                 {

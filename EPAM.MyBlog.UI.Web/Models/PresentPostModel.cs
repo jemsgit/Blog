@@ -48,6 +48,17 @@ namespace EPAM.MyBlog.UI.Web.Models
             }
             return TitleList;
         }
-        
+
+
+        internal static IEnumerable<PresentPostModel> GetAllFavorite(string name)
+        {
+            var list = GetDAL.dal.GetAllFavorite(name).ToList();
+            List<PresentPostModel> TitleList = new List<PresentPostModel>();
+            foreach (var item in list)
+            {
+                TitleList.Add((PresentPostModel)item);
+            }
+            return TitleList;
+        }
     }
 }

@@ -297,6 +297,8 @@
     <Content Include="Views\Search\Result.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Search\Tags.cshtml" />
+    <Content Include="Views\Post\Favorite.cshtml" />
+    <Content Include="Views\Post\DeleteFavorite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

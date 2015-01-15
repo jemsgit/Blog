@@ -1,0 +1,17 @@
+﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
+
+
+
+    @foreach (var item in Model) 
+{
+    <div class="row list">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
+        </div>
+         <div class="col-sm-4 col-md-4 col-lg-4 col-sx-4">
+            @Html.ActionLink("Удалить", "DeleteFavorite", new { id=item.Id }, new { @class="btn btn-default"})  
+        </div>
+    </div>
+
+    }
+

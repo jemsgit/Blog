@@ -895,5 +895,46 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
 
+
+        public IEnumerable<Entities.PresentPost> GetAllFavorite(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Posts.Post_Title, Posts.Post_Id FROM dbo.Posts INNER JOIN dbo.Favorite ON Favorite.Post_Id = Posts.Post_Id WHERE Login = @Login ORDER BY Time DESC", con);
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+        }
+
+        public bool DeletePostFromFav(string name, Guid id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.Favorite WHERE Post_Id = @Id AND Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Id", id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     } 
 }

@@ -39,19 +39,24 @@ namespace EPAM.MyBlog.UI.Web.Models
             return Users;
         }
 
-        internal static void AddUser()
+        internal static void AddUser(List<string> names)
         {
-            throw new NotImplementedException();
+            GetDAL.dal.AddUser(names);
         }
 
-        internal static void AddModer()
+        internal static void AddModer(List<string> names)
         {
-            throw new NotImplementedException();
+            GetDAL.dal.AddModer(names);
         }
 
-        internal static void AddAdmin()
+        internal static void AddAdmin(List<string> names)
         {
-            throw new NotImplementedException();
+            GetDAL.dal.AddAdmin(names);
+        }
+
+        internal static void DeleteUsers(List<string> names)
+        {
+            GetDAL.dal.DeleteUser(names);
         }
     }
 }

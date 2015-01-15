@@ -828,5 +828,72 @@ namespace EPAM.MyBlog.DAL.DB
                 }
             }
         }
+
+
+        public void AddUser(List<string> names)
+        {
+            foreach (var item in names)
+            {
+
+                    using (SqlConnection con = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '3' WHERE Login = @Login", con);
+                        command.Parameters.Add(new SqlParameter("@Login", item));
+                        con.Open();
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+                
+            }
+        }
+
+        public void AddModer(List<string> names)
+        {
+            foreach (var item in names)
+            {
+
+                    using (SqlConnection con = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '2' WHERE Login = @Login", con);
+                        command.Parameters.Add(new SqlParameter("@Login", item));
+                        con.Open();
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+                
+            }
+        }
+
+        public void AddAdmin(List<string> names)
+        {
+            foreach (var item in names)
+            {
+                    using (SqlConnection con = new SqlConnection(ConnectionString))
+                    {
+                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '1' WHERE Login = @Login", con);
+                        command.Parameters.Add(new SqlParameter("@Login", item));
+                        con.Open();
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+            }
+        }
+
+        public void DeleteUser(List<string> names)
+        {
+            foreach (var item in names)
+            {
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("Delete FROM dbo.Users WHERE Login = @Login", con);
+                    command.Parameters.Add(new SqlParameter("@Login", item));
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+        }
+
+
     } 
 }

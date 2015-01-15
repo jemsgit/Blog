@@ -32,6 +32,6 @@
     }
 }
 
-    @{ Html.RenderAction("AddComment", "Comment", new { Post_Id = Model.Id });}
+    @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
 
     @Html.ActionLink("К списку", "Index", "Post")

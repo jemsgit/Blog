@@ -11,7 +11,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
     {
         //
         // GET: /Comment/
-
+        
         public ActionResult AddComment(Guid Post_Id)
         {
             var list = CommentModel.GetAllComments(Post_Id);
@@ -20,7 +20,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return PartialView();
         }
 
-        [ChildActionOnly]
+        
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult AddComment(CommentModel comment)
@@ -34,18 +34,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     CommentModel.Comments.Add(comment);
                     ViewData["List"] = CommentModel.Comments;
                     ModelState.Clear();
-                    return PartialView();
+                    return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }
                 else
                 {
                     ViewData["List"] = CommentModel.Comments;
-                    return PartialView(comment);
+                    return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }
             }
             else
             {
                 ViewData["List"] = CommentModel.Comments;
-                return PartialView(comment);
+                return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
             }
         }
     }

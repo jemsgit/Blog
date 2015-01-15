@@ -43,18 +43,32 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [HttpPost]
         public ActionResult Users(string action)
         {
+            string exist;
+            var list = new List<UserAdminModel>(UserAdminModel.GetAllUsers());
+            List<string> names = new List<string>();
+
+            foreach (var item in list)
+	        {
+                exist = Request.Form[item.Name];
+                if (exist == "on")
+                {
+                    names.Add(item.Name);
+                }
+	        }
+
             switch (action)
             {
                 case "addUser":
-                    UserAdminModel.AddUser();
+                    UserAdminModel.AddUser(names);
                     break;
                 case "addModer":
-                    UserAdminModel.AddModer();
+                    UserAdminModel.AddModer(names);
                     break;
                 case "addAdmin":
-                    UserAdminModel.AddAdmin();
+                    UserAdminModel.AddAdmin(names);
                     break;
                 case "Delete":
+                    UserAdminModel.DeleteUsers(names);
                     break;
                 default:
                     break;

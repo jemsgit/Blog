@@ -76,11 +76,24 @@
         </div>
         
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/Scripts/bootstrap.min.js"></script>
-    
+      
+      
 
-      @RenderSection("script", false)    
+
+      @section Scripts{
+
+        @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+        <script>
+            var Links = {GetPosts: '@Url.Action("MyPosts", "Post")'}
+        </script>
+        @System.Web.Optimization.Scripts.Render("~/bundles/my")
+
+          }
+
+      @RenderSection("script", false)  
+      
+          
+        
 
   </body>
 </html>

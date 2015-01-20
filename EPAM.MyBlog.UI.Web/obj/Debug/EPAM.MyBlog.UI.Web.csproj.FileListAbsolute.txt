@@ -84,3 +84,8 @@ C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\r
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.csprojResolveAssemblyReference.cache
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\obj\Debug\EPAM.MyBlog.UI.Web.pdb
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\Antlr3.Runtime.dll
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\System.Web.Optimization.dll
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\WebGrease.dll
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\bin\System.Web.Optimization.xml

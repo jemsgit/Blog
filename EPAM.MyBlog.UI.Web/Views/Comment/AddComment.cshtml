@@ -13,26 +13,34 @@
         <div>Сказал: @item.Text </div>
     }
 
-@using (Html.BeginForm("AddComment", "Comment", FormMethod.Post)) {
+@if(User.Identity.IsAuthenticated){
+
+
+using (Html.BeginForm("AddComment", "Comment", FormMethod.Post)) {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
     
    
     <fieldset>
-        
+
         @Html.HiddenFor(model => model.Post_ID, new { @Value = ViewData["ID"] })
-         
-        
+
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Text)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Text)
             @Html.ValidationMessageFor(model => model.Text)
-        </div> 
+        </div>
         <p>
             <input type="submit" value="Добавить" />
         </p>
     </fieldset>
 }
 
+}
+else
+{
+    <p> Возможность комментирования доступна только для зарегистрированных пользователей</p>
+}

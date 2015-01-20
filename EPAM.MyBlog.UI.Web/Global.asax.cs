@@ -1,9 +1,11 @@
-﻿using System;
+﻿using EPAM.MyBlog.UI.Web.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace EPAM.MyBlog.UI.Web
@@ -17,6 +19,7 @@ namespace EPAM.MyBlog.UI.Web
             log4net.Config.XmlConfigurator.Configure();
             GetDAL.DAL();
             AreaRegistration.RegisterAllAreas();
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

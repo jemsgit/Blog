@@ -14,10 +14,6 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         //
         // GET: /Post/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         
         public ActionResult Favorite() 
@@ -51,10 +47,14 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-        [ChildActionOnly]
+        
         public ActionResult MyPosts()
         {
-            return PartialView(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
+            if (Request.IsAjaxRequest())
+            {
+                return Json(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
+            }
+            return View(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
         }
 
         public ActionResult Posts(Guid Id)

@@ -3,3 +3,16 @@
 2015-01-20 16:12:02,026 [125] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
 2015-01-20 17:25:12,440 [78] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
 2015-01-20 17:25:35,901 [77] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-20 21:10:02,564 [50] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-20 22:01:13,288 [174] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-20 22:50:19,938 [45] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: sobaka
+2015-01-20 22:50:41,897 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: d62e1f01-eb81-4410-b536-5fa9e409e77d пользователя: 
+2015-01-20 22:50:41,898 [46] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: d62e1f01-eb81-4410-b536-5fa9e409e77dу пользователя: sobaka
+2015-01-20 23:28:34,347 [33] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-20 23:28:44,513 [33] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-20 23:35:04,937 [23] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: f029978d-3f7e-49c2-b8c4-313e28ee382c к посту: bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-20 23:35:04,954 [23] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: sobaka к посту: bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-20 23:35:13,290 [28] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-20 23:35:36,343 [44] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 22f45bfc-613d-4bde-9f53-ef567e68fd15 пользователя: sobaka
+2015-01-20 23:35:36,344 [44] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 22f45bfc-613d-4bde-9f53-ef567e68fd15в избранное пользователя: sobaka
+2015-01-20 23:41:58,184 [26] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: 

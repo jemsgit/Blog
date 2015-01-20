@@ -10,4 +10,3 @@ C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\Entities\bin\Debug\log4n
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\Entities\bin\Debug\log4net.xml
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\Entities\obj\Debug\Entities.dll
 C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\Entities\obj\Debug\Entities.pdb
-C:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache

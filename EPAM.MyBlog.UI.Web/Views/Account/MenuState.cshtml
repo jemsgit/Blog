@@ -4,20 +4,20 @@
                   <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Посты <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("Index", "Post")">Мои посты</a></li>
-                            <li><a href="@Url.Action("Favorite", "Post")">Избранное</a></li>
-                            <li><a href="@Url.Action("News", "Post")">Лента</a></li>
+                            <li><a href="@Url.Action("MyPosts", "Post")" id="my_posts">Мои посты</a></li>
+                            <li><a href="@Url.Action("Favorite", "Post")" id="favorite">Избранное</a></li>
+                            <li><a href="@Url.Action("News", "Post")" id="my_news">Лента</a></li>
                         </ul>
                   </li>
                   <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Аккаунт <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("AboutMe", "Account")">О себе</a></li>
-                            <li><a href="@Url.Action("DeleteAc", "Account")">Удалить аккаунт</a></li>
+                            <li><a href="@Url.Action("AboutMe", "Account")" id="about_me">О себе</a></li>
+                            <li><a href="@Url.Action("DeleteAc", "Account")" id="delete_me">Удалить аккаунт</a></li>
                         </ul>
                   </li>
-                  <li><a href="@Url.Action("Help", "Home")">Помощь</a></li>
-                  <li><a href="@Url.Action("Index", "Search")">Поиск</a></li> 
+                  <li><a href="@Url.Action("Help", "Home")" id="help">Помощь</a></li>
+                  <li><a href="@Url.Action("Index", "Search")" id="searchpost">Поиск</a></li> 
             @if (User.IsInRole("Moder"))
                 {
                    @Html.Partial("~/Views/Admin/ModerMenu.cshtml")
@@ -30,5 +30,7 @@
 }
 else
 {
-
+    <ul class="nav navbar-nav">
+        <li><a href="@Url.Action("Index", "Search")" id="search">Поиск</a></li>
+    </ul> 
 }

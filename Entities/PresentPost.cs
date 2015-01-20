@@ -14,8 +14,6 @@ namespace Entities
         private string title;
         private Guid id;
 
-        public PresentPost()
-        { }
 
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace EPAM.MyBlog.UI.Web.Models
        /// <summary>
        /// Модель имеет поля Логин,Пароль и Запомнить_меня и такие же переменные
        /// </summary>
+
+        private static ILog logger = LogManager.GetLogger(typeof(LoginModel));
 
         [Display(Name= "Логин")]
         [Required(ErrorMessage="Поле {0} не заполнено")]
@@ -58,6 +61,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             if (Pass == null)
             {
                 Result = "Пользователя с таким логином не существует!";
+                logger.Info("Попытка входа в систему под несущетвующим логином: " + this.Name);
                 return false;
             }
             else
@@ -66,11 +70,13 @@ namespace EPAM.MyBlog.UI.Web.Models
                 {
                     Result = "Welcome";
                     FormsAuthentication.RedirectFromLoginPage(this.Name, this.Remember);
+                    logger.Info("Вход в систему пользователя: " + this.Name);
                     return true;
                 }
                 else
                 {
                     Result = "Неверный пароль";
+                    logger.Info("Пользователь: " + this.Name + " ввел некорректный пароль");
                     return false;
                 }
             }

@@ -14,7 +14,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         /// <summary>
         /// Включаем логгер
         /// </summary>
-        ILog logger = LogManager.GetLogger(typeof(RegModel));
+        private static ILog logger = LogManager.GetLogger(typeof(RegModel));
 
         /// <summary>
         /// Поля и переменные: Логин, пароль,подтверждение пароля, электронный адрес. 
@@ -113,7 +113,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             if (Pass != null)
             {
                 Result = "Пользователь с таким логином уже существует!";
-                logger.Info("Попытка регистрации существующего логина" + this.Name);
+                logger.Info("Попытка регистрации существующего логина " + this.Name);
                 return false;
             }
             else
@@ -121,6 +121,7 @@ namespace EPAM.MyBlog.UI.Web.Models
                 if (GetDAL.dal.CheckMail(this.Email))
                 {
                     Result = "Данный E-mail уже зарегистрирован!";
+                    logger.Info("Попытка регистрации существующего E-mail: " + this.Email);
                     return false;
                 }
                 else
@@ -131,11 +132,13 @@ namespace EPAM.MyBlog.UI.Web.Models
                     {
                         FormsAuthentication.RedirectFromLoginPage(this.Name, false);
                         Result = "Вы зарегистрированы!";
+                        logger.Info("Зарегистрирован новый пользователь: " + this.Name);
                         return true;
                     }
                     else
                     {
                         Result = "Упс, что-то пошло не так! Попробуйте, пажалуйста, еще раз.";
+                        logger.Error("Ошибка регистрации пользователя c E-mail:" + this.Email + " и логином: " + this.Name);
                         return false;
                     }
                 }
@@ -150,7 +153,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             if (Pass != null)
             {
                 Result = "Пользователь с таким логином уже существует!";
-                logger.Info("Попытка регистрации существующего логина" + this.Name);
+                logger.Info("Попытка регистрации Админитсратором существующего логина: " + this.Name);
                 return false;
             }
             else
@@ -158,6 +161,7 @@ namespace EPAM.MyBlog.UI.Web.Models
                 if (GetDAL.dal.CheckMail(this.Email))
                 {
                     Result = "Данный E-mail уже зарегистрирован!";
+                    logger.Info("Попытка регистрации Администратором существующего E-mail: " + this.Email);
                     return false;
                 }
                 else
@@ -167,11 +171,13 @@ namespace EPAM.MyBlog.UI.Web.Models
                     if (answer)
                     {
                         Result = "Вы зарегистрированы!";
+                        logger.Info("Администратор Зарегистрировал нового пользователя: " + this.Name);
                         return true;
                     }
                     else
                     {
                         Result = "Упс, что-то пошло не так! Попробуйте, пажалуйста, еще раз.";
+                        logger.Error("Ошибка регистрации Администратором пользователя c E-mail:" + this.Email + " и логином: " + this.Name);
                         return false;
                     }
                 }

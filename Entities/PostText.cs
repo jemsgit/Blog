@@ -22,9 +22,6 @@ namespace Entities
         private DateTime time;
         private string tags;
 
-        public PostText()
-        {
- 
-        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EPAM.MyBlog.UI.Web.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 {
     public class AdminController : Controller
     {
+        private static ILog logger = LogManager.GetLogger(typeof(AdminController));
         //
         // GET: /Admin/
 
@@ -60,15 +62,19 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 case "addUser":
                     UserAdminModel.AddUser(names);
+                    logger.Info("Изменены роли на -Пользователь- у пользователей: " + string.Join(",", names.ToArray()));
                     break;
                 case "addModer":
                     UserAdminModel.AddModer(names);
+                    logger.Info("Изменены роли на -Модератор- у пользователей: " + string.Join(",", names.ToArray()));
                     break;
                 case "addAdmin":
                     UserAdminModel.AddAdmin(names);
+                    logger.Info("Изменены роли на -Администратор- у пользователей: " + string.Join(",", names.ToArray()));
                     break;
                 case "Delete":
                     UserAdminModel.DeleteUsers(names);
+                    logger.Info("Удалены учетные записи пользователей: " + string.Join(",", names.ToArray()));
                     break;
                 default:
                     break;
@@ -120,6 +126,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (PostModel.Delete(id))
                 {
+                    logger.Info("Удаление поста " + id);
                     if (!string.IsNullOrWhiteSpace(ReturnUrl))
                         return Redirect(ReturnUrl);
                     else
@@ -129,10 +136,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 else
                 {
+                    logger.Error("Ошибка удаления поста " + id);
                     return View();
                 }
             }
-            return View();
+            else
+            {
+                logger.Debug("Невалидная модель удаления поста " + id);
+                return View();
+            }
         }
 
         /// <summary>
@@ -159,6 +171,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (CommentModel.Delete(id))
                 {
+                    logger.Info("Удаление комментария " + id);
                     if (!string.IsNullOrWhiteSpace(ReturnUrl))
                         return Redirect(ReturnUrl);
                     else
@@ -168,6 +181,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 else
                 {
+                    logger.Error("Ошибка удаления комментария " + id);
                     return View();
                 }
             }
@@ -191,7 +205,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 string Result;
                 if (model.RegByAdmin(out Result))
                 {
-
+                    logger.Info("Регистрация Администратором пользователя с логином: " + model.Name);
                     if (!string.IsNullOrWhiteSpace(ReturnUrl))
                     {
                         return Redirect(ReturnUrl);
@@ -203,6 +217,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 else
                 {
+                    logger.Error("Ошибка регистрации Администратором пользователя с логином: " + model.Name);
                     ViewData["Result"] = Result;
                 }
             }

@@ -20,8 +20,6 @@ namespace Entities
         private Guid id;
         private Guid post_id;
 
-        public Comment()
-        { }
 
     }
 }

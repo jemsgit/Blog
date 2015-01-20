@@ -3,10 +3,15 @@
     WebGrid grid = new WebGrid(Model);
 }
 
-<h2> Лента </h2>
+<div class="col-sm-12 title">
+    <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4">
+        <p>Лента</p>
+    </div>
+</div>s
 
 @grid.GetHtml(columns: new [] {
-    grid.Column("Title",header: " "),
+    grid.Column("Title",
+                header: " "),
     grid.Column("",
                     header: "",
                     format: @<text>
@@ -14,4 +19,5 @@
                              </text>
 )
 })
+
 

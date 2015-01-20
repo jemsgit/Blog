@@ -1,4 +1,5 @@
 ﻿using EPAM.MyBlog.UI.Web.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,14 @@ using System.Web.Security;
 
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
+
+
     [Authorize(Roles = "User")]
     public class AccountController : Controller
     {
+
+        private static ILog logger = LogManager.GetLogger(typeof(AccountController));
+
         //
         // GET: /Account/
         [AllowAnonymous]
@@ -114,6 +120,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (model.Confirm)
                 {
                     LoginModel.LogOut();
+                    logger.Info("Пользователь вышел из системы: " + User.Identity.Name);
+
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -159,6 +167,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     LoginModel.LogOut();
                     LoginModel.SaveReason(model.Reason);
                     LoginModel.DeleteUser(User.Identity.Name);
+                    logger.Info("Пользователь удалил свой аккаунт с логином: " + User.Identity.Name);
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -211,15 +220,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.SetSex())
                 {
+                    logger.Info("Пользователь: " + User.Identity.Name + " изменил информацию о поле");
                     return RedirectToAction("AboutMe", "Account");
                 }
                 else
                 {
+                    logger.Error("Ошибка при изменении информации о поле пользователя: " + User.Identity.Name);
                     return View(model);
                 }
             }
             else
             {
+                logger.Debug("Невалидная модель при изменении данных о поле пользователя: " + User.Identity.Name);
                 return View(model);
             }
         }
@@ -242,15 +254,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.SetDate())
                 {
+                    logger.Info("Пользователь: " + User.Identity.Name + " изменил дату рождения");
                     return RedirectToAction("AboutMe", "Account");
                 }
                 else
                 {
+                    logger.Error("Ошибка при изменении даты рождения пользователя: " + User.Identity.Name);
                     return View(model);
                 }
             }
             else
             {
+                logger.Debug("Невалидная модель при изменении даты рождения пользователе: " + User.Identity.Name);
                 return View(model);
             }
         }
@@ -275,15 +290,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.SetName())
                 {
+                    logger.Info("Пользователь: " + User.Identity.Name + " изменил имя");
                     return RedirectToAction("AboutMe", "Account");
                 }
                 else
                 {
+                    logger.Error("Ошибка при изменении имени пользователя: " + User.Identity.Name);
                     return View(model);
                 }
             }
             else
             {
+                logger.Debug("Невалидная модель при изменении имени пользователя: " + User.Identity.Name);
                 return View(model);
             }
         }
@@ -309,15 +327,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.SetAbout())
                 {
+                    logger.Info("Пользователь: " + User.Identity.Name + " изменил информцияю о себе");
                     return RedirectToAction("AboutMe", "Account");
                 }
                 else
                 {
+                    logger.Error("Ошибка при изменении информации о себе пользователя: " + User.Identity.Name);
                     return View(model);
                 }
             }
             else
             {
+                logger.Debug("Невалидная модель при изменении информации о себе пользователя: " + User.Identity.Name);
                 return View(model);
             }
         }

@@ -1,0 +1,5 @@
+2015-01-20 14:37:28,883 [28] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Попытка регистрации существующего логинаAdmin2
+2015-01-20 14:38:05,449 [29] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Попытка регистрации существующего логинаAdmin2
+2015-01-20 16:12:02,026 [125] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-20 17:25:12,440 [78] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-20 17:25:35,901 [77] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2

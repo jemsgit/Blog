@@ -5,11 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using log4net;
 
 namespace EPAM.MyBlog.DAL.DB
 {
     public class DAL
     {
+
+        private static ILog logger = LogManager.GetLogger(typeof(DAL));
+
         public static string ConnectionString;
 
         static DAL()
@@ -19,6 +23,7 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
         #region Account
+
 
         public Entities.User Login(string Name)
         {
@@ -52,9 +57,13 @@ namespace EPAM.MyBlog.DAL.DB
                 int num = command.ExecuteNonQuery();
                 if (num == 1)
                 {
+                    logger.Info("DB: Добавлен новый пользователь: " + user.Name);
                     return true;
                 }
-                return false;
+                else {
+                    logger.Error("DB: Ошибка добавления пользователя: " + user.Name);
+                    return false;
+                }
             }
         }
 
@@ -76,6 +85,7 @@ namespace EPAM.MyBlog.DAL.DB
                 }
                 if (count < 1)
                 {
+                    logger.Info("DB: Отсутствует пароль для пользователя: " + Name);
                     return Pass = null;
                 }
                 else
@@ -101,10 +111,12 @@ namespace EPAM.MyBlog.DAL.DB
                 }
                 if (count == 1)
                 {
+                    logger.Info("DB: Существует пользователь с данным e-mail адресом: " + Email);
                     return true;
                 }
                 else
                 {
+                    logger.Info("DB: Не существует пользвателя с данным e-mail адресом: " + Email);
                     return false;
                 }
             }
@@ -120,18 +132,33 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Пользователь удален: " + name);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка удаления пользователя: " + name);
                     return false;
                 }
             }
         }
 
+        public void SaveReason(string reason)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO dbo.Reasons VALUES (@Reason)", con);
+                command.Parameters.Add(new SqlParameter("@Reason", reason));
+                con.Open();
+            }
+        }
+
+
         #endregion
 
         #region Posts
+
+
         public bool AddPost(Entities.PostText post, string login)
         {
             string[] split = post.Tags.Split(' ');
@@ -149,6 +176,8 @@ namespace EPAM.MyBlog.DAL.DB
                 }
             }
 
+
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("INSERT INTO dbo.Posts (User_Name, Post_Id, Post_Title, Post_Text, Time) VALUES (@Login,CAST(@ID AS NVARCHAR(36)), @Title, @Text, @Time)", con);
@@ -162,11 +191,34 @@ namespace EPAM.MyBlog.DAL.DB
 
                 if (num == 1)
                 {
+                    logger.Info("DB: Добавлен пост: " + post.Id + " пользователя: " + post.Author);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка добавления поста: " + post.Id + " пользователя: " + post.Author);
                     return false;
+                }
+            }
+
+        }
+
+        public IEnumerable<Entities.PresentPost> GetAllPostsTitle()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts ORDER BY Time DESC", con);
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
                 }
             }
 
@@ -283,10 +335,12 @@ namespace EPAM.MyBlog.DAL.DB
                         }
                     }
 
+                    logger.Info("DB: Изменен пост: " + post.Id + " пользователя: " + post.Author);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка изменения поста: " + post.Id + " пользователя: " + post.Author);
                     return false;
                 }
             }
@@ -312,6 +366,34 @@ namespace EPAM.MyBlog.DAL.DB
                         con2.Close();
                     }
 
+                    logger.Info("DB: Удален пост: " + Id);
+                    return true;
+                }
+                else
+                {
+                    logger.Error("DB: Ошибка удаления поста: " + Id);
+                    return false;
+                }
+            }
+
+        }
+
+        public bool CheckFavorite(string name, Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) AS C FROM Blog.dbo.Favorite WHERE Post_Id = @Id AND Login=@Login", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                var reader = command.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = (int)reader["C"];
+                }
+                if (count > 0)
+                {
                     return true;
                 }
                 else
@@ -319,30 +401,77 @@ namespace EPAM.MyBlog.DAL.DB
                     return false;
                 }
             }
-
         }
+
+        public bool AddFavorite(string name, Guid Id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO Blog.dbo.Favorite (Blog.dbo.Favorite.Login, Blog.dbo.Favorite.Post_Id) VALUES (@Login, @Id)", con);
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    logger.Info("DB: Пост добавлен в Избранное: " + Id + " пользователя: " + name);
+                    return true;
+                }
+                else
+                {
+                    logger.Error("DB: Ошибка добавления поста в избранного: " + Id + " пользователя: " + name);
+                    return false;
+                }
+            }
+        }
+
+        public IEnumerable<Entities.PresentPost> GetAllFavorite(string name)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Posts.Post_Title, Posts.Post_Id FROM dbo.Posts INNER JOIN dbo.Favorite ON Favorite.Post_Id = Posts.Post_Id WHERE Login = @Login ORDER BY Time DESC", con);
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    yield return new Entities.PresentPost()
+                    {
+                        Id = new Guid((string)reader["Post_Id"]),
+                        Title = (string)reader["Post_Title"]
+                    };
+
+                }
+            }
+        }
+
+        public bool DeletePostFromFav(string name, Guid id)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.Favorite WHERE Post_Id = @Id AND Login = @Login", con);
+                command.Parameters.Add(new SqlParameter("@Id", id));
+                command.Parameters.Add(new SqlParameter("@Login", name));
+                con.Open();
+                int count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    logger.Info("DB: Удален пост из избранного: " + id + " пользователя: " + name);
+                    return true;
+                }
+                else
+                {
+                    logger.Error("DB: Ошибка удаления поста из избранного: " + id + " пользователя: " + name);
+                    return false;
+                }
+            }
+        }
+
 
         #endregion
 
         #region Roles
-        public string[] GetAllRoles()
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("SELECT Title FROM dbo.Roles", con);
-                con.Open();
-                string[] roles = new string[command.ExecuteNonQuery()];
-                int count = 0;
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    roles[count] = (string)reader["Title"];
-                    count++;
-                }
-                return roles;
-            }
-
-        }
 
         public int GetRoleForUser(string username)
         {
@@ -365,6 +494,7 @@ namespace EPAM.MyBlog.DAL.DB
 
         #region Comments
 
+
         public bool AddComment(Entities.Comment comment)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -379,10 +509,12 @@ namespace EPAM.MyBlog.DAL.DB
                 int num = command.ExecuteNonQuery();
                 if (num == 1)
                 {
+                    logger.Info("DB: Добавлен комментарий: " + comment.ID + " к посту: " + comment.Post_ID);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка добавления комментария: " + comment.ID + " к посту: " + comment.Post_ID);
                     return false;
                 }
             }
@@ -446,18 +578,22 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Удален комментарий: " + id);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка удаления комментария: " + id);
                     return false;
                 }
             }
         }
 
+
         #endregion
 
         #region Users
+
 
         public IEnumerable<Entities.User> GetAllUsers()
         {
@@ -536,21 +672,6 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
-        #endregion
-
-
-
-        public void SaveReason(string reason)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("INSERT INTO dbo.Reasons VALUES (@Reason)", con);
-                command.Parameters.Add(new SqlParameter("@Reason", reason));
-                con.Open();
-            }
-        }
-
-
         public bool SaveSex(Entities.UserInfo info)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -562,10 +683,12 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Данные о поле пользователя сохранены: " + info.Login);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка записи данных о поле пользователя: " + info.Login);
                     return false;
                 }
             }
@@ -590,10 +713,12 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Данные о дате рождения пользователя сохранены: " + info.Login);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка записи данных о дате рождения пользователя: " + info.Login);
                     return false;
                 }
             }
@@ -610,10 +735,12 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Данные об имени пользователя сохранены: " + info.Login);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка записи данных об имени пользователя: " + info.Login);
                     return false;
                 }
             }
@@ -630,10 +757,12 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Данные о пользователе сохранены: " + info.Login);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка записи данных о пользователе: " + info.Login);
                     return false;
                 }
             }
@@ -682,7 +811,6 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
-
         public bool AddAvatar(Entities.Avatar avatar)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -695,35 +823,22 @@ namespace EPAM.MyBlog.DAL.DB
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                 {
+                    logger.Info("DB: Аватр добавлен: " + avatar.Login);
                     return true;
                 }
                 else
                 {
+                    logger.Error("DB: Ошибка добавления аватара: " + avatar.Login);
                     return false;
                 }
             }
         }
 
-        public IEnumerable<Entities.PresentPost> GetAllPostsTitle()
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("SELECT Post_Title, Post_Id FROM dbo.Posts ORDER BY Time DESC", con);
-                con.Open();
-                var reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    yield return new Entities.PresentPost()
-                    {
-                        Id = new Guid((string)reader["Post_Id"]),
-                        Title = (string)reader["Post_Title"]
-                    };
+        #endregion
 
-                }
-            }
+        #region Tags
 
-        }
 
         public IEnumerable<Entities.PresentPost> GetResultOfSearchTag(string p)
         {
@@ -745,7 +860,6 @@ namespace EPAM.MyBlog.DAL.DB
                 }
             }
         }
-
 
         public IEnumerable<Entities.PresentPost> GetResultOfSearch(string p)
         {
@@ -784,50 +898,10 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
-        public bool CheckFavorite(string name, Guid Id)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("SELECT COUNT(*) AS C FROM Blog.dbo.Favorite WHERE Post_Id = @Id AND Login=@Login", con);
-                command.Parameters.Add(new SqlParameter("@Id", Id));
-                command.Parameters.Add(new SqlParameter("@Login", name));
-                con.Open();
-                var reader = command.ExecuteReader();
-                int count = 0;
-                while (reader.Read())
-                {
-                    count = (int)reader["C"];
-                }
-                if (count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
 
-        public bool AddFavorite(string name, Guid Id)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("INSERT INTO Blog.dbo.Favorite (Blog.dbo.Favorite.Login, Blog.dbo.Favorite.Post_Id) VALUES (@Login, @Id)", con);
-                command.Parameters.Add(new SqlParameter("@Id", Id));
-                command.Parameters.Add(new SqlParameter("@Login", name));
-                con.Open();
-                int count = command.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        #endregion
+
+        #region Admin
 
 
         public void AddUser(List<string> names)
@@ -835,15 +909,15 @@ namespace EPAM.MyBlog.DAL.DB
             foreach (var item in names)
             {
 
-                    using (SqlConnection con = new SqlConnection(ConnectionString))
-                    {
-                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '3' WHERE Login = @Login", con);
-                        command.Parameters.Add(new SqlParameter("@Login", item));
-                        con.Open();
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '3' WHERE Login = @Login", con);
+                    command.Parameters.Add(new SqlParameter("@Login", item));
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                }
+
             }
         }
 
@@ -852,15 +926,15 @@ namespace EPAM.MyBlog.DAL.DB
             foreach (var item in names)
             {
 
-                    using (SqlConnection con = new SqlConnection(ConnectionString))
-                    {
-                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '2' WHERE Login = @Login", con);
-                        command.Parameters.Add(new SqlParameter("@Login", item));
-                        con.Open();
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '2' WHERE Login = @Login", con);
+                    command.Parameters.Add(new SqlParameter("@Login", item));
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                }
+
             }
         }
 
@@ -868,14 +942,14 @@ namespace EPAM.MyBlog.DAL.DB
         {
             foreach (var item in names)
             {
-                    using (SqlConnection con = new SqlConnection(ConnectionString))
-                    {
-                        SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '1' WHERE Login = @Login", con);
-                        command.Parameters.Add(new SqlParameter("@Login", item));
-                        con.Open();
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("UPDATE dbo.Users SET Role_Id = '1' WHERE Login = @Login", con);
+                    command.Parameters.Add(new SqlParameter("@Login", item));
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                }
             }
         }
 
@@ -895,46 +969,8 @@ namespace EPAM.MyBlog.DAL.DB
         }
 
 
+        #endregion
 
-        public IEnumerable<Entities.PresentPost> GetAllFavorite(string name)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("SELECT Posts.Post_Title, Posts.Post_Id FROM dbo.Posts INNER JOIN dbo.Favorite ON Favorite.Post_Id = Posts.Post_Id WHERE Login = @Login ORDER BY Time DESC", con);
-                command.Parameters.Add(new SqlParameter("@Login", name));
-                con.Open();
-                var reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    yield return new Entities.PresentPost()
-                    {
-                        Id = new Guid((string)reader["Post_Id"]),
-                        Title = (string)reader["Post_Title"]
-                    };
-
-                }
-            }
-        }
-
-        public bool DeletePostFromFav(string name, Guid id)
-        {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("DELETE FROM dbo.Favorite WHERE Post_Id = @Id AND Login = @Login", con);
-                command.Parameters.Add(new SqlParameter("@Id", id));
-                command.Parameters.Add(new SqlParameter("@Login", name));
-                con.Open();
-                int count = command.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
     } 
 }

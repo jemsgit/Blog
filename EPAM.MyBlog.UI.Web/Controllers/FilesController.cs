@@ -1,4 +1,5 @@
 ﻿using EPAM.MyBlog.UI.Web.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 {
     public class FilesController : Controller
     {
+
+        private static ILog logger = LogManager.GetLogger(typeof(FilesController));
         //
         // GET: /Files/
 
@@ -28,20 +31,38 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         {
             var model = new AvatarModel();
             model.Login = User.Identity.Name;
-            
-            if (ModelState.IsValid)
+
+            if (File != null) 
             {
-                if (File != null)
+                if (!File.ContentType.Contains("image"))
+                {
+                    logger.Error("Попытка загрузки не image в качетсве аватара пользователем: " + User.Identity.Name);
+                    return View();
+                }
+
+                if (ModelState.IsValid)
                 {
                     model.MimeType = File.ContentType;
                     model.Avatar = new byte[File.ContentLength];
+
                     File.InputStream.Read(model.Avatar, 0, File.ContentLength);
+                    model.AddPhoto();
+
+                    logger.Info("Загрузка нового аватара пользователем: " + User.Identity.Name);
+                    return RedirectToAction("AboutMe", "Account");
                 }
 
-                model.AddPhoto();
-                return RedirectToAction("AboutMe", "Account");
+                else
+                {
+                    logger.Debug("Модель аватара невалидна у пользователя: " + User.Identity.Name);
+                    return View();
+                }
             }
+
             return View();
+
+            
+            
             
         }
 
@@ -50,6 +71,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             if (name != null)
             {
                 var info = AvatarModel.GetInfo(name);
+                logger.Info("Загрузка аватара из базы для пользователя: " + User.Identity.Name);
                 return File(info.Avatar, info.MimeType);
             }
             else

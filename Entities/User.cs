@@ -24,7 +24,5 @@ namespace Entities
         private int role_id;
         private string role;
 
-        public User()
-        { }
     }
 }

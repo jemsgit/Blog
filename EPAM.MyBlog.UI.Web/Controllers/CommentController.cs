@@ -1,4 +1,5 @@
 ﻿using EPAM.MyBlog.UI.Web.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 {
     public class CommentController : Controller
     {
+        private static ILog logger = LogManager.GetLogger(typeof(CommentController));
         //
         // GET: /Comment/
         
@@ -34,10 +36,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     CommentModel.Comments.Add(comment);
                     ViewData["List"] = CommentModel.Comments;
                     ModelState.Clear();
+                    logger.Info("Добавлен комментарий пользователя: " + comment.Author + " к посту: " + comment.Post_ID);
                     return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }
                 else
                 {
+                    logger.Error("ошибка добавления комментария пользователя: " + comment.Author + " к посту: " + comment.Post_ID);
                     ViewData["List"] = CommentModel.Comments;
                     return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }

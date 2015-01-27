@@ -13,3 +13,4 @@
 2015-01-28 00:30:01,557 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста cd2dde95-56e3-418d-9595-83f0792604bc
 2015-01-28 00:45:22,417 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 05a6ece9-4bf6-4b87-8073-0b4303c3abd3
 2015-01-28 00:45:22,432 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 05a6ece9-4bf6-4b87-8073-0b4303c3abd3
+2015-01-28 02:19:06,245 [224] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2

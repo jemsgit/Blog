@@ -1,13 +1,14 @@
-﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
+﻿@model List<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
 @{
-    WebGrid grid = new WebGrid(Model);
+    WebGrid grid = new WebGrid(ModelcanPage:true, rowsPerPage:15);
+    grid.Pager(WebGridPagerModes.NextPrevious);
 }
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Результаты поиска</div>
 </div>
 
-@if(Model != null)
+@if (Model.Count != 0)
 {
 @grid.GetHtml(columns: new [] {
     grid.Column("Title",
@@ -27,3 +28,5 @@ else
 {
     <p>Поиск не дал результатов</p>
 }
+
+@Html.ActionLink("Вернуться к поиску", "Index", "Search")

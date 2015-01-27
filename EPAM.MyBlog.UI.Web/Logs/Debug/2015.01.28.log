@@ -1,0 +1,15 @@
+2015-01-28 00:11:00,559 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 8bb9fad2-0a7c-4d14-977c-c095ee5a8460
+2015-01-28 00:11:09,184 [19] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 8bb9fad2-0a7c-4d14-977c-c095ee5a8460
+2015-01-28 00:13:16,666 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 7f509c80-ff12-4457-bb80-a9575206f740
+2015-01-28 00:13:22,806 [19] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 7f509c80-ff12-4457-bb80-a9575206f740
+2015-01-28 00:21:59,138 [9] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-28 00:21:59,154 [9] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-28 00:22:32,833 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 8bb9fad2-0a7c-4d14-977c-c095ee5a8460
+2015-01-28 00:22:32,834 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 8bb9fad2-0a7c-4d14-977c-c095ee5a8460
+2015-01-28 00:22:44,135 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 00:23:09,213 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 155020fc-c16d-48fe-90f0-151ba2fbf5b1
+2015-01-28 00:23:09,213 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 155020fc-c16d-48fe-90f0-151ba2fbf5b1
+2015-01-28 00:30:01,546 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: cd2dde95-56e3-418d-9595-83f0792604bc
+2015-01-28 00:30:01,557 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста cd2dde95-56e3-418d-9595-83f0792604bc
+2015-01-28 00:45:22,417 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 05a6ece9-4bf6-4b87-8073-0b4303c3abd3
+2015-01-28 00:45:22,432 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 05a6ece9-4bf6-4b87-8073-0b4303c3abd3

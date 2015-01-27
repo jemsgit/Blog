@@ -165,3 +165,10 @@ p {
     width : 400px;
     height : 100px;
 }
+
+.gridtitle {
+    width:90%;
+}
+.gridbutton {
+    width:20%;
+}

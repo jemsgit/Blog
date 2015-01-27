@@ -3,16 +3,21 @@
     WebGrid grid = new WebGrid(Model);
 }
 
-<h2> Результаты поиска </h2>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Результаты поиска</div>
+</div>
 
 @if(Model != null)
 {
 @grid.GetHtml(columns: new [] {
-    grid.Column("Title",header: " "),
+    grid.Column("Title",
+                    style: "gridtitle",
+                    header: " "),
     grid.Column("",
+                    style: "gridbutton",
                     header: "",
                     format: @<text>
-                                @Html.ActionLink("Читать", "Posts", "Post", new { id=item.Id }, null)
+                                @Html.ActionLink("Читать", "Posts", "Post", new { id=item.Id }, new {@class="btn btn-default"})
                              </text>
 )
 })

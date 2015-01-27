@@ -86,6 +86,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult UserPosts(string name)
         {
+            ViewData["name"] = name;
             return View(PresentPostModel.GetAllPostsTitle(name));
         }
 
@@ -102,37 +103,29 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult UserComments(string name)
         {
+            ViewData["name"] = name;
             return View(CommentModel.GetAllComments(name));
         }
 
 
-        public ActionResult DeletePost(Guid Id, string ReturnUrl)
+        public ActionResult DeletePost(Guid Id, string name)
         {
-            if (string.IsNullOrWhiteSpace(ReturnUrl))
-            {
-                ReturnUrl = "";
-            }
             var post = PostModel.GetPostById(Id);
             ViewData["Title"] = post.Title;
-            ViewData.Add("ReturnUrl", ReturnUrl);
+            ViewData["name"] = name;
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult DeletePost(Guid id, ConfirmModel model, string ReturnUrl)
+        public ActionResult DeletePost(Guid id, ConfirmModel model, string name)
         {
             if (ModelState.IsValid)
             {
                 if (PostModel.Delete(id))
                 {
                     logger.Info("Удаление поста " + id);
-                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
-                        return Redirect(ReturnUrl);
-                    else
-                    {
-                        return RedirectToAction("Users", "Admin");
-                    }
+                    return RedirectToAction("UserPosts", "Admin", new {name = name});
                 }
                 else
                 {
@@ -153,31 +146,22 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         /// <param name="Id"></param>
         /// <param name="ReturnUrl"></param>
         /// <returns></returns>
-        public ActionResult DeleteComment(Guid Id, string ReturnUrl)
+        public ActionResult DeleteComment(Guid Id, string name)
         {
-            if (string.IsNullOrWhiteSpace(ReturnUrl))
-            {
-                ReturnUrl = "";
-            }
-            ViewData.Add("ReturnUrl", ReturnUrl);
+            ViewData["name"] = name;
             return View();
         }
 
 
         [HttpPost]
-        public ActionResult DeleteComment(Guid id, ConfirmModel model, string ReturnUrl)
+        public ActionResult DeleteComment(Guid id, ConfirmModel model, string name)
         {
             if (ModelState.IsValid)
             {
                 if (CommentModel.Delete(id))
                 {
                     logger.Info("Удаление комментария " + id);
-                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
-                        return Redirect(ReturnUrl);
-                    else
-                    {
-                        return RedirectToAction("Users", "Admin");
-                    }
+                    return RedirectToAction("UserComments", "Admin", new {name = name});
                 }
                 else
                 {

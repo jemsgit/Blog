@@ -572,8 +572,9 @@ namespace EPAM.MyBlog.DAL.DB
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 string text = "НЛО прилетело и оставило эту запись";
-                SqlCommand command = new SqlCommand("UPDATE dbo.Comments SET Text = @Text", con);
+                SqlCommand command = new SqlCommand("UPDATE dbo.Comments SET Text = @Text WHERE dbo.Comments.Comment_ID = @Id", con);
                 command.Parameters.Add(new SqlParameter("@Text", text));
+                command.Parameters.Add(new SqlParameter("@Id", id));
                 con.Open();
                 int count = command.ExecuteNonQuery();
                 if (count > 0)

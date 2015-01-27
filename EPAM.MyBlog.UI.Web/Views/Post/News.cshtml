@@ -1,21 +1,24 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
 @{
-    WebGrid grid = new WebGrid(Model);
+    WebGrid grid = new WebGrid(Model,canPage:true, rowsPerPage:15);
+    grid.Pager(WebGridPagerModes.NextPrevious);
 }
 
 <div class="col-sm-12 title">
     <div class="col-sm-6 col-md-6 col-lg-6 col-sx-6 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4">
         <p>Лента</p>
     </div>
-</div>s
+</div>
 
 @grid.GetHtml(columns: new [] {
     grid.Column("Title",
+                style: "gridtitle",
                 header: " "),
     grid.Column("",
+                    style: "gridbutton",
                     header: "",
                     format: @<text>
-                                @Html.ActionLink("Читать", "Posts", new { id=item.Id })
+                                @Html.ActionLink("Читать", "Posts", new { id=item.Id }, new {@class="btn btn-default"})
                              </text>
 )
 })

@@ -145,5 +145,23 @@ p {
 
 .btn{
     margin:5px 10px;
+
 }
 
+#srch-term {
+    width: 300px;
+    margin: 20px 20px;
+}
+
+.newpost > div{
+    padding-top: 10px;
+}
+
+#Title, #Tags {
+    width:75%
+}
+
+.editor-field textarea {
+    width : 400px;
+    height : 100px;
+}

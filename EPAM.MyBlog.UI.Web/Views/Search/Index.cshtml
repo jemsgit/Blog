@@ -1,16 +1,18 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.SearchModel
 
-@using (Html.BeginForm("Index", "Search")) {
+@using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-inline" }))
+{
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Поиск</legend>
+  <div class="form-group">
+    @Html.TextBoxFor(model => model.SearchText, new { type = "text", @class = "form-control", placeholder = "Search", id = "srch-term" })
+  </div>
+  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        <p>Для поиска статей по тегу наберите "#текст_тега"</p>
+        <p>Для поиска статей по тексту просто наберите текст</p>
+        </fieldset>
 
-<form role="search">
-        <div class="input-group">
-            @Html.TextBoxFor(model => model.SearchText, new { type="text", @class="form-control", placeholder="Search", name="srch-term", id="srch-term"})
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-</form>
 }
     

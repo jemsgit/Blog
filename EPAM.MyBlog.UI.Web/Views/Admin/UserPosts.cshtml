@@ -3,27 +3,25 @@
 @{ int c = 0;}
 
 <div class="row">
-    <p class="title title-top">Записи</p>
+    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Записи</div>
 </div>
-<table>
 
-    @foreach (var item in Model) 
-{
-    c++;
-    <tr>
-        <td>
-            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
 
-        </td>
-        <td>
-            @Html.ActionLink("Удалить", "DeletePost", new { id=item.Id }) |
-            
-        </td>
-    </tr>
 
+@foreach (var item in Model) 
+{   c++;
+    
+    <div class="row list">
+        <div class="col-sm-10 col-md-10 col-lg-10 col-sx-10">
+             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id }) 
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2">
+            @Html.ActionLink("Удалить", "DeletePost", new { id=item.Id }, new { @class="btn btn-default"})
+        </div>
+    </div>
+ 
     }
-
-</table>
 
 
 @if(c==0)

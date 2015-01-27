@@ -1,0 +1,35 @@
+2015-01-27 18:27:23,426 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-27 19:10:30,133 [33] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:13:34,940 [33] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:23:17,243 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:24:42,892 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:25:08,209 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:25:35,094 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 19:54:51,305 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 20:03:53,317 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 20:05:14,651 [27] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 21:07:20,490 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 05a6ece9-4bf6-4b87-8073-0b4303c3abd3 пользователя: 
+2015-01-27 21:09:03,803 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: b017e7d1-7f79-4249-a3eb-085f6d7059e3 пользователя: 
+2015-01-27 21:09:41,134 [27] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 4b95e976-edee-4dba-b867-c372c563922b пользователя: 
+2015-01-27 21:11:02,765 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: c6d70744-8522-4253-9f36-b296f74feba1 пользователя: 
+2015-01-27 21:38:36,446 [42] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 21:39:30,378 [22] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 21:39:38,972 [31] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 21:39:47,346 [31] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-27 21:39:57,428 [48] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-27 21:53:16,896 [43] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 78f5c678-04da-4efe-88ff-b34ebcc1f364 к посту: 4b95e976-edee-4dba-b867-c372c563922b
+2015-01-27 21:53:16,912 [43] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 4b95e976-edee-4dba-b867-c372c563922b
+2015-01-27 21:59:40,997 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: b017e7d1-7f79-4249-a3eb-085f6d7059e3 пользователя: Admin2
+2015-01-27 21:59:41,011 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: b017e7d1-7f79-4249-a3eb-085f6d7059e3в избранное пользователя: Admin2
+2015-01-27 22:01:25,081 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 22:02:22,057 [40] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: aa51086d-364d-4a14-aec9-8aac8ebcc9f5
+2015-01-27 22:02:22,058 [40] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария aa51086d-364d-4a14-aec9-8aac8ebcc9f5
+2015-01-27 22:14:29,950 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменены роли на -Администратор- у пользователей: Admin1
+2015-01-27 22:14:38,730 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменены роли на -Модератор- у пользователей: Moder1
+2015-01-27 22:30:44,465 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 41ed63e4-bcce-41aa-9543-7a4883d37b95 к посту: c6d70744-8522-4253-9f36-b296f74feba1
+2015-01-27 22:30:44,477 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: c6d70744-8522-4253-9f36-b296f74feba1
+2015-01-27 22:46:05,682 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 21acafa2-7c74-470d-b5a4-d224bad9eccf
+2015-01-27 22:46:05,683 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 21acafa2-7c74-470d-b5a4-d224bad9eccf
+2015-01-27 23:00:26,423 [32] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-27 23:04:11,358 [44] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 05960caf-2ead-41d2-b055-a4ffa6f435d8
+2015-01-27 23:04:11,359 [44] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 05960caf-2ead-41d2-b055-a4ffa6f435d8

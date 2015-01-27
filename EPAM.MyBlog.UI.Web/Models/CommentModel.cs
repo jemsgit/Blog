@@ -16,8 +16,9 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         public string Author { get { return author; } set { author = value; } }
 
-        [Display(Name = "Ваш комментарий")]
+        [Display(Name = "Комментарий")]
         [Required(ErrorMessage = "Поле {0} не заполнено")]
+        [DataType(DataType.MultilineText)]
         public string Text { get { return text; } set { text = value; } }
 
         public DateTime Time { get { return time; } set { time = value; } }

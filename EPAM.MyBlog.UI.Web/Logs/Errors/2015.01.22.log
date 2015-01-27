@@ -1,0 +1,6 @@
+2015-01-22 18:43:53,556 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: e1c3f805-4764-4142-a164-516cd1ab5a6e к посту: bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-22 18:43:53,593 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: bd4cbacb-d2f6-40f2-8c9e-beb48b5931c1
+2015-01-22 18:43:56,543 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-22 18:44:13,698 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-22 18:44:17,088 [7] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-22 18:44:39,135 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2

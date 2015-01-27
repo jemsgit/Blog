@@ -77,19 +77,19 @@
         
     </footer>
       
-      
 
+      @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+      @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+      @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+      
 
       @section Scripts{
 
-        @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
         <script>
             var Links = {GetPosts: '@Url.Action("MyPosts", "Post")'}
         </script>
-        @System.Web.Optimization.Scripts.Render("~/bundles/my")
-
           }
-
+      @System.Web.Optimization.Scripts.Render("~/bundles/my")
       @RenderSection("script", false)  
       
           

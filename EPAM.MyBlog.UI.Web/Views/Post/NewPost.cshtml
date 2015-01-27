@@ -1,10 +1,11 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.PostModel
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset class = "newpost">
         <legend>Новая запись</legend>
 
         <div class="editor-label">
@@ -30,6 +31,7 @@
             @Html.EditorFor(model => model.Tags)
             @Html.ValidationMessageFor(model => model.Tags)
         </div>
+        <p>Добавьте теги, разделив их пробелом</p>
         <p>
             <input type="submit" value="Создать" />
         </p>

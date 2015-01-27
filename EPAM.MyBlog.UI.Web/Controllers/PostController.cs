@@ -37,7 +37,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (model.AddPost(User.Identity.Name.ToString()))
                 {
 
-                    return RedirectToAction("Index", "Post");
+                    return RedirectToAction("MyPosts", "Post");
                 }
                 else
                 {

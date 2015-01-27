@@ -18,6 +18,7 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         [Display(Name = "Текст записи")]
         [Required(ErrorMessage = "Поле {0} не заполнено")]
+        [DataType(DataType.MultilineText)]
         public string Text { get { return text; } set { text = value; } }
 
         [Display(Name = "Заголовок")]

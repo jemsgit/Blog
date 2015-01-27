@@ -14,13 +14,13 @@
         </div>
     </div>
     <div>
-        <p>Теги: @Html.DisplayFor(model => model.Tags)</p>
+        <p><strong>Теги: </strong>@Html.DisplayFor(model => model.Tags)</p>
     </div>
     <div>
-        <p>Автор: @Html.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author}, null)</p>
+        <p><strong>Автор:</strong> @Html.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author}, null)</p>
     </div>
     <div>
-        <p>Дата: @Html.DisplayFor(model => model.Time)</p>
+        <p><strong>Дата:</strong> @Html.DisplayFor(model => model.Time)</p>
     </div>
     if((string)ViewData["Check"] == "True")
     {
@@ -35,7 +35,7 @@
     @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
 
 @if(Model.Author == User.Identity.Name){
-    @Html.ActionLink("К списку", "Index", "Post")
+    @Html.ActionLink("К списку", "MyPosts", "Post")
 }
 else{
     if(User.Identity.IsAuthenticated){

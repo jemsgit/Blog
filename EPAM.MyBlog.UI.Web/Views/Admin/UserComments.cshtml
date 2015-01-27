@@ -1,39 +1,36 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.CommentModel>
-
+@{ int c = 0;}
 @{
     ViewBag.Title = "UserComments";
 }
 
-<h2>UserComments</h2>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Комментарии</div>
+</div>
 
 
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-lg-6 col-sx-6">Комментарий</div>
+    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">Время</div>
+    </div>
 
-<table>
-    <tr>
+@foreach (var item in Model) 
+{   c++;
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-lg-6 col-sx-6">@Html.DisplayFor(modelItem => item.Text)</div>
+    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">@Html.DisplayFor(modelItem => item.Time)</div>
+    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">@Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
+            @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID })</div>
+    </div>
+    
+    }
 
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Time)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        <td>
-            @Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
-            @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID })
-        </td>
-    </tr>
+@if(c==0)
+{
+    <div class="row list">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
+            <p>  У пользователя нет комментариев </p>
+        </div>
+        </div>
 }
-
-</table>

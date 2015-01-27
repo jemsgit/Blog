@@ -44,10 +44,11 @@
             @Html.ActionLink("Посты", "UserPosts", new { name=item.Name }) |
             @Html.ActionLink("Комменты", "UserComments", new { name=item.Name }) |
         </td>
+        @if(User.Identity.Name != item.Name){
         <td>
             <input type="checkbox" name="@item.Name"/>
         </td>
-        
+        }
     </tr>
 }
 </tbody>

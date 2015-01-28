@@ -24,16 +24,26 @@ body{
      overflow:hidden;
 }
 
-#content, #sidebar{
+#content, #sidebar, #loading{
     height: 800px;
     
 }
 
-#content {
+#loading img{
+    width:264px;
+    height:34px;
+    position:absolute;
+    left:40%;
+    top:50%;
+   
+}
+
+#content, #loading {
     background-color: rgba(229, 220, 213, 0.8);
     -ms-word-break: break-all;
     word-break: break-all;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .head{

@@ -13,10 +13,10 @@
 {
     c++;
     <div class="row list">
-        <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
+        <div class="col-sm-10 col-md-10 col-lg-10 col-sx-10">
             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
         </div>
-         <div class="col-sm-4 col-md-4 col-lg-4 col-sx-4">
+         <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2">
             @Html.ActionLink("Удалить", "DeleteFavorite", new { id=item.Id }, new { @class="btn btn-default"})  
         </div>
     </div>

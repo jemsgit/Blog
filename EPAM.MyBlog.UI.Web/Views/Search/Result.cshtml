@@ -1,6 +1,6 @@
 ﻿@model List<EPAM.MyBlog.UI.Web.Models.PresentPostModel>
 @{
-    WebGrid grid = new WebGrid(ModelcanPage:true, rowsPerPage:15);
+    WebGrid grid = new WebGrid(Model, canPage:true, rowsPerPage:15);
     grid.Pager(WebGridPagerModes.NextPrevious);
 }
 

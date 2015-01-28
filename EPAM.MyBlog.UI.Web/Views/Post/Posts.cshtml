@@ -22,13 +22,16 @@
     <div>
         <p><strong>Дата:</strong> @Html.DisplayFor(model => model.Time)</p>
     </div>
-    if((string)ViewData["Check"] == "True")
-    {
-        <button type="submit" name="action" value="AddFav" hidden="hidden">В избранное</button>
-        <p>Данная статья находится в @Html.ActionLink(" избранном","Favorite", "Post")</p>
-    }
-    else{
-        <button type="submit" name="action" value="AddFav">В избранное</button>
+    if(User.Identity.IsAuthenticated){
+    
+        if((string)ViewData["Check"] == "True")
+        {
+            <button type="submit" name="action" value="AddFav" hidden="hidden">В избранное</button>
+            <p>Данная статья находится в @Html.ActionLink(" избранном","Favorite", "Post")</p>
+        }
+        else{
+            <button type="submit" name="action" value="AddFav">В избранное</button>
+        }
     }
 }
 

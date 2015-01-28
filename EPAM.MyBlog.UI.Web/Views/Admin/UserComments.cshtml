@@ -9,21 +9,30 @@
 </div>
 
 
-<div class="row">
-    <div class="col-md-6 col-sm-6 col-lg-6 col-sx-6">Комментарий</div>
-    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">Время</div>
-    </div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Комментарий</th>
+            <th>Время</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) 
+        {   c++;
+            <tr>
+                <th scope="row">@c</th>
+                <td>@Html.DisplayFor(modelItem => item.Text)</td>
+                <td>@Html.DisplayFor(modelItem => item.Time)</td>
+                <td>@Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
+                    @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID, name = @ViewData["name"] })</td>
+            </tr>
+         }
 
-@foreach (var item in Model) 
-{   c++;
-<div class="row">
-    <div class="col-md-6 col-sm-6 col-lg-6 col-sx-6">@Html.DisplayFor(modelItem => item.Text)</div>
-    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">@Html.DisplayFor(modelItem => item.Time)</div>
-    <div class="col-md-3 col-sm-3 col-lg-3 col-sx-3">@Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
-            @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID, name = @ViewData["name"] })</div>
-    </div>
-    
-    }
+    </tbody>
+
+</table>
+
 
 
 @if(c==0)

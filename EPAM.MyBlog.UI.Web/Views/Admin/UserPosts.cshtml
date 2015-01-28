@@ -3,7 +3,7 @@
 @{ int c = 0;}
 
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Записи</div>
+    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Записи @ViewData["name"]</div>
 </div>
 
 
@@ -13,7 +13,7 @@
     
     <div class="row list">
         <div class="col-sm-10 col-md-10 col-lg-10 col-sx-10">
-             @Html.ActionLink(@item.Title, "Posts", new { id=item.Id }) 
+             @Html.ActionLink(@item.Title, "Posts", "Post", new { id=item.Id }, null) 
         </div>
 
         <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2">

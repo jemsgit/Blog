@@ -24,7 +24,7 @@ namespace EPAM.MyBlog.UI.Web.Models
             switch (role)
             {
                 case 1:
-                    return new[] { "Admin", "Moder", "User" };
+                    return new[] { "Admin",  "User" };
                 case 2:
                     return new[] { "Moder", "User" };
                 case 3:

@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.UserAdminModel>
-
+@{ int c = 0;}
 
 <div class="col-sm-12 title">
     
@@ -15,8 +15,10 @@
 @using (Html.BeginForm("Users", "Admin", FormMethod.Post))
 {
 
-<table class="table table-condensed">
+<table class="table table-hover">
+    <thead>
     <tr>
+        <th>№</th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -28,9 +30,12 @@
         </th>
         <th></th>
     </tr>
+    </thead>
     <tbody>
 @foreach (var item in Model) {
+    c++;
     <tr>
+        <th scope="row">@c</th>
         <td>
             @Html.ActionLink(item.Name, "UserInfo", "Account" ,new {name = item.Name}, null)
         </td>
@@ -42,7 +47,7 @@
         </td>
         <td>
             @Html.ActionLink("Посты", "UserPosts", new { name=item.Name }) |
-            @Html.ActionLink("Комменты", "UserComments", new { name=item.Name }) |
+            @Html.ActionLink("Комменты", "UserComments", new { name=item.Name }) 
         </td>
         @if(User.Identity.Name != item.Name){
         <td>

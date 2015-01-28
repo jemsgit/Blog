@@ -1,6 +1,6 @@
-﻿/// <reference path="../jquery-2.1.1.min.js" />
+﻿/// <reference path="../jquery-1.11.2.js" />
 
-function get_page() {
+(function get_page() {
     $.ajax({
         type: "GET",
         url: Links.GetPosts,
@@ -10,8 +10,8 @@ function get_page() {
             }
         }
     });
-};
+})();
 
-var $Post = $("#my_posts")
+//var $Post = $("#my_posts")
 
-$Post.click(get_page());
+//$Post.click(get_page());

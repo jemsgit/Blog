@@ -92,15 +92,6 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public ActionResult Posts(Guid Id)
-        {
-            var post = PostModel.GetPostById(Id);
-            return View(post);
-        }
-        
-
-
-        [Authorize(Roles = "Admin")]
         public ActionResult UserComments(string name)
         {
             ViewData["name"] = name;

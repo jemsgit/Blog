@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
       <link href="~/Content/bootstrap.css" rel="stylesheet" />
       <link href="~/Content/css/style.css" rel="stylesheet" />
+      
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -62,6 +63,7 @@
         <div class="container main">
             <div class="row main">
                       <div class="col-lg-9 col-md-9 col-sm-9 shadow" id="content">@RenderBody()</div>
+                      <div class="col-lg-9 col-md-9 col-sm-9 shadow hidden" id="loading"><img src="../../Content/img/712.GIF" alt="" /></div>
                       <div class="col-lg-3 col-md-3 col-sm-3 shadow" id="sidebar">@Html.Action("Tags", "Search")</div>
             </div>
         </div>
@@ -81,17 +83,12 @@
       @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
       @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
       @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
-      
-
-      @section Scripts{
-
-        <script>
-            var Links = {GetPosts: '@Url.Action("MyPosts", "Post")'}
-        </script>
-          }
+     @* <script>
+          var Links = { GetPosts: '@Url.Action("MyPosts", "Post")' }
+      </script>*@
       @System.Web.Optimization.Scripts.Render("~/bundles/my")
+          
       @RenderSection("script", false)  
-      
           
         
 

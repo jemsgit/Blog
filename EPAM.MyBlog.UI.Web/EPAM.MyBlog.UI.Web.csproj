@@ -155,6 +155,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\712.GIF" />
     <Content Include="Content\img\cropped-345656.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\User-icon.png" />
@@ -166,6 +167,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\include\links.js" />
+    <Content Include="Scripts\include\loading.js" />
     <Content Include="Scripts\include\script.js" />
     <Content Include="Scripts\jquery-1.11.2.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -285,7 +288,6 @@
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\UserPosts.cshtml" />
     <Content Include="Views\Admin\DeletePost.cshtml" />
-    <Content Include="Views\Admin\Posts.cshtml" />
     <Content Include="Views\Admin\UserComments.cshtml" />
     <Content Include="Views\Admin\DeleteComment.cshtml" />
     <Content Include="Views\Account\DeleteAc.cshtml" />

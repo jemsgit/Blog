@@ -2,15 +2,15 @@
     {
         <ul class="nav navbar-nav">
                   <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Посты <span class="caret"></span></a>
+                        <a href="@Url.Action("Index", "Post")" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Посты <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("MyPosts", "Post")" id="my_posts">Мои посты</a></li>
-                            <li><a href="@Url.Action("Favorite", "Post")" id="favorite">Избранное</a></li>
-                            <li><a href="@Url.Action("News", "Post")" id="my_news">Лента</a></li>
+                            <li>@Ajax.ActionLink("Мои посты","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })</li>
+                            <li>@Ajax.ActionLink("Избранное","Favorite", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })</li>
+                            <li>@Ajax.ActionLink("Лента","News", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })</li>
                         </ul>
                   </li>
                   <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Аккаунт <span class="caret"></span></a>
+                        <a href="@Url.Action("Index", "Account")" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Аккаунт <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="@Url.Action("AboutMe", "Account")" id="about_me">О себе</a></li>
                             <li><a href="@Url.Action("DeleteAc", "Account")" id="delete_me">Удалить аккаунт</a></li>
@@ -31,6 +31,6 @@
 else
 {
     <ul class="nav navbar-nav">
-        <li><a href="@Url.Action("Index", "Search")" id="search">Поиск</a></li>
+        <li>@Ajax.ActionLink("Поиск","Index", "Search", new { }, new AjaxOptions{ UpdateTargetId = "content" })</li>
     </ul> 
 }

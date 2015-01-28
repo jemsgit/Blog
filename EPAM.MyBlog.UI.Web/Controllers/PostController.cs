@@ -6,11 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
     public class PostController : Controller
     {
         private static ILog logger = LogManager.GetLogger(typeof(AdminController));
+
         //
         // GET: /Post/
 
@@ -18,6 +20,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         
         public ActionResult Favorite() 
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Favorite", PresentPostModel.GetAllFavorite(User.Identity.Name));
             return View(PresentPostModel.GetAllFavorite(User.Identity.Name));
         }
 
@@ -51,9 +55,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult MyPosts()
         {
             if (Request.IsAjaxRequest())
-            {
-                return Json(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
-            }
+                return PartialView("MyPosts", PresentPostModel.GetAllPostsTitle(User.Identity.Name));
             return View(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
         }
 
@@ -168,6 +170,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult News()
         {
             var posts = PresentPostModel.GetAllPostsTitle();
+            if (Request.IsAjaxRequest())
+                return PartialView("News", posts);
             return View(posts);
         }
 

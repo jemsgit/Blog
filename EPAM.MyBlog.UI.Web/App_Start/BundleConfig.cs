@@ -12,10 +12,13 @@ namespace EPAM.MyBlog.UI.Web.App_Start
             //bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
             //    "~/Scripts/jquery-ui-{version}.js"));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/jquery-1.11.2.js"));
+                "~/Scripts/jquery-1.11.2.js",
+                "~/Scripts/jquery-migrate-1.2.1.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                "~/Scripts/jquery.unobtrusive-ajax.min.js",
                 "~/Scripts/jquery.unobtrusive*",
+                "~/Scripts/jquery-migrate-1.2.1.js",
                 "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(

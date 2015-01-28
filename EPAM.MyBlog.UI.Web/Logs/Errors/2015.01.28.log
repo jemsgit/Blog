@@ -34,3 +34,27 @@
 2015-01-28 15:25:00,887 [98] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
 2015-01-28 15:25:03,506 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
 2015-01-28 15:35:02,572 [27] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 19:39:21,837 [5] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-28 19:46:55,756 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-28 19:48:16,233 [10] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-28 20:11:20,902 [57] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-28 20:11:29,701 [57] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-28 20:50:23,353 [60] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 20:50:28,088 [60] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: Admin2
+2015-01-28 20:50:28,089 [60] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил имя
+2015-01-28 20:50:28,369 [62] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 20:50:43,204 [60] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-01-28 20:50:43,205 [60] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-01-28 20:50:43,495 [60] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 20:50:57,701 [61] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о поле пользователя сохранены: Admin2
+2015-01-28 20:50:57,702 [61] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил информацию о поле
+2015-01-28 20:50:57,921 [61] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 20:51:07,489 [60] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о дате рождения пользователя сохранены: Admin2
+2015-01-28 20:51:07,490 [60] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил дату рождения
+2015-01-28 20:51:07,753 [61] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 21:09:44,941 [49] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 21:57:16,741 [31] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 22:08:55,959 [36] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 23:00:24,653 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 23:03:11,467 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-28 23:54:50,348 [9] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2

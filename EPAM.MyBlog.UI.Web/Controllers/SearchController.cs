@@ -14,6 +14,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Index",null);
             return View();
         }
 
@@ -26,7 +28,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             }
             else
             {
-                return PartialView();
+                return View();
             }
 
         }

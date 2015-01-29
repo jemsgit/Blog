@@ -13,11 +13,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Index");
             return View();
         }
 
         public ActionResult Help()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Help");
             return View();
         }
 

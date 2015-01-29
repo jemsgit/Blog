@@ -4,7 +4,8 @@
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
-@using (Html.BeginForm()) {
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -43,5 +44,7 @@
 }
 
 <div>
-    @Html.ActionLink("К списку записей", "Index")
+    @Ajax.ActionLink("К списку записей","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })
 </div>
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

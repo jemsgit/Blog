@@ -4,8 +4,8 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Вы действиетльно хотите удалить запись @ViewData["Title"]</h2>
-@using (Html.BeginForm())
+<h2>Вы действиетльно хотите удалить запись @ViewData["name"]</h2>
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
 {
     <button name="Confirm" value ="true">Да</button> 
     <button name="Confirm" value ="false">Нет</button>

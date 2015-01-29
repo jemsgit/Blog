@@ -17,11 +17,15 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Index");
             return View();
         }
 
         public ActionResult EditInfoAvatar()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("EditInfoAvatar");
             return View();
         }
 

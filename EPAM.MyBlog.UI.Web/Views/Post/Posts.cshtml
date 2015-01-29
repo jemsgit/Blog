@@ -17,7 +17,7 @@
         <p><strong>Теги: </strong>@Html.DisplayFor(model => model.Tags)</p>
     </div>
     <div>
-        <p><strong>Автор:</strong> @Html.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author}, null)</p>
+        <p><strong>Автор:</strong> @Ajax.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author }, new AjaxOptions{ UpdateTargetId = "content" }) </p>
     </div>
     <div>
         <p><strong>Дата:</strong> @Html.DisplayFor(model => model.Time)</p>
@@ -27,21 +27,23 @@
         if((string)ViewData["Check"] == "True")
         {
             <button type="submit" name="action" value="AddFav" hidden="hidden">В избранное</button>
-            <p>Данная статья находится в @Html.ActionLink(" избранном","Favorite", "Post")</p>
+            <p>Данная статья находится в @Ajax.ActionLink(" избранном","Favorite", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" }) </p>
         }
         else{
             <button type="submit" name="action" value="AddFav">В избранное</button>
         }
     }
 }
-
+<div id="comment">
     @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
-
+</div>
 @if(Model.Author == User.Identity.Name){
-    @Html.ActionLink("К списку", "MyPosts", "Post")
+    @Ajax.ActionLink("К списку","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })
 }
 else{
     if(User.Identity.IsAuthenticated){
-    @Html.ActionLink("К списку", "UserPosts", "Post", new { name=Model.Author }, null)
+        @Ajax.ActionLink("К списку","UserPosts", "Post", new { name=Model.Author }, new AjaxOptions{ UpdateTargetId = "content" })
     }
 }
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

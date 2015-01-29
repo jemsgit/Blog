@@ -12,7 +12,7 @@
 </div>
 
 
-@using (Html.BeginForm("Users", "Admin", FormMethod.Post))
+@using (Ajax.BeginForm("Users", "Admin", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
 {
 
 <table class="table table-hover">
@@ -63,3 +63,5 @@
     <button type="submit" name="action" value="addAdmin" id="addAdmin">Сделать Adminом </button>
     <button type="submit" name="action" value="Delete" id="Delete">Удалить </button>
 }
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

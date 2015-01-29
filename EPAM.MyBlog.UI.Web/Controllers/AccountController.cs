@@ -22,11 +22,14 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [AllowAnonymous]
         public ActionResult Login(string ReturnUrl)
         {
+
             if (string.IsNullOrWhiteSpace(ReturnUrl))
             {
                 ReturnUrl = "";
             }
             ViewData.Add("ReturnUrl", ReturnUrl);
+            if (Request.IsAjaxRequest())
+                return PartialView("Login");
             return View();
         }
 
@@ -63,6 +66,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     ViewData["Result"] = Result;
                 }
             }
+            if (Request.IsAjaxRequest())
+                return PartialView("Login");
             return View();
         }
 
@@ -74,6 +79,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 ReturnUrl = "";
             }
             ViewData.Add("ReturnUrl", ReturnUrl);
+            if (Request.IsAjaxRequest())
+                return PartialView("Reg");
             return View();
         }
 
@@ -102,6 +109,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     ViewData["Result"] = Result;
                 }
             }
+            if (Request.IsAjaxRequest())
+                return PartialView("Reg");
             return View();
 
         }
@@ -109,6 +118,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult LogOut()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("LogOut");
             return View();
         }
 
@@ -125,7 +136,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-
+            if (Request.IsAjaxRequest())
+                return PartialView("LogOut");
             return View();
         }
 
@@ -154,6 +166,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult DeleteAc()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("DeleteAc");
             return View();
         }
 
@@ -171,7 +185,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-
+            if (Request.IsAjaxRequest())
+                return PartialView("DeleteAc");
             return View();
         }
 
@@ -190,12 +205,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult AboutMe() 
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
+            if (Request.IsAjaxRequest())
+                return PartialView("AboutMe", info);
             return View(info);
         }
 
         public ActionResult UserInfo(string name) 
         {
             var info = UserAboutModel.GetInfo(name);
+            if (Request.IsAjaxRequest())
+                return PartialView("UserInfo", info);
             return View(info);
         }
         
@@ -203,6 +222,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult EditSex()
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
+            if (Request.IsAjaxRequest())
+                return PartialView("EditSex", info);
             return View(info);
         }
 
@@ -241,6 +262,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult EditDate()
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
+            if (Request.IsAjaxRequest())
+                return PartialView("EditDate", info);
             return View(info);
         }
 
@@ -273,6 +296,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult EditName()
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
+            if (Request.IsAjaxRequest())
+                return PartialView("EditName", info);
             return View(info);
         }
 
@@ -310,6 +335,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult EditAbout()
         {
             var info = UserAboutModel.GetInfo(User.Identity.Name);
+            if (Request.IsAjaxRequest())
+                return PartialView("EditAbout", info);
             return View(info);
         }
 

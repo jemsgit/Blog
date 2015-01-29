@@ -28,7 +28,7 @@ namespace EPAM.MyBlog.UI.Web.App_Start
                 "~/Scripts/tinymce/tinymce.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/my").Include(
-                "~/Scripts/include/script.js"));
+                "~/Scripts/include/script2.js"));
         }
     }
 }

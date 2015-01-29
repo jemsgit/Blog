@@ -13,7 +13,7 @@
         if (!String.IsNullOrEmpty(item))
         {
             <li>
-                @Html.ActionLink(item, "Result", "Search", new { search = "#" + item }, null)
+                @Ajax.ActionLink(item ,"Result", "Search", new { search = "#" + item }, new AjaxOptions{ UpdateTargetId = "content" })
            </li>
         }
         
@@ -25,3 +25,5 @@ else
     
 }
     </ul>
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

@@ -39,6 +39,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             SearchModel model = new SearchModel();
             model.SearchText = search;
             var result = model.GetResult();
+            if (Request.IsAjaxRequest())
+                return PartialView("Result", result);
             return View(result);
         }
 

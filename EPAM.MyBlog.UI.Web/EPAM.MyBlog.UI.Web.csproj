@@ -170,7 +170,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\include\links.js" />
     <Content Include="Scripts\include\loading.js" />
-    <Content Include="Scripts\include\script.js" />
+    <Content Include="Scripts\include\script2.js" />
     <Content Include="Scripts\jquery-1.11.2.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

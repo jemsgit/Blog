@@ -33,12 +33,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "Moder")]
         public ActionResult PostComment()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("PostComment", UserAdminModel.GetAllUsers());
             return View(UserAdminModel.GetAllUsers());
         }
 
         [Authorize(Roles = "Admin")]
         public ActionResult Users()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Users", UserAdminModel.GetAllUsers());
             return View(UserAdminModel.GetAllUsers());
         }
 
@@ -79,7 +83,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 default:
                     break;
             }
-
+            if (Request.IsAjaxRequest())
+                return PartialView("Users", UserAdminModel.GetAllUsers());
             return View(UserAdminModel.GetAllUsers());
         }
 
@@ -87,6 +92,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult UserPosts(string name)
         {
             ViewData["name"] = name;
+            if (Request.IsAjaxRequest())
+                return PartialView("UserPosts", PresentPostModel.GetAllPostsTitle(name));
             return View(PresentPostModel.GetAllPostsTitle(name));
         }
 
@@ -95,6 +102,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult UserComments(string name)
         {
             ViewData["name"] = name;
+            if (Request.IsAjaxRequest())
+                return PartialView("UserComments", CommentModel.GetAllComments(name));
             return View(CommentModel.GetAllComments(name));
         }
 
@@ -104,6 +113,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             var post = PostModel.GetPostById(Id);
             ViewData["Title"] = post.Title;
             ViewData["name"] = name;
+            if (Request.IsAjaxRequest())
+                return PartialView("DeletePost");
             return View();
         }
 
@@ -140,6 +151,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult DeleteComment(Guid Id, string name)
         {
             ViewData["name"] = name;
+            if (Request.IsAjaxRequest())
+                return PartialView("DeleteComment");
             return View();
         }
 
@@ -167,6 +180,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("Create");
             return View();
         }
 
@@ -196,24 +211,11 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     ViewData["Result"] = Result;
                 }
             }
+            if (Request.IsAjaxRequest())
+                return PartialView("Create");
             return View();
 
         }
 
-        //[HttpPost]
-        //public ActionResult ChangeUser()
-        //{
-        //    string exist;
-
-            
-        //    for (int i = 0; i < length; i++)
-        //    {
-        //        exist = Request[i.ToString()];
-        //        if (exist == "on")
-        //        {
-        //            UserModel.AddLink(idUser, ChooseAwardsModel.awards[i].AwardId);
-        //        }
-        //    }
-        //}
     }
 }

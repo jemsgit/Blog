@@ -29,4 +29,6 @@ else
     <p>Поиск не дал результатов</p>
 }
 
-@Html.ActionLink("Вернуться к поиску", "Index", "Search")
+@Ajax.ActionLink("Вернуться к поиску","Index", "Search", new { }, new AjaxOptions{ UpdateTargetId = "content" })
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

@@ -4,7 +4,8 @@
     ViewBag.Title = "EditDate";
 }
 
-@using (Html.BeginForm()) {
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
+{
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
 
@@ -24,3 +25,4 @@
 }
 
 
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

@@ -14,10 +14,10 @@
     c++;
     <div class="row list">
         <div class="col-sm-10 col-md-10 col-lg-10 col-sx-10">
-            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
+            @Ajax.ActionLink(@item.Title,"Posts", "Post", new { id=item.Id }, new AjaxOptions{ UpdateTargetId = "content" })
         </div>
          <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2">
-            @Html.ActionLink("Удалить", "DeleteFavorite", new { id=item.Id }, new { @class="btn btn-default"})  
+            @Ajax.ActionLink("Удалить","DeleteFavorite", "Post", new { id=item.Id }, new AjaxOptions{ UpdateTargetId = "content" }, new { @class="btn btn-default"})
         </div>
     </div>
 
@@ -32,3 +32,4 @@
         </div>
 }
 
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

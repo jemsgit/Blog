@@ -11,7 +11,7 @@
         <p>Мои записи</p>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2 ">
-        @Html.ActionLink("Создать запись", "NewPost", "Post", new { @class="btn btn-default"})
+        @Ajax.ActionLink("Создать запись" , "NewPost" ,"Post", new { }, new AjaxOptions{ UpdateTargetId = "content" }, new { @class="btn btn-default"})
     </div>
 </div>
 
@@ -22,11 +22,11 @@
     c++;
     <div class="row list">
         <div class="col-sm-8 col-md-8 col-lg-8 col-sx-8">
-            @Html.ActionLink(@item.Title, "Posts", new { id=item.Id })  
+            @Ajax.ActionLink(@item.Title,"Posts", new { id=item.Id }, new AjaxOptions{ UpdateTargetId = "content" })
         </div>
          <div class="col-sm-4 col-md-4 col-lg-4 col-sx-4">
-            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class="btn btn-default"}) 
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id }, new { @class="btn btn-default"})  
+            @Ajax.ActionLink("Редактировать","Edit", new { id = item.Id }, new AjaxOptions{ UpdateTargetId = "content" },new { @class="btn btn-default"})
+            @Ajax.ActionLink("Удалить","Delete", new { id=item.Id }, new AjaxOptions{ UpdateTargetId = "content" }, new { @class="btn btn-default"})
         </div>
     </div>
 
@@ -40,3 +40,5 @@
         </div>
         </div>
 }
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

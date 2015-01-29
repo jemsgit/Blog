@@ -1,7 +1,7 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.PostModel
 
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
 {
     @Html.ValidationSummary(true)
 
@@ -39,24 +39,10 @@
 }
 
 <div>
-    @Html.ActionLink("К списку записей", "Index")
+    @Ajax.ActionLink("К списку записей","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })
 </div>
 
-@section script {
-@*    <script src="/Scripts/tinymce/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript">
-
-        tinymce.init({
-            encoding : "xml",
-            selector: "div .textarea> input",
-            plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-        });
-    </script>*@
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-}
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

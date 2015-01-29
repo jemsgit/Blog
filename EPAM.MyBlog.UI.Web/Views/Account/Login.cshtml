@@ -16,7 +16,7 @@
 else
 {
 
-using (Html.BeginForm()) {
+using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" })) {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
     @Html.Hidden("ReturnUrl",ViewData["ReturnUrl"])
@@ -88,3 +88,4 @@ using (Html.BeginForm()) {
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
 
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

@@ -3,7 +3,7 @@
 }
 
 
-@using (Html.BeginForm("EditInfoAvatar", "Files", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm("EditInfoAvatar", "Files", FormMethod.Post, new { enctype = "multipart/form-data", id = "ajaxform" }))
 {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
@@ -14,7 +14,11 @@
     <input type="file" name="File" />
     <p>
          <input type="submit" value="Сохранить" class="btn btn-default"/>
+         @Html.ActionLink("Вернуться", "AboutMe", "Account", null, new { @class = "btn btn-default" })
     </p>
         </fieldset>
 }
 
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")

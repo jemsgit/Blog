@@ -4,9 +4,22 @@
     ViewBag.Title = "UserComments";
 }
 
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Комментарии @ViewData["name"]</div>
+
+<div class="col-sm-12 title">
+    
+    <div class="col-md-8 col-sm-8 col-lg-8 col-sx-8"><p>Комментарии @ViewData["name"]</p></div>
+    <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2 pull-righ">
+                @if(User.IsInRole("Admin"))
+    {
+        <p>@Html.ActionLink("К пользователям", "Users", "Admin", new { @class="btn btn-default"})</p>
+    }
+    else if (User.IsInRole("Moder"))
+    {
+        <p>@Html.ActionLink("К пользователям", "PostComment", "Admin", new { @class="btn btn-default"})</p>
+    }
+    </div>
 </div>
+
 
 
 <table class="table table-hover">
@@ -24,7 +37,7 @@
                 <th scope="row">@c</th>
                 <td>@Html.DisplayFor(modelItem => item.Text)</td>
                 <td>@Html.DisplayFor(modelItem => item.Time)</td>
-                <td>@Html.ActionLink("К посту", "Posts", new { id=item.Post_ID }) |
+                <td>@Html.ActionLink("К посту", "Posts", "Post", new { id=item.Post_ID }, null) |
                     @Html.ActionLink("Delete", "DeleteComment", new { id=item.ID, name = @ViewData["name"] })</td>
             </tr>
          }
@@ -43,5 +56,6 @@
         </div>
         </div>
 }
+
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

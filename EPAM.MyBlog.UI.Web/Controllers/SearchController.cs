@@ -22,14 +22,14 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [HttpPost]
         public ActionResult Index(SearchModel model)
         {
-            if (!String.IsNullOrEmpty(model.SearchText))
-            {
-                return RedirectToAction("Result", new { search = model.SearchText });
-            }
-            else
-            {
-                return View();
-            }
+                if (!String.IsNullOrEmpty(model.SearchText))
+                {
+                    return RedirectToAction("Result", new { search = model.SearchText });
+                }
+                else
+                {
+                    return RedirectToAction("Result", new { search = " " });
+                }
 
         }
 

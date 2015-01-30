@@ -1,6 +1,6 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.SearchModel
 
-@using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-inline" }))
+@using (Ajax.BeginForm("Index", "Search", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" }, new { @class = "form-inline" })) 
 {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
@@ -15,4 +15,6 @@
         </fieldset>
 
 }
+
+<div class="col-md-12" id="result"></div>
     

@@ -16,12 +16,12 @@
             <div class="editor-label">
             @Html.LabelFor(model => model.Reason)
         </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.Reason, new { cols = 60, @rows = 3 })
+        <div class="editor-field-comment textarea">
+            @Html.TextAreaFor(model => model.Reason)
         </div>
 
     <button name="Confirm" value ="true" class="btn btn-default">Да</button> 
-    <button name="Confirm" value ="false" class="btn btn-default">Нет</button>
+    @Html.ActionLink("Нет", "MyPosts", "Post", null, new { @class="btn btn-default"})
 
 
 }

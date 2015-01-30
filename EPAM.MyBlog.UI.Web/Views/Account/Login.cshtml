@@ -42,9 +42,9 @@ using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "c
                 @ViewData["Result"]
             </div>
             <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
-                <label>
+
                     @Html.LabelFor(model => model.Name)
-                </label>
+
                 <div class="editor-field">
                     @Html.EditorFor(model => model.Name)
                     <div>
@@ -53,9 +53,9 @@ using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "c
                 </div>
             </div>
             <div class="form-group col-sm-8 col-md-8 col-lg-8 col-sx-8">
-                <label>
+
                     @Html.LabelFor(model => model.Password)
-                </label>
+
                 <div class="editor-field">
                     @Html.EditorFor(model => model.Password)
                     <div>

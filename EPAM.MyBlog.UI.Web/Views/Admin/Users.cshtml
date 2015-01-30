@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<EPAM.MyBlog.UI.Web.Models.UserAdminModel>
 @{ int c = 0;}
 
-<div class="col-sm-12 title">
+<div class="col-sm-12 col-md-12 col-lg-12 col-sx-12 title">
     
     <div class="col-sm-4 col-md-4 col-lg-4 col-sx-4 col-sm-offset-4 col-md-offset-4 col-sx-offset-4 col-lg-offset-4 bold">
         <p>Пользователи</p>
@@ -11,8 +11,9 @@
     </div>
 </div>
 
+<div class="col-sm-12 col-md-12 col-lg-12 col-sx-12">
 
-@using (Ajax.BeginForm("Users", "Admin", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
+@using (Html.BeginForm("Users", "Admin", FormMethod.Post, new {id = "ajaxform"}))
 {
 
 <table class="table table-hover">
@@ -32,12 +33,13 @@
     </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     c++;
     <tr>
         <th scope="row">@c</th>
         <td>
-            @Html.ActionLink(item.Name, "UserInfo", "Account" ,new {name = item.Name}, null)
+            @Html.ActionLink(item.Name, "UserInfo", "Account", new { name = item.Name }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
@@ -46,10 +48,11 @@
             @Html.DisplayFor(modelItem => item.Role)
         </td>
         <td>
-            @Html.ActionLink("Посты", "UserPosts", new { name=item.Name }) |
-            @Html.ActionLink("Комменты", "UserComments", new { name=item.Name }) 
+            @Html.ActionLink("Посты", "UserPosts", new { name = item.Name }) |
+            @Html.ActionLink("Комменты", "UserComments", new { name = item.Name }) 
         </td>
-        @if(User.Identity.Name != item.Name){
+        @if (User.Identity.Name != item.Name)
+        {
         <td>
             <input type="checkbox" name="@item.Name"/>
         </td>
@@ -64,4 +67,6 @@
     <button type="submit" name="action" value="Delete" id="Delete">Удалить </button>
 }
 
+</div>
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

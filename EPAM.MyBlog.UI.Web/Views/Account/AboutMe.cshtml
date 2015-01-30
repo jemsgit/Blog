@@ -12,6 +12,7 @@
 
 
     <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="col-lg-4 col-md-4 col-sm-4">
             @Html.Action("Avatar", new { name  = User.Identity.Name})
         </div>
@@ -19,70 +20,79 @@
 
             <div class="row">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+            <div class="col-lg-3 col-md-3 col-sm-3 bold">
                 @Html.DisplayNameFor(model => model.Name)
           
             </div>
-            @if (Model.Name != null)
-            {
+            
             <div class="col-lg-8 col-md-8 col-sm-8">
+                @if (Model.Name != null)
+            {
                 @Html.DisplayFor(model => model.Name)
+            }
                 <div class="pull-right">
                     @Html.ActionLink("Изменить", "EditName", null, new { @class="btn btn-default"})
                 </div>
             </div>
-            }
+           
 
             </div>
             <div class="row">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+            <div class="col-lg-3 col-md-3 col-sm-3 bold">
                 @Html.DisplayNameFor(model => model.Sex)
           
             </div>
-            @if(Model.Sex != null){
+            
             <div class="col-lg-8 col-md-8 col-sm-8">
+                @if(Model.Sex != null){
                 @Html.DisplayFor(model => model.Sex)
+                }
                 <div class="pull-right">
                     @Html.ActionLink("Изменить", "EditSex", null, new { @class="btn btn-default"})
                 </div>
             </div>
-            }
+            
             </div>
             <div class="row">
 
-             <div class="col-lg-4 col-md-4 col-sm-4 bold">
+             <div class="col-lg-3 col-md-3 col-sm-3 bold">
                 @Html.DisplayNameFor(model => model.Birthday)
           
             </div>
-            @if (Model.Birthday != null)
-            {
+            
             <div class="col-lg-8 col-md-8 col-sm-8">
+                @if (Model.Birthday != null)
+            {
                 @Html.DisplayFor(model => model.Birthday)
+                    }
                 <div class="pull-right">
                     @Html.ActionLink("Изменить", "EditDate", null, new { @class="btn btn-default"})
                 </div>
             </div>
-            }
+            
                 </div>
             
             <div class="row">
     
-            <div class="col-lg-4 col-md-4 col-sm-4 bold">
+            <div class="col-lg-3 col-md-3 col-sm-3 bold">
                 @Html.DisplayNameFor(model => model.AboutMe)
           
             </div>
-            @if (Model.AboutMe != null)
-            {
+            
             <div class="col-lg-8 col-md-8 col-sm-8">
+                @if (Model.AboutMe != null)
+            {
                 @Html.DisplayFor(model => model.AboutMe)
+            }
                 <div class="pull-right">
                     @Html.ActionLink("Изменить", "EditAbout", null, new { @class="btn btn-default"})
                 </div>
             </div>
-            }
+            
                 </div>
         </div>
+       </div>
     </div>
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

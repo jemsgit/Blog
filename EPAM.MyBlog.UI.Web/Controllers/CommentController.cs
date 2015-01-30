@@ -37,18 +37,24 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     ViewData["List"] = CommentModel.Comments;
                     ModelState.Clear();
                     logger.Info("Добавлен комментарий пользователя: " + comment.Author + " к посту: " + comment.Post_ID);
+                    if (Request.IsAjaxRequest())
+                        return RedirectToAction("AddComment", "Comment", new { Post_Id = comment.Post_ID });
                     return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }
                 else
                 {
                     logger.Error("ошибка добавления комментария пользователя: " + comment.Author + " к посту: " + comment.Post_ID);
                     ViewData["List"] = CommentModel.Comments;
+                    if (Request.IsAjaxRequest())
+                        return RedirectToAction("AddComment", "Comment", new { Post_Id = comment.Post_ID });
                     return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
                 }
             }
             else
             {
                 ViewData["List"] = CommentModel.Comments;
+                if (Request.IsAjaxRequest())
+                    return RedirectToAction("AddComment", "Comment", new { Post_Id = comment.Post_ID });
                 return RedirectToAction("Posts", "Post", new { Id = comment.Post_ID });
             }
         }

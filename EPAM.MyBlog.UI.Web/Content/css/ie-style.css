@@ -16,11 +16,19 @@ body{
     background-attachment: fixed;
 }
 
-#sidebar {
-    background-color:rgba(245, 221, 194, 0.8);
+html > /**/ body #sidebar {
+    background:rgb(245,221,194);
+    background: transparent\9;
+    background:rgba(245,221,194,0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ccf5ddc2,endColorstr=#ccf5ddc2);
+    zoom: 1;
 }
+#sidebar:nth-child(n) {
+    filter: none;
+}
+
 .main{
-     background-color:rgba(229, 220, 213, 0.00);
+     background-color:#d5c9bf;
      overflow:hidden;
 }
 
@@ -43,13 +51,13 @@ body{
     word-break: break-all;
     overflow-y: auto;
     overflow-x: hidden;
-    -ms-background-color: rgb(229, 220, 213);
-    background-color: rgba(229, 220, 213, 0.8);
+    -ms-background-color: #cfb8a5;
+    background-color: #cfb8a5;
 }
 
 .head{
     color:white;
-    background-color:rgba(248, 229, 222,0.4);
+    background-color:#cbbbb6;
     padding:10px;
     margin-bottom:10px;
     margin-top:10px;
@@ -57,7 +65,7 @@ body{
 }
 
 .footer{
-    background-color:rgba(0, 0, 0,0.5);
+    background-color:rgb(0, 0, 0);
     color: white;
     margin-bottom:10px;
     margin-top:10px;

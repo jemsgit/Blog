@@ -3,8 +3,13 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-<h2>Вы действиетльно хотите удалить запись @ViewData["Title"]</h2>
+<div class="col-sm-12 title">
+    
+    <div class="col-sm-12 col-md-12 col-lg-12 col-sx-12 ">
+        <p>Удаление записи "@ViewData["name"]" из Избранного</p>
+    </div>
+</div>
+<p>Вы действиетльно хотите удалить запись <strong>@ViewData["name"]?</strong></p>
 @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
 {
     <button name="Confirm" value ="true">Да</button> 

@@ -17,6 +17,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
 
         private static ILog logger = LogManager.GetLogger(typeof(AccountController));
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
         //
         // GET: /Account/
         [AllowAnonymous]
@@ -183,7 +189,10 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     LoginModel.DeleteUser(User.Identity.Name);
                     logger.Info("Пользователь удалил свой аккаунт с логином: " + User.Identity.Name);
                 }
-                return RedirectToAction("Index", "Home");
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             if (Request.IsAjaxRequest())
                 return PartialView("DeleteAc");
@@ -247,12 +256,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 else
                 {
                     logger.Error("Ошибка при изменении информации о поле пользователя: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("EditSex", model);
                     return View(model);
                 }
             }
             else
             {
                 logger.Debug("Невалидная модель при изменении данных о поле пользователя: " + User.Identity.Name);
+                if (Request.IsAjaxRequest())
+                    return PartialView("EditSex", model);
                 return View(model);
             }
         }

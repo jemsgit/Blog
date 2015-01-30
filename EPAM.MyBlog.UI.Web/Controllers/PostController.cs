@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
+    [Authorize(Roles = "User")]
     public class PostController : Controller
     {
         private static ILog logger = LogManager.GetLogger(typeof(AdminController));
@@ -16,7 +17,10 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         //
         // GET: /Post/
 
-
+        public ActionResult Index()
+        {
+            return View();
+        }
         
         public ActionResult Favorite() 
         {
@@ -161,7 +165,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult DeleteFavorite(Guid Id)
         {
             var post = PostModel.GetPostById(Id);
-            ViewData["Title"] = post.Title;
+            ViewData["name"] = post.Title;
             if (Request.IsAjaxRequest())
                 return PartialView("DeleteFavorite");
             return View();

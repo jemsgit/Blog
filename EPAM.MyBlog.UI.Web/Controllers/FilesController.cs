@@ -41,6 +41,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (!File.ContentType.Contains("image"))
                 {
                     logger.Error("Попытка загрузки не image в качетсве аватара пользователем: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("EditInfoAvatar");
                     return View();
                 }
 
@@ -53,6 +55,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     model.AddPhoto();
 
                     logger.Info("Загрузка нового аватара пользователем: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return RedirectToAction("AboutMe", "Account");
                     return RedirectToAction("AboutMe", "Account");
                 }
 
@@ -64,10 +68,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             }
 
             return View();
-
-            
-            
-            
+  
         }
 
         public FileContentResult GetImage(string name)

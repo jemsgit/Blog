@@ -1,0 +1,57 @@
+2015-01-31 01:00:27,144 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: f601194e-2631-45e0-a224-f2acaf05e8b5
+2015-01-31 01:00:27,178 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария f601194e-2631-45e0-a224-f2acaf05e8b5
+2015-01-31 01:03:39,029 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Moder3
+2015-01-31 01:04:13,092 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: d62e1f01-eb81-4410-b536-5fa9e409e77d пользователя: Moder3
+2015-01-31 01:04:13,093 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: d62e1f01-eb81-4410-b536-5fa9e409e77dв избранное пользователя: Moder3
+2015-01-31 01:04:37,828 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Moder3
+2015-01-31 01:27:02,495 [51] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-01-31 01:27:10,928 [54] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-01-31 01:27:10,929 [54] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-01-31 01:30:18,880 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 9f7298cf-9c51-4ecb-bdae-e17f891fd241 пользователя: Admin2
+2015-01-31 01:30:18,893 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 9f7298cf-9c51-4ecb-bdae-e17f891fd241из Избранного у пользователя: Admin2
+2015-01-31 01:30:27,979 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-01-31 01:30:27,980 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-01-31 01:30:35,452 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-01-31 01:30:35,453 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-01-31 01:31:06,098 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-01-31 01:31:06,100 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-01-31 01:31:11,454 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-01-31 01:31:11,455 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-01-31 01:45:00,967 [52] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-01-31 01:48:49,976 [47] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-01-31 01:49:05,543 [47] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: sobaka
+2015-01-31 01:51:33,484 [37] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных об имени пользователя: sobaka
+2015-01-31 01:51:33,485 [37] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении имени пользователя: sobaka
+2015-01-31 01:52:58,998 [42] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных об имени пользователя: sobaka
+2015-01-31 01:52:58,999 [42] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении имени пользователя: sobaka
+2015-01-31 01:53:26,336 [42] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных о поле пользователя: sobaka
+2015-01-31 01:53:39,760 [42] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении информации о поле пользователя: sobaka
+2015-01-31 01:55:11,027 [50] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных о поле пользователя: sobaka
+2015-01-31 01:55:11,028 [50] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении информации о поле пользователя: sobaka
+2015-01-31 01:55:50,122 [29] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных о поле пользователя: sobaka
+2015-01-31 01:55:53,597 [29] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении информации о поле пользователя: sobaka
+2015-01-31 01:57:09,140 [26] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка записи данных о поле пользователя: sobaka
+2015-01-31 01:57:13,896 [26] ERROR EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Ошибка при изменении информации о поле пользователя: sobaka
+2015-01-31 02:10:06,462 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: sobaka
+2015-01-31 02:10:06,477 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил имя
+2015-01-31 02:10:13,640 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о поле пользователя сохранены: sobaka
+2015-01-31 02:10:13,641 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил информацию о поле
+2015-01-31 02:10:22,811 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о дате рождения пользователя сохранены: sobaka
+2015-01-31 02:10:22,813 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил дату рождения
+2015-01-31 02:10:27,393 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о пользователе сохранены: sobaka
+2015-01-31 02:10:27,394 [19] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил информцияю о себе
+2015-01-31 02:10:40,935 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-01-31 02:10:40,936 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-01-31 02:10:40,974 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-31 02:13:33,847 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Moder3
+2015-01-31 02:13:45,329 [18] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: sobaka
+2015-01-31 02:13:47,362 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: sobaka
+2015-01-31 02:13:57,804 [48] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: sobaka
+2015-01-31 02:14:05,297 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-31 02:14:17,063 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-01-31 02:14:17,064 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-01-31 02:14:17,172 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-31 02:14:30,662 [48] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: sobaka
+2015-01-31 02:14:30,662 [48] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил имя
+2015-01-31 02:14:30,690 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-31 02:26:55,391 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka

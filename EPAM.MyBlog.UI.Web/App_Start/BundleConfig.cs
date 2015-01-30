@@ -29,6 +29,9 @@ namespace EPAM.MyBlog.UI.Web.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/my").Include(
                 "~/Scripts/include/script2.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/my2").Include(
+                "~/Scripts/include/script1.js"));
         }
     }
 }

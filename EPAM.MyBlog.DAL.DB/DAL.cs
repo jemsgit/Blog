@@ -55,7 +55,7 @@ namespace EPAM.MyBlog.DAL.DB
                 command.Parameters.Add(new SqlParameter("@Role_Id", role));
                 con.Open();
                 int num = command.ExecuteNonQuery();
-                if (num == 1)
+                if (num == 1 & AddUserInfo(user.Name))
                 {
                     logger.Info("DB: Добавлен новый пользователь: " + user.Name);
                     return true;
@@ -161,7 +161,7 @@ namespace EPAM.MyBlog.DAL.DB
 
         public bool AddPost(Entities.PostText post, string login)
         {
-            string[] split = post.Tags.Split(' ');
+            string[] split = post.Tags.Trim().Split(' ');
             for (int i = 0; i < split.Length; i++)
             {
                 using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -250,8 +250,6 @@ namespace EPAM.MyBlog.DAL.DB
         {
             StringBuilder s = new StringBuilder();
 
-
-
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("SELECT Post_Id, Post_Title, Post_Text, User_Name, Time FROM dbo.Posts WHERE Post_Id = @Id", con);
@@ -287,7 +285,7 @@ namespace EPAM.MyBlog.DAL.DB
                         while (reader2.Read())
                         {
                             s.Append((string)reader2["Tag"]);
-                            s.Append(", ");
+                            s.Append(" ");
                         }
                     }
                     post.Tags = s.ToString();
@@ -320,7 +318,7 @@ namespace EPAM.MyBlog.DAL.DB
                         con2.Close();
                     }
 
-                    string[] split = post.Tags.Split(' ');
+                    string[] split = post.Tags.Trim().Split(' ');
                     for (int i = 0; i < split.Length; i++)
                     {
                         using (SqlConnection con2 = new SqlConnection(ConnectionString))
@@ -615,6 +613,27 @@ namespace EPAM.MyBlog.DAL.DB
             }
         }
 
+        public bool AddUserInfo(string login) 
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO dbo.UserAbout (Login) VALUES (@Login)", con);
+                command.Parameters.Add(new SqlParameter("@Login", login));
+                con.Open();
+                int num = command.ExecuteNonQuery();
+                if (num == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+        }
+
+
         public Entities.UserInfo GetUserInfo(string name)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -866,7 +885,7 @@ namespace EPAM.MyBlog.DAL.DB
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT [Post_Id], [Post_Title] FROM [Blog].dbo.Posts WHERE Post_Text LIKE @Text ORDER BY [Blog].dbo.Posts.Time DESC", con);
+                SqlCommand command = new SqlCommand("SELECT [Post_Id], [Post_Title] FROM [Blog].dbo.Posts WHERE Post_Text LIKE @Text OR Post_Title LIKE @Text ORDER BY [Blog].dbo.Posts.Time DESC", con);
                 command.Parameters.Add(new SqlParameter("@Text", p));
                 con.Open();
                 var reader = command.ExecuteReader();

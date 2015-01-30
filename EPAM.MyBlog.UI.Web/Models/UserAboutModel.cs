@@ -25,6 +25,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         [Display(Name = "Имя")]
         public string Name { get { return name; } set { name = value; } }
         [Display(Name = "О себе")]
+        [DataType(DataType.MultilineText)]
         public string AboutMe { get { return info; } set { info = value; } }
 
         private string login;

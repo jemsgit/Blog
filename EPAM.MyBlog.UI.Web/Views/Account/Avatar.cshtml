@@ -15,7 +15,7 @@
     }
 
 @if(User.Identity.Name == Model.Login){
-<div class="post">
+<div class="center_btn">
     @Html.ActionLink("Изменить аватар", "EditInfoAvatar", "Files", null, new { @class="btn btn-default"})
 </div>
 }

@@ -2,10 +2,21 @@
 
 @{ int c = 0;}
 
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">Записи @ViewData["name"]</div>
-</div>
+<div class="col-sm-12 title">   
+    <div class="col-md-8 col-sm-8 col-lg-8 col-sx-8"><p>Записи @ViewData["name"]</p></div>
 
+    <div class="col-sm-2 col-md-2 col-lg-2 col-sx-2 pull-righ">
+        @if(User.IsInRole("Admin"))
+{
+    <p>@Html.ActionLink("К пользователям", "Users", "Admin", new { @class="btn btn-default"})</p>
+}
+else if (User.IsInRole("Moder"))
+{
+     <p>@Html.ActionLink("К пользователям", "PostComment", "Admin", new { @class="btn btn-default"})</p>
+}
+        
+    </div>
+</div>
 
 
 @foreach (var item in Model) 
@@ -33,6 +44,5 @@
         </div>
 }
 
-@Html.ActionLink("К пользователям", "Users", "Admin")
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

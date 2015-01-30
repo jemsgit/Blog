@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,7 +12,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         /// Модель для поиска по тегам и тексту
         /// </summary>
         /// 
-
+        [Required(ErrorMessage = "Поле не заполнено")]
         public string SearchText { get { return search; } set { search = value; } }
 
         private string search;
@@ -29,25 +30,32 @@ namespace EPAM.MyBlog.UI.Web.Models
         internal IEnumerable<PresentPostModel> GetResult()
         {
             string query = SearchText.Trim();
-            if(query.Substring(0,1) == "#")
+            if (!String.IsNullOrEmpty(query))
             {
-                var result = GetDAL.dal.GetResultOfSearchTag(this.SearchText.Substring(1,SearchText.Length-1)).ToList();
-                List<PresentPostModel> TitleList = new List<PresentPostModel>();
-                foreach (var item in result)
+                if (query.Substring(0, 1) == "#")
                 {
-                    TitleList.Add((PresentPostModel)item);
+                    var result = GetDAL.dal.GetResultOfSearchTag(this.SearchText.Substring(1, SearchText.Length - 1)).ToList();
+                    List<PresentPostModel> TitleList = new List<PresentPostModel>();
+                    foreach (var item in result)
+                    {
+                        TitleList.Add((PresentPostModel)item);
+                    }
+                    return TitleList;
                 }
-                return TitleList;
+                else
+                {
+                    var result = GetDAL.dal.GetResultOfSearch(this.SearchText).ToList();
+                    List<PresentPostModel> TitleList = new List<PresentPostModel>();
+                    foreach (var item in result)
+                    {
+                        TitleList.Add((PresentPostModel)item);
+                    }
+                    return TitleList;
+                }
             }
             else
             {
-                var result = GetDAL.dal.GetResultOfSearch(this.SearchText).ToList();
-                List<PresentPostModel> TitleList = new List<PresentPostModel>();
-                foreach (var item in result)
-                {
-                    TitleList.Add((PresentPostModel)item);
-                }
-                return TitleList;
+                return new List<PresentPostModel>();
             }
         }
 

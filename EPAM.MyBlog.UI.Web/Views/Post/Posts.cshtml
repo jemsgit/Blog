@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Posts";
 }
-@using (Html.BeginForm("Posts", "Post", FormMethod.Post))
+@using (Html.BeginForm("Posts", "Post", FormMethod.Post, new { id = "ajaxform"}))
 {
     <div class ="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">@Html.DisplayFor(model => model.Title)</div>
@@ -17,19 +17,21 @@
         <p><strong>Теги: </strong>@Html.DisplayFor(model => model.Tags)</p>
     </div>
     <div>
-        <p><strong>Автор:</strong> @Ajax.ActionLink(Model.Author,"UserInfo", "Account", new {name = Model.Author }, new AjaxOptions{ UpdateTargetId = "content" }) </p>
+        <p><strong>Автор:</strong> @Ajax.ActionLink(Model.Author, "UserInfo", "Account", new { name = Model.Author }, new AjaxOptions { UpdateTargetId = "content" }) </p>
     </div>
     <div>
         <p><strong>Дата:</strong> @Html.DisplayFor(model => model.Time)</p>
     </div>
-    if(User.Identity.IsAuthenticated){
-    
-        if((string)ViewData["Check"] == "True")
+    if (User.Identity.IsAuthenticated)
+    {
+
+        if ((string)ViewData["Check"] == "True")
         {
             <button type="submit" name="action" value="AddFav" hidden="hidden">В избранное</button>
-            <p>Данная статья находится в @Ajax.ActionLink(" избранном","Favorite", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" }) </p>
+            <p>Данная статья находится в @Ajax.ActionLink(" избранном", "Favorite", "Post", new { }, new AjaxOptions { UpdateTargetId = "content" }) </p>
         }
-        else{
+        else
+        {
             <button type="submit" name="action" value="AddFav">В избранное</button>
         }
     }
@@ -47,3 +49,4 @@ else{
 }
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

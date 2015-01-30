@@ -1,15 +1,12 @@
 ﻿@model EPAM.MyBlog.UI.Web.Models.PostModel
 
-<script src="~/Scripts/jquery-1.7.1.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
 {
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>PostModel</legend>
+    <fieldset class = "newpost">
+        <legend>Редактирование</legend>
 
         @Html.HiddenFor(model => model.Id)
 
@@ -36,9 +33,9 @@
             @Html.EditorFor(model => model.Tags)
             @Html.ValidationMessageFor(model => model.Tags)
         </div>
-
+        <p>Добавьте теги, разделив их пробелом</p>
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Сохранить" />
         </p>
     </fieldset>
 }
@@ -47,4 +44,7 @@
     @Ajax.ActionLink("К списку записей","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })
 </div>
 
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

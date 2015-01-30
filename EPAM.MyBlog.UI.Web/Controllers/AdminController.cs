@@ -46,6 +46,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(UserAdminModel.GetAllUsers());
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Users(string action)
         {
@@ -88,7 +89,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(UserAdminModel.GetAllUsers());
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Moder")]
         public ActionResult UserPosts(string name)
         {
             ViewData["name"] = name;
@@ -98,7 +99,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Moder")]
         public ActionResult UserComments(string name)
         {
             ViewData["name"] = name;
@@ -107,7 +108,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(CommentModel.GetAllComments(name));
         }
 
-
+        [Authorize(Roles = "Admin, Moder")]
         public ActionResult DeletePost(Guid Id, string name)
         {
             var post = PostModel.GetPostById(Id);
@@ -118,7 +119,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "Admin, Moder")]
         [HttpPost]
         public ActionResult DeletePost(Guid id, ConfirmModel model, string name)
         {
@@ -148,6 +149,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         /// <param name="Id"></param>
         /// <param name="ReturnUrl"></param>
         /// <returns></returns>
+        /// 
+        [Authorize(Roles = "Admin, Moder")]
         public ActionResult DeleteComment(Guid Id, string name)
         {
             ViewData["name"] = name;
@@ -156,7 +159,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "Admin, Moder")]
         [HttpPost]
         public ActionResult DeleteComment(Guid id, ConfirmModel model, string name)
         {

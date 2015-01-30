@@ -155,6 +155,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\ie-style.css" />
     <Content Include="Content\img\09.gif" />
     <Content Include="Content\img\712.GIF" />
     <Content Include="Content\img\cropped-345656.jpg" />
@@ -170,6 +171,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\include\links.js" />
     <Content Include="Scripts\include\loading.js" />
+    <Content Include="Scripts\include\script1.js" />
     <Content Include="Scripts\include\script2.js" />
     <Content Include="Scripts\jquery-1.11.2.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -322,6 +324,8 @@
     <Content Include="Views\Post\Favorite.cshtml" />
     <Content Include="Views\Post\DeleteFavorite.cshtml" />
     <Content Include="Views\Post\UserPosts.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,6 +32,13 @@
         </div>
 }
 
-@Html.ActionLink("К пользователям", "Users")
+@if(User.IsInRole("Admin"))
+{
+    @Html.ActionLink("К пользователям", "Users", "Admin")
+}
+else if (User.IsInRole("Moder"))
+{
+     @Html.ActionLink("К пользователям", "PostComment", "Admin")
+}
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

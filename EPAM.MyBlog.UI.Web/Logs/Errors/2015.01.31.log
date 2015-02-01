@@ -55,3 +55,21 @@
 2015-01-31 02:14:30,662 [48] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил имя
 2015-01-31 02:14:30,690 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
 2015-01-31 02:26:55,391 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-01-31 23:37:38,894 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:37:38,939 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: e943faa6-6caa-4f1e-bb07-024896b6a12aв избранное пользователя: sobaka
+2015-01-31 23:37:55,464 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:37:55,465 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: sobaka
+2015-01-31 23:42:30,425 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:42:30,437 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: e943faa6-6caa-4f1e-bb07-024896b6a12aв избранное пользователя: sobaka
+2015-01-31 23:45:42,158 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: d62e1f01-eb81-4410-b536-5fa9e409e77d пользователя: sobaka
+2015-01-31 23:45:42,159 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: d62e1f01-eb81-4410-b536-5fa9e409e77dв избранное пользователя: sobaka
+2015-01-31 23:45:53,429 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:45:53,430 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: sobaka
+2015-01-31 23:45:55,888 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: d62e1f01-eb81-4410-b536-5fa9e409e77d пользователя: sobaka
+2015-01-31 23:45:55,889 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: d62e1f01-eb81-4410-b536-5fa9e409e77dиз Избранного у пользователя: sobaka
+2015-01-31 23:46:00,738 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:46:00,739 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: e943faa6-6caa-4f1e-bb07-024896b6a12aв избранное пользователя: sobaka
+2015-01-31 23:47:32,718 [29] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:47:32,718 [29] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: sobaka
+2015-01-31 23:50:46,243 [38] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-01-31 23:50:46,257 [38] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: e943faa6-6caa-4f1e-bb07-024896b6a12aв избранное пользователя: sobaka

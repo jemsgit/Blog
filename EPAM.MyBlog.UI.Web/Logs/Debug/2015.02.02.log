@@ -1,0 +1,79 @@
+2015-02-02 00:20:30,695 [36] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-02 00:28:42,367 [41] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-02 00:28:44,431 [51] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-02 00:33:10,777 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-02 00:33:46,078 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 95376b94-200c-4255-9b17-9eadd1cbb042 пользователя: 
+2015-02-02 00:33:50,375 [53] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 95376b94-200c-4255-9b17-9eadd1cbb042
+2015-02-02 00:33:50,376 [53] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 95376b94-200c-4255-9b17-9eadd1cbb042у пользователя: Admin2
+2015-02-02 00:35:06,571 [41] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: eb250a1d-006e-40ea-adb2-9975e74f58b5 пользователя: 
+2015-02-02 00:35:17,192 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-02 00:35:26,942 [16] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: JemJem
+2015-02-02 00:35:38,501 [54] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: eb250a1d-006e-40ea-adb2-9975e74f58b5
+2015-02-02 00:35:38,502 [54] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: eb250a1d-006e-40ea-adb2-9975e74f58b5у пользователя: JemJem
+2015-02-02 01:08:12,809 [26] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 37bd5783-8695-4598-9ff0-47896dbb9217 пользователя: 
+2015-02-02 01:14:08,582 [22] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: bb740022-0df3-4fe3-a898-46dcf5e5b492 пользователя: 
+2015-02-02 01:18:32,553 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 8161347c-8529-4201-868d-9c78e8b37d38 пользователя: 
+2015-02-02 01:18:56,105 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: JemJem
+2015-02-02 01:19:10,023 [36] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-02 01:25:00,539 [36] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 256a696f-6692-44c1-bcad-49018e04024b пользователя: 
+2015-02-02 01:31:46,278 [32] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: d98e8bc2-f052-4d10-a8b0-fee9998556cc к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:32:57,308 [32] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] -    в EPAM.MyBlog.UI.Web.Controllers.CommentController.AddComment(CommentModel comment) в c:\Users\Jem\Documents\Visual Studio 2012\Projects\Blog\EPAM.MyBlog.UI.Web\Controllers\CommentController.cs:строка 37
+   в lambda_method(Closure , ControllerBase , Object[] )
+  
+2015-02-02 01:32:57,310 [32] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Ссылка на объект не указывает на экземпляр объекта.
+2015-02-02 01:33:25,033 [48] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: fe271ff3-2997-44e5-8906-f10e84e4dfd9 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:33:25,034 [48] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:33:39,849 [41] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: c9156e39-c6a8-4e6c-b85b-1e421a940333 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:33:39,850 [41] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:35:54,907 [37] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 86989df9-978f-409a-a652-9c99072edd37 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:35:54,909 [37] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:38:04,657 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: d90ea45d-32fa-4496-ac0b-0eb4ca5ec118 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:38:04,658 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 256a696f-6692-44c1-bcad-49018e04024b
+2015-02-02 01:43:43,375 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0cfc24f3-12cf-48f5-a093-22a7942a37d3 пользователя: Admin2
+2015-02-02 01:43:43,376 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0cfc24f3-12cf-48f5-a093-22a7942a37d3в избранное пользователя: Admin2
+2015-02-02 01:44:39,091 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 0cfc24f3-12cf-48f5-a093-22a7942a37d3 пользователя: 
+2015-02-02 01:44:39,092 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 0cfc24f3-12cf-48f5-a093-22a7942a37d3у пользователя: Admin2
+2015-02-02 01:45:50,931 [33] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 0cfc24f3-12cf-48f5-a093-22a7942a37d3 пользователя: 
+2015-02-02 01:45:50,932 [33] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 0cfc24f3-12cf-48f5-a093-22a7942a37d3у пользователя: Admin2
+2015-02-02 01:57:05,836 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 99d9932d-c402-4da9-bdc2-8a1bbdb31899 пользователя: 
+2015-02-02 01:57:05,837 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 99d9932d-c402-4da9-bdc2-8a1bbdb31899у пользователя: Admin2
+2015-02-02 02:06:03,812 [40] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 9e29a5ad-8706-4a5a-a0ee-99e2bddffa84 пользователя: 
+2015-02-02 02:06:03,812 [40] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 9e29a5ad-8706-4a5a-a0ee-99e2bddffa84у пользователя: Admin2
+2015-02-02 02:08:39,486 [53] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: aad5e562-431a-4239-ab1c-6c452c76bfbf пользователя: 
+2015-02-02 02:08:39,486 [53] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: aad5e562-431a-4239-ab1c-6c452c76bfbfу пользователя: Admin2
+2015-02-02 02:11:15,362 [51] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672 пользователя: 
+2015-02-02 02:11:15,364 [51] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672у пользователя: Admin2
+2015-02-02 02:13:43,936 [17] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 8f1f47dd-5882-449b-b36c-0220ab1d4fa9 к посту: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f
+2015-02-02 02:13:43,938 [17] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f
+2015-02-02 02:19:19,915 [21] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 2990e86a-7688-405d-9f3a-7131d1462ab2 пользователя: 
+2015-02-02 02:21:49,254 [34] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 2990e86a-7688-405d-9f3a-7131d1462ab2 пользователя: 
+2015-02-02 02:21:49,255 [34] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 2990e86a-7688-405d-9f3a-7131d1462ab2у пользователя: Admin2
+2015-02-02 02:22:41,684 [5] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 2990e86a-7688-405d-9f3a-7131d1462ab2 пользователя: 
+2015-02-02 02:22:41,685 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 2990e86a-7688-405d-9f3a-7131d1462ab2у пользователя: Admin2
+2015-02-02 02:25:29,421 [34] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:26:56,472 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:26:56,474 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:28:28,335 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:28:28,337 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:28:50,997 [15] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:28:50,998 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:28:54,368 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-02 02:30:08,638 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:30:08,639 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:32:26,781 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 82182377-e5be-476f-bb02-4c29e907d71b пользователя: 
+2015-02-02 02:32:26,782 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:35:29,937 [52] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 82182377-e5be-476f-bb02-4c29e907d71b
+2015-02-02 02:35:29,937 [52] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 82182377-e5be-476f-bb02-4c29e907d71bу пользователя: Admin2
+2015-02-02 02:36:33,961 [51] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 87736c07-9b84-4b33-8f76-8e1caa9bb3d9 пользователя: 
+2015-02-02 02:41:40,327 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 87736c07-9b84-4b33-8f76-8e1caa9bb3d9
+2015-02-02 02:41:40,370 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 87736c07-9b84-4b33-8f76-8e1caa9bb3d9у пользователя: Admin2
+2015-02-02 03:00:55,688 [9] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: ae993aab-0c49-4f53-ae65-15709e21894c пользователя: 
+2015-02-02 03:09:18,989 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: ae993aab-0c49-4f53-ae65-15709e21894c
+2015-02-02 03:09:19,000 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: ae993aab-0c49-4f53-ae65-15709e21894cу пользователя: Admin2
+2015-02-02 03:09:34,714 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 2990e86a-7688-405d-9f3a-7131d1462ab2
+2015-02-02 03:09:34,716 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 2990e86a-7688-405d-9f3a-7131d1462ab2у пользователя: Admin2
+2015-02-02 03:09:45,634 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: ac06c564-9a7a-497c-9703-9f1cc50f6b02 пользователя: 
+2015-02-02 03:09:53,718 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: ac06c564-9a7a-497c-9703-9f1cc50f6b02 пользователя: 
+2015-02-02 03:09:53,719 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: ac06c564-9a7a-497c-9703-9f1cc50f6b02у пользователя: Admin2
+2015-02-02 03:09:57,308 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: ac06c564-9a7a-497c-9703-9f1cc50f6b02
+2015-02-02 03:09:57,309 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: ac06c564-9a7a-497c-9703-9f1cc50f6b02у пользователя: Admin2

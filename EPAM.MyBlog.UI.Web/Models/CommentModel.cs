@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace EPAM.MyBlog.UI.Web.Models
 {
@@ -18,6 +19,7 @@ namespace EPAM.MyBlog.UI.Web.Models
 
         [Display(Name = "Комментарий")]
         [Required(ErrorMessage = "Поле {0} не заполнено")]
+        [AllowHtml]
         [DataType(DataType.MultilineText)]
         public string Text { get { return text; } set { text = value; } }
 

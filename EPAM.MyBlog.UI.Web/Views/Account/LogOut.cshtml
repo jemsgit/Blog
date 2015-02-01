@@ -5,10 +5,11 @@
 }
 
 <h2>Вы действиетльно хотите выйти?</h2>
-@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
+@using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logout" }))
 {
-    <button name="Confirm" value ="true">Да</button> 
-    <button name="Confirm" value ="false">Нет</button>
+    <button type="submit" name="Confirm" value ="true">Да</button> 
+    <button type="submit" name="Confirm" value ="false">Нет</button>
 }
 
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")
 @System.Web.Optimization.Scripts.Render("~/bundles/my")

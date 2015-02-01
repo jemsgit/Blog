@@ -43,15 +43,11 @@
                 <img src="../../Content/img/logo.png" alt="MyBlog" height ="25" />
               </a>
           </div>
-          <div class="collapse navbar-collapse" id="menu">
-
+          <div class="collapse navbar-collapse">
+              <div id="menu">
               @Html.Action("MenuState", "Account")
-
-              <div class="col-sm1 col-md-1 col-lg-1 pull-right">
-                   <div class="btn-group">
-                       @Html.Action("State", "Account")
-                    </div>
               </div>
+
 
          <div class="col-sm-3 col-md-3">
                  
@@ -67,7 +63,7 @@
 
       <div class="container head shadow">
           <div class="row">
-              <div class="col-lg-8 col-md-8 col-sm-8">@Html.Action("TitleState", "Account")</div>
+              <div class="col-lg-8 col-md-8 col-sm-8" id="name">@Html.Action("TitleState", "Account")</div>
           </div>
       </div>
 
@@ -83,8 +79,8 @@
         <div class="container footer">
             <div class="row">
                 <div class="col-md-4">@Ajax.ActionLink("Помощь","Help", "Home", new { }, new AjaxOptions{ UpdateTargetId = "content" })</div>
-                <div class="col-md-4">@Ajax.ActionLink("Контакты","Help", "Home", new { }, new AjaxOptions{ UpdateTargetId = "content" })</div>
-                <div class="col-md-4">@Ajax.ActionLink("Разработчики","Help", "Home", new { }, new AjaxOptions{ UpdateTargetId = "content" })</div>
+                <div class="col-md-4"><a href="https://vk.com/jem_jem" class="nojs">Контакты</a></div>
+                <div class="col-md-4"><a href="https://vk.com/jem_jem" class="nojs">Разработчики</a></div>
             </div>
         </div>
         
@@ -94,11 +90,8 @@
       @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
       @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
       @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
-     @* <script>
-          var Links = { GetPosts: '@Url.Action("MyPosts", "Post")' }
-      </script>*@
       @System.Web.Optimization.Scripts.Render("~/bundles/my")
-
+      @System.Web.Optimization.Scripts.Render("~/bundles/my2")
       @RenderSection("script", false)  
           
         

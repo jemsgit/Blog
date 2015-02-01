@@ -112,8 +112,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult DeletePost(Guid Id, string name)
         {
             var post = PostModel.GetPostById(Id);
-            ViewData["Title"] = post.Title;
             ViewData["name"] = name;
+            ViewData["ptitle"] = post.Title;
             if (Request.IsAjaxRequest())
                 return PartialView("DeletePost");
             return View();
@@ -133,12 +133,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 else
                 {
                     logger.Error("Ошибка удаления поста " + id);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("DeletePost");
                     return View();
                 }
             }
             else
             {
                 logger.Debug("Невалидная модель удаления поста " + id);
+                if (Request.IsAjaxRequest())
+                    return PartialView("DeletePost");
                 return View();
             }
         }
@@ -168,15 +172,22 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 if (CommentModel.Delete(id))
                 {
                     logger.Info("Удаление комментария " + id);
-                    return RedirectToAction("UserComments", "Admin", new {name = name});
+                    return RedirectToAction("UserComments", "Admin", new { name = name });
                 }
                 else
                 {
                     logger.Error("Ошибка удаления комментария " + id);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("DeleteComment");
                     return View();
                 }
             }
-            return View();
+            else
+            {
+                if (Request.IsAjaxRequest())
+                    return PartialView("DeleteComment");
+                return View();
+            }
         }
 
 

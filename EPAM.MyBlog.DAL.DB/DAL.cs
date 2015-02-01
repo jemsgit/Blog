@@ -150,6 +150,7 @@ namespace EPAM.MyBlog.DAL.DB
                 SqlCommand command = new SqlCommand("INSERT INTO dbo.Reasons VALUES (@Reason)", con);
                 command.Parameters.Add(new SqlParameter("@Reason", reason));
                 con.Open();
+                command.ExecuteNonQuery();
             }
         }
 

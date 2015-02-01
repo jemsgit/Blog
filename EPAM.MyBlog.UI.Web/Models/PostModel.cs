@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace EPAM.MyBlog.UI.Web.Models
 {
@@ -19,6 +20,7 @@ namespace EPAM.MyBlog.UI.Web.Models
         [Display(Name = "Текст записи")]
         [Required(ErrorMessage = "Поле {0} не заполнено")]
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Text { get { return text; } set { text = value; } }
 
         [Display(Name = "Заголовок")]

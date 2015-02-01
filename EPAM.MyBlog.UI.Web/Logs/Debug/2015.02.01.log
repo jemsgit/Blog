@@ -1,0 +1,463 @@
+2015-02-01 00:00:29,905 [23] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-02-01 00:00:29,909 [23] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: sobaka
+2015-02-01 00:11:01,327 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 00:11:01,329 [46] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 00:11:10,063 [54] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 00:11:10,063 [54] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 00:11:25,972 [54] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 00:11:25,973 [54] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 00:11:38,183 [55] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 00:11:38,184 [55] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 00:11:39,211 [57] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 00:11:39,212 [57] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 00:11:46,916 [53] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 9f7298cf-9c51-4ecb-bdae-e17f891fd241 пользователя: Admin2
+2015-02-01 00:11:46,918 [53] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 9f7298cf-9c51-4ecb-bdae-e17f891fd241в избранное пользователя: Admin2
+2015-02-01 00:12:07,999 [57] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: 
+2015-02-01 00:12:08,000 [57] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcу пользователя: Admin2
+2015-02-01 01:01:05,907 [52] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 22f45bfc-613d-4bde-9f53-ef567e68fd15 пользователя: sobaka
+2015-02-01 01:01:05,907 [52] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 22f45bfc-613d-4bde-9f53-ef567e68fd15из Избранного у пользователя: sobaka
+2015-02-01 01:10:29,607 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: ccd4d45b-1352-470e-8e70-c8903d5eb93f к посту: e943faa6-6caa-4f1e-bb07-024896b6a12a
+2015-02-01 01:10:29,608 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: sobaka к посту: e943faa6-6caa-4f1e-bb07-024896b6a12a
+2015-02-01 01:11:06,321 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:11:19,402 [20] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-02-01 01:11:19,403 [20] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-02-01 01:11:19,505 [23] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:11:25,421 [23] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: sobaka
+2015-02-01 01:11:25,422 [23] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил имя
+2015-02-01 01:11:25,451 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:11:49,888 [20] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: sobaka
+2015-02-01 01:27:28,969 [35] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-02-01 01:27:28,969 [35] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: e943faa6-6caa-4f1e-bb07-024896b6a12aв избранное пользователя: sobaka
+2015-02-01 01:27:33,824 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: sobaka
+2015-02-01 01:27:33,825 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: sobaka
+2015-02-01 01:27:41,008 [35] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 7894a8ed-863a-409f-b3fd-fe4e46b51fab пользователя: 
+2015-02-01 01:27:46,933 [28] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 7894a8ed-863a-409f-b3fd-fe4e46b51fab пользователя: 
+2015-02-01 01:27:46,933 [28] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 7894a8ed-863a-409f-b3fd-fe4e46b51fabу пользователя: sobaka
+2015-02-01 01:27:54,359 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 7894a8ed-863a-409f-b3fd-fe4e46b51fab
+2015-02-01 01:27:54,359 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 7894a8ed-863a-409f-b3fd-fe4e46b51fabу пользователя: sobaka
+2015-02-01 01:28:49,839 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:28:57,012 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-02-01 01:28:57,012 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-02-01 01:29:02,830 [9] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:29:21,520 [5] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: sobaka
+2015-02-01 01:29:21,521 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил имя
+2015-02-01 01:29:25,052 [5] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о поле пользователя сохранены: sobaka
+2015-02-01 01:29:25,053 [5] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: sobaka изменил информацию о поле
+2015-02-01 01:31:37,378 [14] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 01:31:42,331 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 01:31:48,354 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 01:31:48,355 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 01:31:48,520 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 01:32:40,494 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 01:33:43,245 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-01 01:33:50,855 [16] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-02-01 01:33:50,856 [16] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-02-01 02:08:35,318 [92] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: sobaka
+2015-02-01 02:14:20,708 [92] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 02:14:34,944 [91] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 02:14:41,616 [96] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 02:15:15,171 [87] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 02:15:18,790 [94] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 02:18:37,341 [91] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 02:18:45,513 [91] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 02:19:03,664 [88] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 02:19:07,961 [16] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 02:20:26,722 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 02:24:46,398 [79] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 13:07:10,568 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:07:10,616 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-02-01 13:07:14,777 [6] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:07:14,778 [6] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:07:17,767 [8] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:07:17,768 [8] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:07:40,733 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:07:40,734 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-02-01 13:07:43,550 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:07:43,551 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:07:58,348 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 13:08:06,940 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 13:08:06,940 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 13:20:20,427 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 13:20:28,471 [8] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 13:46:27,320 [22] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:46:27,333 [22] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-02-01 13:46:46,865 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:46:49,296 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:47:10,439 [7] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:47:10,439 [7] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:47:20,432 [15] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:47:20,433 [15] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:47:29,038 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:47:29,039 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcв избранное пользователя: Admin2
+2015-02-01 13:47:35,133 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc пользователя: Admin2
+2015-02-01 13:47:35,134 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcиз Избранного у пользователя: Admin2
+2015-02-01 13:51:40,522 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc
+2015-02-01 13:51:40,537 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcу пользователя: Admin2
+2015-02-01 13:51:46,085 [11] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста: 0d20cd2c-01fb-4b33-9d75-9d790c6006dc
+2015-02-01 13:51:46,086 [11] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка при удалении поста id: 0d20cd2c-01fb-4b33-9d75-9d790c6006dcу пользователя: Admin2
+2015-02-01 13:52:09,759 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 9f7298cf-9c51-4ecb-bdae-e17f891fd241
+2015-02-01 13:52:09,760 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 9f7298cf-9c51-4ecb-bdae-e17f891fd241у пользователя: Admin2
+2015-02-01 14:01:34,469 [32] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 14:03:11,129 [34] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 14:03:12,873 [31] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 14:04:52,251 [34] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 14:05:01,833 [39] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 14:05:06,740 [34] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 14:05:17,511 [38] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 14:10:59,914 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 24f599de-8ec6-40bb-9242-48f9a5d9cf37
+2015-02-01 14:10:59,915 [46] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 24f599de-8ec6-40bb-9242-48f9a5d9cf37у пользователя: Admin2
+2015-02-01 15:48:42,195 [131] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: e943faa6-6caa-4f1e-bb07-024896b6a12a пользователя: Admin2
+2015-02-01 15:48:58,355 [131] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: e943faa6-6caa-4f1e-bb07-024896b6a12aиз Избранного у пользователя: Admin2
+2015-02-01 15:49:46,547 [128] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151 пользователя: Admin2
+2015-02-01 15:49:46,548 [128] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151в избранное пользователя: Admin2
+2015-02-01 15:50:04,372 [128] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151 пользователя: Admin2
+2015-02-01 15:50:04,373 [128] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151из Избранного у пользователя: Admin2
+2015-02-01 15:50:57,909 [108] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 15:51:04,534 [108] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пост добавлен в Избранное: 9ca45656-e691-4d65-ad7a-f4256904f386 пользователя: Admin2
+2015-02-01 15:51:04,536 [108] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Добавлен пост с id: 9ca45656-e691-4d65-ad7a-f4256904f386в избранное пользователя: Admin2
+2015-02-01 15:51:15,746 [108] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост из избранного: 9ca45656-e691-4d65-ad7a-f4256904f386 пользователя: Admin2
+2015-02-01 15:51:15,748 [108] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 9ca45656-e691-4d65-ad7a-f4256904f386из Избранного у пользователя: Admin2
+2015-02-01 15:57:39,267 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:07:11,820 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 16:07:19,270 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 16:07:19,271 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 16:07:53,000 [115] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:08:04,739 [112] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:08:17,149 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 16:08:23,440 [115] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 16:08:23,441 [115] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 16:08:23,462 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 16:08:59,579 [114] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:09:05,671 [116] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:09:29,477 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151
+2015-02-01 16:09:29,478 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: 8a4ff7f3-f5d7-4c3d-b31c-6ba4b999e151у пользователя: Admin2
+2015-02-01 16:10:02,543 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:11:58,097 [119] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:13:24,846 [120] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:13:29,192 [120] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:14:18,779 [127] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:14:26,720 [125] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:15:11,239 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:15:18,419 [118] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:21:17,244 [130] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:21:23,997 [130] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:29:01,311 [130] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:29:06,793 [122] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:39:03,095 [130] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 16:42:45,911 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:42:50,092 [23] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:44:37,618 [9] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:44:41,943 [9] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:44:53,616 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:45:04,716 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:45:30,605 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:45:36,662 [22] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:46:34,502 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:46:39,022 [116] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:47:42,620 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:47:48,089 [22] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:48:49,184 [22] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:48:56,235 [109] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:50:53,623 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:50:59,006 [9] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 16:56:17,788 [120] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 16:56:36,569 [120] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 17:01:09,058 [98] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 17:01:15,170 [123] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 17:04:55,686 [121] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 17:05:25,391 [121] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:05:25,432 [121] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sdfs@gmasf.coj
+2015-02-01 17:05:25,662 [121] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:05:25,663 [121] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:05:41,209 [118] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: saratov
+2015-02-01 17:05:41,211 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: saratov изменил имя
+2015-02-01 17:05:46,847 [121] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о пользователе сохранены: saratov
+2015-02-01 17:05:46,849 [121] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: saratov изменил информцияю о себе
+2015-02-01 17:05:54,033 [121] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: saratov
+2015-02-01 17:05:54,035 [121] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: saratov
+2015-02-01 17:05:54,074 [117] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: saratov
+2015-02-01 17:06:23,143 [118] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: saratov
+2015-02-01 17:06:23,144 [118] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: saratov
+2015-02-01 17:07:21,752 [99] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:07:21,753 [99] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:20:56,142 [125] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:20:56,155 [125] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:24:45,352 [113] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:24:45,353 [113] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:25:17,744 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:25:17,744 [105] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:25:19,390 [120] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:25:19,391 [120] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:25:27,235 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:25:27,237 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:25:32,145 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:25:32,147 [105] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:25:40,591 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:25:40,592 [105] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:26:07,702 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:26:07,703 [116] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:26:59,190 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:26:59,192 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 17:28:23,069 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:28:23,072 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: asdasd@dsa.come
+2015-02-01 17:28:23,125 [105] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:28:23,127 [105] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:29:17,956 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:29:17,958 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:30:22,569 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:30:22,572 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sadsd2@sda.cd
+2015-02-01 17:30:22,592 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:30:22,593 [12] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:30:38,770 [92] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:30:38,770 [92] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:32:08,655 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:32:08,669 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: dfsdfs@sdf.com
+2015-02-01 17:32:08,761 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:32:08,767 [12] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:32:16,672 [93] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:32:16,673 [93] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:32:45,559 [93] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:32:45,560 [93] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sd2asd@gmai.com
+2015-02-01 17:32:45,660 [93] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:32:45,662 [93] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:32:57,346 [92] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:32:57,349 [92] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:37:16,913 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:37:16,926 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sd2awsd@gmai.com
+2015-02-01 17:37:17,145 [116] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:37:17,154 [116] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:37:30,289 [103] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 17:37:30,290 [103] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 17:39:08,853 [103] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 17:39:08,854 [103] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sdawsd@gmai.com
+2015-02-01 17:39:08,909 [103] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 17:39:08,910 [103] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 17:39:18,597 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:39:24,630 [8] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:39:38,634 [113] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:39:46,996 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov2
+2015-02-01 17:39:46,997 [8] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov2
+2015-02-01 17:40:28,970 [113] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Пользователь: saratov ввел некорректный пароль
+2015-02-01 17:40:47,047 [103] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:42:11,641 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:42:14,306 [108] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:42:27,701 [116] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:42:29,781 [8] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:43:38,349 [125] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:43:43,587 [124] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:44:25,845 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:44:31,053 [114] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:45:20,186 [97] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:46:09,972 [97] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 17:55:05,959 [92] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 17:55:16,590 [112] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:07:46,878 [108] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:09:04,611 [108] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:09:06,988 [117] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:10:23,905 [123] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:10:32,877 [90] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:11:23,177 [104] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:12:03,361 [104] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:12:36,988 [90] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:13:42,726 [96] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:16:29,884 [94] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:17:25,490 [100] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:18:20,939 [9] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:19:10,049 [100] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:19:35,254 [100] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:20:42,471 [110] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 18:20:51,692 [110] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: saratov
+2015-02-01 18:26:56,651 [109] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 18:26:56,652 [109] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 18:28:32,098 [21] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 18:28:32,112 [21] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sdfs@gmasf.cojd
+2015-02-01 18:28:32,119 [21] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 18:28:32,122 [21] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 18:30:48,849 [88] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: saratov
+2015-02-01 18:30:48,850 [88] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: saratov
+2015-02-01 18:31:30,028 [113] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 18:31:30,030 [113] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: asdwasd@dsa.com
+2015-02-01 18:31:30,033 [113] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: saratov
+2015-02-01 18:31:30,036 [113] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: saratov
+2015-02-01 18:34:22,594 [109] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: saratov
+2015-02-01 19:07:41,701 [50] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 19:08:06,775 [50] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удалены учетные записи пользователей: Admin1,Amerika,Amerika2,Amerika3,Jack122,Jemrock,Moder1,Moder2,Moder3,saratov,sobaka
+2015-02-01 19:08:20,349 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 9ca45656-e691-4d65-ad7a-f4256904f386
+2015-02-01 19:08:20,350 [46] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 9ca45656-e691-4d65-ad7a-f4256904f386
+2015-02-01 19:08:48,608 [50] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 22f45bfc-613d-4bde-9f53-ef567e68fd15
+2015-02-01 19:08:48,609 [50] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 22f45bfc-613d-4bde-9f53-ef567e68fd15
+2015-02-01 19:21:05,789 [75] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672 пользователя: 
+2015-02-01 19:21:11,856 [77] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672 пользователя: 
+2015-02-01 19:21:11,857 [77] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672у пользователя: Admin2
+2015-02-01 19:21:48,554 [81] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: b65c153a-f478-4c1c-adba-ac24a5eb1305 пользователя: 
+2015-02-01 19:22:00,503 [84] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: b65c153a-f478-4c1c-adba-ac24a5eb1305
+2015-02-01 19:22:00,504 [84] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста b65c153a-f478-4c1c-adba-ac24a5eb1305
+2015-02-01 19:24:00,910 [54] ERROR EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Ошибка удаления поста: b65c153a-f478-4c1c-adba-ac24a5eb1305
+2015-02-01 19:24:00,911 [54] ERROR EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Ошибка удаления поста b65c153a-f478-4c1c-adba-ac24a5eb1305
+2015-02-01 19:27:29,095 [67] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: a50070e0-0927-4f03-a83b-0f9e8dfedd59 пользователя: 
+2015-02-01 19:28:33,303 [72] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: a50070e0-0927-4f03-a83b-0f9e8dfedd59
+2015-02-01 19:28:33,316 [72] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста a50070e0-0927-4f03-a83b-0f9e8dfedd59
+2015-02-01 19:56:38,047 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 19:56:51,974 [9] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 19:56:51,974 [9] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 19:57:27,193 [8] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:09:44,969 [26] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:09:48,913 [30] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: asdfasdf
+2015-02-01 20:09:48,914 [30] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: asdfasdf
+2015-02-01 20:09:52,680 [30] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: asdfasdf
+2015-02-01 20:09:52,689 [30] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: asdfasdf
+2015-02-01 20:09:56,241 [30] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Пользователь: Admin2 ввел некорректный пароль
+2015-02-01 20:12:44,510 [34] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Пользователь: Admin2 ввел некорректный пароль
+2015-02-01 20:13:16,790 [37] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Пользователь: Admin2 ввел некорректный пароль
+2015-02-01 20:13:36,787 [36] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:14:59,918 [36] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:17:06,079 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 20:17:06,092 [24] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 20:17:14,239 [30] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:18:58,610 [20] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:19:26,169 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 20:19:26,171 [19] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 20:19:32,669 [19] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:20:04,977 [22] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:20:07,847 [22] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: saratov
+2015-02-01 20:20:07,852 [22] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: saratov
+2015-02-01 20:20:15,239 [19] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:20:19,892 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:20:31,085 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:20:51,494 [30] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:20:58,197 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:21:10,242 [22] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:21:49,173 [12] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:21:59,272 [19] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:29:50,452 [15] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: sobaka
+2015-02-01 20:29:50,453 [15] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: sobaka
+2015-02-01 20:30:12,857 [15] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 20:31:42,643 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 20:32:09,682 [39] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 21:02:52,857 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:03:11,357 [28] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:03:34,447 [28] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 21:03:36,762 [29] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:03:39,029 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о дате рождения пользователя сохранены: Admin2
+2015-02-01 21:03:39,030 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил дату рождения
+2015-02-01 21:03:39,058 [28] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:11:36,421 [22] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 92355ce8-5bde-4c5b-9f72-02418e5e34bb пользователя: 
+2015-02-01 21:12:03,052 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 92355ce8-5bde-4c5b-9f72-02418e5e34bb
+2015-02-01 21:12:08,685 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 92355ce8-5bde-4c5b-9f72-02418e5e34bb
+2015-02-01 21:13:13,053 [20] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 56836ac3-e13c-49d2-a22e-a656b210271a пользователя: 
+2015-02-01 21:14:10,789 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 56836ac3-e13c-49d2-a22e-a656b210271a
+2015-02-01 21:14:10,790 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 56836ac3-e13c-49d2-a22e-a656b210271a
+2015-02-01 21:16:14,745 [48] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 2af524e9-b641-4b04-9254-65f6c2a8ca55 пользователя: 
+2015-02-01 21:16:34,808 [34] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: 2af524e9-b641-4b04-9254-65f6c2a8ca55
+2015-02-01 21:16:54,430 [34] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста 2af524e9-b641-4b04-9254-65f6c2a8ca55
+2015-02-01 21:18:47,790 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: f7757b4a-6805-41e4-8113-314d135653c1 пользователя: 
+2015-02-01 21:18:55,876 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: f7757b4a-6805-41e4-8113-314d135653c1
+2015-02-01 21:19:03,239 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление поста f7757b4a-6805-41e4-8113-314d135653c1
+2015-02-01 21:19:18,249 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: ca00c7fe-9cd0-4031-adfb-b569061081dc к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:19:18,250 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:19:21,184 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: e649623c-21d6-44dc-8039-93371bc12776 к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:19:21,185 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:19:24,592 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 115428ef-362e-4dbb-a6f7-d5e12c281dca к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:19:24,592 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Admin2 к посту: 9b66991d-5719-4ca3-8dcc-8e2a5ecf4672
+2015-02-01 21:25:39,638 [39] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:25:52,380 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 21:25:52,381 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 21:27:11,292 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 21:27:11,293 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 21:31:01,958 [20] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:31:18,432 [15] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 21:31:18,433 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 21:31:28,460 [15] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:32:09,880 [53] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: Admin2
+2015-02-01 21:32:09,881 [53] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: Admin2
+2015-02-01 21:34:00,837 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: Moder1
+2015-02-01 21:34:00,840 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: jemfsdf@gmail.com
+2015-02-01 21:34:00,857 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: Moder1
+2015-02-01 21:34:00,858 [13] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Администратор Зарегистрировал нового пользователя: Moder1
+2015-02-01 21:34:00,859 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Регистрация Администратором пользователя с логином: Moder1
+2015-02-01 21:34:05,666 [54] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменены роли на -Модератор- у пользователей: Moder1
+2015-02-01 21:34:32,352 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: User01
+2015-02-01 21:34:32,354 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: sdfg@gmail.com
+2015-02-01 21:34:32,360 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: User01
+2015-02-01 21:34:32,362 [19] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Администратор Зарегистрировал нового пользователя: User01
+2015-02-01 21:34:32,365 [19] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Регистрация Администратором пользователя с логином: User01
+2015-02-01 21:37:54,807 [15] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: aad5e562-431a-4239-ab1c-6c452c76bfbf пользователя: 
+2015-02-01 21:38:43,385 [26] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 99d9932d-c402-4da9-bdc2-8a1bbdb31899 пользователя: 
+2015-02-01 21:41:03,922 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 0cfc24f3-12cf-48f5-a093-22a7942a37d3 пользователя: 
+2015-02-01 21:41:19,777 [38] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 21:42:50,588 [29] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: bodybuilder
+2015-02-01 21:42:50,590 [29] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: bodybuilder@gmail.com
+2015-02-01 21:42:50,615 [29] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: bodybuilder
+2015-02-01 21:42:50,616 [29] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Администратор Зарегистрировал нового пользователя: bodybuilder
+2015-02-01 21:42:50,616 [29] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Регистрация Администратором пользователя с логином: bodybuilder
+2015-02-01 21:44:30,938 [43] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 21:44:42,001 [45] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Пользователь: bodybuilder ввел некорректный пароль
+2015-02-01 21:44:45,584 [32] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: bodybuilder
+2015-02-01 21:45:57,355 [49] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: f51bb664-37e5-4b30-ba2d-f37ea40f8a8f пользователя: 
+2015-02-01 21:49:04,864 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 259bba0a-ccd2-43ca-8c0a-84dc0b8b8a2e пользователя: 
+2015-02-01 21:49:51,457 [46] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: a2255f06-2f07-48cf-bb5b-a1def201ee0f пользователя: 
+2015-02-01 21:54:18,909 [41] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 1b1eb63a-f93c-41da-a00f-c859da74dd0e пользователя: 
+2015-02-01 21:56:22,393 [29] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: bodybuilder
+2015-02-01 21:56:51,542 [38] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: JemJem
+2015-02-01 21:56:51,545 [38] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: jemgus@gad.com
+2015-02-01 21:56:51,551 [38] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: JemJem
+2015-02-01 21:56:51,551 [38] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: JemJem
+2015-02-01 21:58:10,128 [41] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f пользователя: 
+2015-02-01 21:58:53,454 [35] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: d042fd5b-d7f4-4053-9d18-583150c1be25 пользователя: 
+2015-02-01 21:59:24,174 [42] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Изменен пост: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f пользователя: 
+2015-02-01 21:59:24,175 [42] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: 89e77ebe-9276-4bdb-abab-ae62b7be1d8fу пользователя: JemJem
+2015-02-01 22:00:37,928 [42] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: bf2916a0-0ba7-4023-b870-62fc4fc5740e пользователя: 
+2015-02-01 22:01:21,680 [32] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 33db1975-9473-4c0c-9aea-9e71c9b3776c пользователя: 
+2015-02-01 22:01:37,604 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: e8e606aa-d7aa-4c7f-bcb4-385fc05809ba пользователя: 
+2015-02-01 22:02:09,053 [29] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 1448340e-0979-4260-a9ed-0259da82ebee пользователя: 
+2015-02-01 22:02:39,053 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 9e29a5ad-8706-4a5a-a0ee-99e2bddffa84 пользователя: 
+2015-02-01 22:03:52,469 [45] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: d87f3441-28ac-4107-9ffb-aa8bcc91ae6e пользователя: 
+2015-02-01 22:05:17,663 [45] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: JemJem
+2015-02-01 22:05:28,326 [33] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 22:06:40,591 [45] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 22:06:50,724 [33] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Moder1
+2015-02-01 22:08:29,769 [40] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 4aff9a3e-a7ca-4b25-8a59-c1af8e84d395 пользователя: 
+2015-02-01 22:09:07,289 [40] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален комментарий: 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 22:09:07,290 [40] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удаление комментария 115428ef-362e-4dbb-a6f7-d5e12c281dca
+2015-02-01 22:09:32,131 [42] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: b69ac16f-b075-4a26-991a-17b90d8c1775 к посту: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f
+2015-02-01 22:09:32,132 [42] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Moder1 к посту: 89e77ebe-9276-4bdb-abab-ae62b7be1d8f
+2015-02-01 22:10:14,019 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: c8fa8be6-e990-4385-95c5-ae61dec55062 к посту: 0cfc24f3-12cf-48f5-a093-22a7942a37d3
+2015-02-01 22:10:14,020 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Moder1 к посту: 0cfc24f3-12cf-48f5-a093-22a7942a37d3
+2015-02-01 22:10:58,345 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 263bf826-cb25-40c9-86e9-42f7f7209473 к посту: bf2916a0-0ba7-4023-b870-62fc4fc5740e
+2015-02-01 22:10:58,346 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Moder1 к посту: bf2916a0-0ba7-4023-b870-62fc4fc5740e
+2015-02-01 22:11:43,487 [11] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен комментарий: 13cab2e8-30b2-45af-8a83-5f901fd3dcaf к посту: 1b1eb63a-f93c-41da-a00f-c859da74dd0e
+2015-02-01 22:11:43,488 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.CommentController [(null)] - Добавлен комментарий пользователя: Moder1 к посту: 1b1eb63a-f93c-41da-a00f-c859da74dd0e
+2015-02-01 22:33:18,919 [53] FATAL EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Серверная ошибка: System.Web.Mvc
+2015-02-01 22:39:53,072 [45] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Moder1
+2015-02-01 22:40:02,046 [37] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: JemJem
+2015-02-01 22:40:12,935 [45] FATAL EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Серверная ошибка: System.Web.Mvc
+2015-02-01 23:35:38,760 [56] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: JemJem
+2015-02-01 23:35:50,367 [11] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:35:53,071 [11] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:35:59,455 [13] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:36:03,454 [43] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:36:07,852 [43] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: asdfasdfas
+2015-02-01 23:36:07,855 [43] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: asdfasdfas
+2015-02-01 23:37:07,105 [56] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:37:10,286 [39] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:37:13,214 [22] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:37:15,935 [56] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:37:20,390 [30] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: sdfsdfsdfsd
+2015-02-01 23:37:20,391 [30] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: sdfsdfsdfsd
+2015-02-01 23:38:39,399 [39] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:38:44,236 [39] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 23:38:47,615 [39] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные об имени пользователя сохранены: Admin2
+2015-02-01 23:38:47,616 [39] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил имя
+2015-02-01 23:38:47,883 [43] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 23:38:50,804 [13] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Данные о поле пользователя сохранены: Admin2
+2015-02-01 23:38:50,805 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь: Admin2 изменил информацию о поле
+2015-02-01 23:38:50,982 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2
+2015-02-01 23:40:03,186 [13] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:40:05,835 [13] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:40:09,263 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:40:18,276 [43] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:40:20,607 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-01 23:40:24,854 [22] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: fsfsdfsdfsdfsd
+2015-02-01 23:40:24,857 [22] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Попытка входа в систему под несущетвующим логином: fsfsdfsdfsdfsd
+2015-02-01 23:42:52,430 [47] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-01 23:48:33,872 [49] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: Admin2

@@ -25,5 +25,32 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View();
         }
 
+        public ActionResult HttpError()
+        {
+            if (Request.IsAjaxRequest())
+                return PartialView("HttpError");
+            return View();
+        }
+
+        public ActionResult HttpError404()
+        {
+            if (Request.IsAjaxRequest())
+                return PartialView("HttpError404");
+            return View();
+        }
+
+        public ActionResult HttpError500()
+        {
+            if (Request.IsAjaxRequest())
+                return PartialView("HttpError500");
+            return View();
+        }
+
+        public ActionResult HttpError403()
+        {
+            if (Request.IsAjaxRequest())
+                return PartialView("HttpError403");
+            return View();
+        }
     }
 }

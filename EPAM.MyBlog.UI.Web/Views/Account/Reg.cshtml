@@ -16,7 +16,7 @@
 else
 {
 
-    using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" }))
+    using (Html.BeginForm("Reg", "Account", FormMethod.Post, new { id = "reg_form" }))
     {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
@@ -92,3 +92,4 @@ else
 }
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

@@ -26,14 +26,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         //
         // GET: /Account/
         [AllowAnonymous]
-        public ActionResult Login(string ReturnUrl)
+        public ActionResult Login()
         {
-
-            if (string.IsNullOrWhiteSpace(ReturnUrl))
-            {
-                ReturnUrl = "";
-            }
-            ViewData.Add("ReturnUrl", ReturnUrl);
             if (Request.IsAjaxRequest())
                 return PartialView("Login");
             return View();
@@ -42,7 +36,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Login(LoginModel model, string ReturnUrl)
+        public ActionResult Login(LoginModel model)
         {
             var checkbox = Request.Form["remember1"];
             if (checkbox == "on")
@@ -58,14 +52,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 string Result;
                 if (model.Login(out Result))
                 {
-                    if (!string.IsNullOrWhiteSpace(ReturnUrl))
-                    {
-                        return Redirect(ReturnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+
+                   return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -138,6 +126,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 {
                     LoginModel.LogOut();
                     logger.Info("Пользователь вышел из системы: " + User.Identity.Name);
+                    return RedirectToAction("Index", "Home");
 
                 }
                 return RedirectToAction("Index", "Home");
@@ -148,22 +137,28 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
         [AllowAnonymous]
-        [ChildActionOnly]
+
         public ActionResult State()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("State");
             return PartialView();
         }
+
+
         [AllowAnonymous]
-        [ChildActionOnly]
+        //[ChildActionOnly]
         public ActionResult MenuState()
         {
+            if (Request.IsAjaxRequest())
+                return PartialView("MenuState");
             return PartialView();
         }
 
 
 
         [AllowAnonymous]
-        [ChildActionOnly]
+
         public ActionResult TitleState()
         {
             return PartialView();
@@ -188,6 +183,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     LoginModel.SaveReason(model.Reason);
                     LoginModel.DeleteUser(User.Identity.Name);
                     logger.Info("Пользователь удалил свой аккаунт с логином: " + User.Identity.Name);
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -296,12 +292,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 else
                 {
                     logger.Error("Ошибка при изменении даты рождения пользователя: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("EditDate");
                     return View(model);
                 }
             }
             else
             {
                 logger.Debug("Невалидная модель при изменении даты рождения пользователе: " + User.Identity.Name);
+                if (Request.IsAjaxRequest())
+                    return PartialView("EditDate");
                 return View(model);
             }
         }
@@ -334,12 +334,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 else
                 {
                     logger.Error("Ошибка при изменении имени пользователя: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("EditName");
                     return View(model);
                 }
             }
             else
             {
                 logger.Debug("Невалидная модель при изменении имени пользователя: " + User.Identity.Name);
+                if (Request.IsAjaxRequest())
+                    return PartialView("EditName");
                 return View(model);
             }
         }
@@ -373,12 +377,16 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 else
                 {
                     logger.Error("Ошибка при изменении информации о себе пользователя: " + User.Identity.Name);
+                    if (Request.IsAjaxRequest())
+                        return PartialView("EditAbout");
                     return View(model);
                 }
             }
             else
             {
                 logger.Debug("Невалидная модель при изменении информации о себе пользователя: " + User.Identity.Name);
+                if (Request.IsAjaxRequest())
+                    return PartialView("EditAbout");
                 return View(model);
             }
         }

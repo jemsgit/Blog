@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
+    
     public class CommentController : Controller
     {
         private static ILog logger = LogManager.GetLogger(typeof(CommentController));

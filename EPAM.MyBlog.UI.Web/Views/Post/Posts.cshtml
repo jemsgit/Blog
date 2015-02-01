@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Posts";
 }
-@using (Html.BeginForm("Posts", "Post", FormMethod.Post, new { id = "ajaxform"}))
+@using (Html.BeginForm("Posts", "Post", FormMethod.Post, new { id = "ajaxformfav"}))
 {
     <div class ="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 title">@Html.DisplayFor(model => model.Title)</div>
     </div>
     <div class ="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-sx-12 post">
-            @Html.DisplayFor(model => model.Text)
+            @Html.Raw(Model.Text)
         </div>
     </div>
     <div>
@@ -36,9 +36,14 @@
         }
     }
 }
+
+@System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")
 <div id="comment">
     @Html.Action("AddComment", "Comment", new { Post_Id = Model.Id })
 </div>
+
+<div class ="col-md-10">
 @if(Model.Author == User.Identity.Name){
     @Ajax.ActionLink("К списку","MyPosts", "Post", new { }, new AjaxOptions{ UpdateTargetId = "content" })
 }
@@ -47,6 +52,6 @@ else{
         @Ajax.ActionLink("К списку","UserPosts", "Post", new { name=Model.Author }, new AjaxOptions{ UpdateTargetId = "content" })
     }
 }
-
+</div>
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
 @System.Web.Optimization.Scripts.Render("~/bundles/my2")

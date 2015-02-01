@@ -16,7 +16,7 @@
 else
 {
 
-using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "content" })) {
+using (Html.BeginForm( "Login", "Account", FormMethod.Post, new { id = "login_form" })) {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
     @Html.Hidden("ReturnUrl",ViewData["ReturnUrl"])
@@ -89,3 +89,4 @@ using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "c
 }
 
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

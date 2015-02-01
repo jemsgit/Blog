@@ -11,7 +11,7 @@
 </div>
      <p>Вы действиетльно хотите удалить аккаунт?</p>
 
-@using (Ajax.BeginForm( new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "comment" }))
+@using (Html.BeginForm("DeleteAc", "Account", FormMethod.Post, new { id = "delete_form" }))
 {
             <div class="editor-label">
             @Html.LabelFor(model => model.Reason)
@@ -26,7 +26,6 @@
 
 }
 
-@*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

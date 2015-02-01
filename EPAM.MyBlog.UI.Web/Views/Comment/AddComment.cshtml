@@ -8,21 +8,25 @@
 
 @foreach (var item in (List<EPAM.MyBlog.UI.Web.Models.CommentModel>)ViewData["List"])
     {
-    
-        <div>@Html.ActionLink(item.Author, "UserInfo","Account",new {name = item.Author}, null) в @item.Time</div>
-        <div>Сказал: @item.Text </div>
+        <div class="col-lg-10 col-md-10 col-sx-10 comment">
+        <div class="comment_author">@Html.ActionLink(item.Author, "UserInfo","Account",new {name = item.Author}, null)</div>
+        <div class="comment_text">Сказал: @Html.Raw(item.Text) </div>
+        <div class="time">@item.Time</div>
+        </div>
     }
+
+<div class="col-md-10">
 
 @if(User.Identity.IsAuthenticated){
 
-
+    
     using (Ajax.BeginForm("AddComment", "Comment", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "comment" }))
     { 
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
     
    
-    <fieldset >
+
 
         @Html.HiddenFor(model => model.Post_ID, new { @Value = ViewData["ID"] })
 
@@ -31,19 +35,22 @@
             @Html.LabelFor(model => model.Text)
         </div>
         <div class="editor-field-comment textarea">
+            <p> Доступно html форматирование </p>
             @Html.EditorFor(model => model.Text)
             @Html.ValidationMessageFor(model => model.Text)
         </div>
         <p>
             <input type="submit" class="btn btn-default" value="Добавить" />
         </p>
-    </fieldset>
+
 }
 
 }
 else
-{
+{   <div class="col-md-12">
     <p> Возможность комментирования доступна только для зарегистрированных пользователей</p>
+    </div>
 }
-
+    </div>
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

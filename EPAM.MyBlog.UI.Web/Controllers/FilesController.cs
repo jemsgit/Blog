@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace EPAM.MyBlog.UI.Web.Controllers
 {
+    [Authorize(Roles = "User")]
     public class FilesController : Controller
     {
 

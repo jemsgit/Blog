@@ -2,8 +2,12 @@
     ViewBag.Title = "Index";
 }
 
-<a href="@Url.Action("MyPosts", "Post")" >Мои посты</a>
-<a href="@Url.Action("Favorite", "Post")" >Избранное</a>
-<a href="@Url.Action("News", "Post")" >Лента</a>
-
+<div class="title">
+    <ul>
+        <li><a href="@Url.Action("MyPosts", "Post")" >Мои посты</a></li>
+        <li><a href="@Url.Action("Favorite", "Post")" >Избранное</a></li>
+        <li><a href="@Url.Action("News", "Post")" >Лента</a></li>
+    </ul>
+</div>
 @System.Web.Optimization.Scripts.Render("~/bundles/my")
+@System.Web.Optimization.Scripts.Render("~/bundles/my2")

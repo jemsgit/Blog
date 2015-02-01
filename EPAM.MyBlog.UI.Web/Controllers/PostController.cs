@@ -37,12 +37,18 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(true)]
         public ActionResult NewPost(PostModel model)
         {
             model.Id = Guid.NewGuid();
             model.Time = DateTime.Now;
             if (ModelState.IsValid)
             {
+                if (model.Text.ToLower().IndexOf("<script>") != -1 || model.Text.ToLower().IndexOf("style") != -1)
+                {
+                    if (Request.IsAjaxRequest())
+                        return PartialView("NewPost");
+                }
                 //string Result;
                 if (model.AddPost(User.Identity.Name.ToString()))
                 {
@@ -51,9 +57,13 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                 }
                 else
                 {
+                    if (Request.IsAjaxRequest())
+                        return PartialView("NewPost");
                     return View();
                 }
             }
+            if (Request.IsAjaxRequest())
+                return PartialView("NewPost");
             return View();
         }
 
@@ -65,6 +75,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             return View(PresentPostModel.GetAllPostsTitle(User.Identity.Name));
         }
 
+        [AllowAnonymous]
         public ActionResult Posts(Guid Id)
         {
             ViewData["Check"] = PostModel.CheckFavorite(User.Identity.Name, Id).ToString();
@@ -103,6 +114,11 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             post.Time = DateTime.Now;
             if (ModelState.IsValid)
             {
+                if (post.Text.ToLower().IndexOf("<script>") != -1 || post.Text.ToLower().IndexOf("style") != -1)
+                {
+                    if (Request.IsAjaxRequest())
+                        return PartialView("Edit");
+                }
                 if (post.EditPost())
                 {
                     logger.Info("Изменен пост id: " + post.Id + "у пользователя: " + User.Identity.Name);
@@ -139,6 +155,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.Confirm)
                 {
+
                     if (PostModel.Delete(id))
                     {
                         logger.Info("Удален пост id: " + id + "у пользователя: " + User.Identity.Name);
@@ -186,6 +203,8 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     else
                     {
                         logger.Error("Ошибка при удалении поста id: " + id + "из Избранного у пользователя: " + User.Identity.Name);
+                        if (Request.IsAjaxRequest())
+                            return PartialView("DeleteFavorite", new { Id = id });
                         return View();
                     }
                 }
@@ -194,9 +213,12 @@ namespace EPAM.MyBlog.UI.Web.Controllers
                     return RedirectToAction("Favorite", "Post");
                 }
             }
+            if (Request.IsAjaxRequest())
+                return PartialView("DeleteFavorite");
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Comments(Guid id)
         {
             return View();

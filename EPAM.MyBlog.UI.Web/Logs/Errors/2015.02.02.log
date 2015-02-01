@@ -77,3 +77,4 @@
 2015-02-02 03:09:53,719 [12] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Изменен пост id: ac06c564-9a7a-497c-9703-9f1cc50f6b02у пользователя: Admin2
 2015-02-02 03:09:57,308 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: ac06c564-9a7a-497c-9703-9f1cc50f6b02
 2015-02-02 03:09:57,309 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: ac06c564-9a7a-497c-9703-9f1cc50f6b02у пользователя: Admin2
+2015-02-02 03:34:17,491 [40] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2

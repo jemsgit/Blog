@@ -109,3 +109,9 @@
 2015-02-02 12:15:39,209 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - попытка несанкционированного удалени€ поста: 1d8c061b-9ec5-4b96-9eb4-dd4f5a181293 у пользовател€: Admin2  пользователем: JemJem
 2015-02-02 12:15:53,369 [10] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] -   
 2015-02-02 12:15:53,370 [10] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Ёлемент модели, переданный в словарь, имеет тип "<>f__AnonymousType2`1[System.Guid]", но дл€ этого словар€ требуетс€ элемент модели типа "EPAM.MyBlog.UI.Web.Models.ConfirmModel".
+2015-02-02 13:09:04,872 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: ƒанные об имени пользовател€ сохранены: JemJem
+2015-02-02 13:09:04,884 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - ѕользователь: JemJem изменил им€
+2015-02-02 13:09:13,773 [10] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: јватр добавлен: JemJem
+2015-02-02 13:09:13,774 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - «агрузка нового аватара пользователем: JemJem
+2015-02-02 13:09:13,809 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - «агрузка аватара из базы дл€ пользовател€: JemJem
+2015-02-02 13:09:53,454 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - «агрузка аватара из базы дл€ пользовател€: JemJem

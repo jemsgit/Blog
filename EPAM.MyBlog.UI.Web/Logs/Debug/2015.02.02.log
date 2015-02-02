@@ -78,3 +78,34 @@
 2015-02-02 03:09:57,308 [18] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: ac06c564-9a7a-497c-9703-9f1cc50f6b02
 2015-02-02 03:09:57,309 [18] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: ac06c564-9a7a-497c-9703-9f1cc50f6b02у пользователя: Admin2
 2015-02-02 03:34:17,491 [40] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-02 11:48:12,692 [7] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-02 11:50:04,417 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Отсутствует пароль для пользователя: sobaka
+2015-02-02 11:50:04,429 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Не существует пользвателя с данным e-mail адресом: dfsdfds@sdf.com
+2015-02-02 11:50:04,460 [7] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен новый пользователь: sobaka
+2015-02-02 11:50:04,464 [7] INFO  EPAM.MyBlog.UI.Web.Models.RegModel [(null)] - Зарегистрирован новый пользователь: sobaka
+2015-02-02 11:53:47,296 [28] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 16a2cb37-aabf-4c11-a0c7-d350ee23c6cd пользователя: 
+2015-02-02 11:54:08,380 [24] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-02-02 11:54:08,381 [24] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-02-02 11:54:08,415 [26] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка аватара из базы для пользователя: sobaka
+2015-02-02 11:54:23,354 [25] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Аватр добавлен: sobaka
+2015-02-02 11:54:23,354 [25] INFO  EPAM.MyBlog.UI.Web.Controllers.FilesController [(null)] - Загрузка нового аватара пользователем: sobaka
+2015-02-02 11:55:41,230 [14] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Пользователь удален: sobaka
+2015-02-02 11:55:43,411 [14] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь удалил свой аккаунт с логином: sobaka
+2015-02-02 11:57:07,831 [17] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: Admin2
+2015-02-02 12:07:58,918 [12] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: a444bec3-98fe-41d9-964f-7b0002fd0ed0 пользователя: 
+2015-02-02 12:08:47,859 [12] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] -   
+2015-02-02 12:08:47,860 [12] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Элемент модели, переданный в словарь, имеет тип "<>f__AnonymousType2`1[System.Guid]", но для этого словаря требуется элемент модели типа "EPAM.MyBlog.UI.Web.Models.ConfirmModel".
+2015-02-02 12:09:53,696 [25] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: a444bec3-98fe-41d9-964f-7b0002fd0ed0
+2015-02-02 12:09:53,709 [25] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: a444bec3-98fe-41d9-964f-7b0002fd0ed0у пользователя: Admin2
+2015-02-02 12:10:06,211 [19] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: d31d9b1c-4dcb-44e2-a351-557d4efd43de пользователя: 
+2015-02-02 12:10:46,052 [25] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Удален пост: d31d9b1c-4dcb-44e2-a351-557d4efd43de
+2015-02-02 12:10:46,052 [25] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - Удален пост id: d31d9b1c-4dcb-44e2-a351-557d4efd43deу пользователя: Admin2
+2015-02-02 12:14:39,885 [8] INFO  EPAM.MyBlog.DAL.DB.DAL [(null)] - DB: Добавлен пост: 1d8c061b-9ec5-4b96-9eb4-dd4f5a181293 пользователя: 
+2015-02-02 12:14:58,516 [32] INFO  EPAM.MyBlog.UI.Web.Controllers.AccountController [(null)] - Пользователь вышел из системы: Admin2
+2015-02-02 12:15:09,503 [7] INFO  EPAM.MyBlog.UI.Web.Models.LoginModel [(null)] - Вход в систему пользователя: JemJem
+2015-02-02 12:15:16,486 [8] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - попытка несанкционированного удаления поста: 1d8c061b-9ec5-4b96-9eb4-dd4f5a181293 у пользователя: Admin2  пользователем: JemJem
+2015-02-02 12:15:16,513 [8] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] -   
+2015-02-02 12:15:16,514 [8] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Элемент модели, переданный в словарь, имеет тип "<>f__AnonymousType2`1[System.Guid]", но для этого словаря требуется элемент модели типа "EPAM.MyBlog.UI.Web.Models.ConfirmModel".
+2015-02-02 12:15:39,209 [10] INFO  EPAM.MyBlog.UI.Web.Controllers.AdminController [(null)] - попытка несанкционированного удаления поста: 1d8c061b-9ec5-4b96-9eb4-dd4f5a181293 у пользователя: Admin2  пользователем: JemJem
+2015-02-02 12:15:53,369 [10] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] -   
+2015-02-02 12:15:53,370 [10] ERROR EPAM.MyBlog.UI.Web.MvcApplication [(null)] - Элемент модели, переданный в словарь, имеет тип "<>f__AnonymousType2`1[System.Guid]", но для этого словаря требуется элемент модели типа "EPAM.MyBlog.UI.Web.Models.ConfirmModel".

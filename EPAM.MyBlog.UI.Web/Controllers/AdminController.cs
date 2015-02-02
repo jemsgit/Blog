@@ -147,13 +147,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             }
         }
 
-        /// <summary>
-        /// Доделать
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <param name="ReturnUrl"></param>
-        /// <returns></returns>
-        /// 
+
         [Authorize(Roles = "Admin, Moder")]
         public ActionResult DeleteComment(Guid Id, string name)
         {

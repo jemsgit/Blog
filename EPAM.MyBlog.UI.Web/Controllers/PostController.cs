@@ -143,6 +143,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         {
             var post = PostModel.GetPostById(Id);
             ViewData["name"] = post.Title;
+            TempData["author"] = post.Author;
             if (Request.IsAjaxRequest())
                 return PartialView("Delete");
             return View();
@@ -155,15 +156,26 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.Confirm)
                 {
+                    string Author = TempData["author"].ToString();
+                    if (Author == User.Identity.Name)
+                    {
 
-                    if (PostModel.Delete(id))
-                    {
-                        logger.Info("Удален пост id: " + id + "у пользователя: " + User.Identity.Name);
-                        return RedirectToAction("MyPosts", "Post");
+                        if (PostModel.Delete(id))
+                        {
+                            logger.Info("Удален пост id: " + id + "у пользователя: " + User.Identity.Name);
+                            return RedirectToAction("MyPosts", "Post");
+                        }
+                        else
+                        {
+                            logger.Error("Ошибка при удалении поста id: " + id + "у пользователя: " + User.Identity.Name);
+                            if (Request.IsAjaxRequest())
+                                return PartialView("Delete", new { Id = id });
+                            return View();
+                        }
                     }
-                    else
+                    else 
                     {
-                        logger.Error("Ошибка при удалении поста id: " + id + "у пользователя: " + User.Identity.Name);
+                        logger.Info(String.Format("попытка несанкционированного удаления поста: {0} у пользователя: {1}  пользователем: {2}",id, Author,User.Identity.Name));
                         if (Request.IsAjaxRequest())
                             return PartialView("Delete", new { Id = id });
                         return View();
@@ -182,6 +194,7 @@ namespace EPAM.MyBlog.UI.Web.Controllers
         public ActionResult DeleteFavorite(Guid Id)
         {
             var post = PostModel.GetPostById(Id);
+            TempData["author"] = post.Author;
             ViewData["name"] = post.Title;
             if (Request.IsAjaxRequest())
                 return PartialView("DeleteFavorite");
@@ -195,14 +208,25 @@ namespace EPAM.MyBlog.UI.Web.Controllers
             {
                 if (model.Confirm)
                 {
-                    if (PostModel.DeleteFavorite(User.Identity.Name, id))
+                    string Author = TempData["author"].ToString();
+                    if (Author == User.Identity.Name)
                     {
-                        logger.Info("Удален пост id: " + id + "из Избранного у пользователя: " + User.Identity.Name);
-                        return RedirectToAction("Favorite", "Post");
+                        if (PostModel.DeleteFavorite(User.Identity.Name, id))
+                        {
+                            logger.Info("Удален пост id: " + id + "из Избранного у пользователя: " + User.Identity.Name);
+                            return RedirectToAction("Favorite", "Post");
+                        }
+                        else
+                        {
+                            logger.Error("Ошибка при удалении поста id: " + id + "из Избранного у пользователя: " + User.Identity.Name);
+                            if (Request.IsAjaxRequest())
+                                return PartialView("DeleteFavorite", new { Id = id });
+                            return View();
+                        }
                     }
                     else
                     {
-                        logger.Error("Ошибка при удалении поста id: " + id + "из Избранного у пользователя: " + User.Identity.Name);
+                        logger.Info(String.Format("попытка несанкционированного удаления поста из избранного: {0} у пользователя: {1}  пользователем: {2}", id, Author, User.Identity.Name));
                         if (Request.IsAjaxRequest())
                             return PartialView("DeleteFavorite", new { Id = id });
                         return View();
